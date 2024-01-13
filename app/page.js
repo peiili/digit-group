@@ -1,31 +1,68 @@
 import Image from 'next/image'
+import styles from './page.module.css'
+import moment from 'moment'
+async function getData(page) {
+  const options = {
+    method: 'POST',
+    body: JSON.stringify({
+        "page": page,
+        "size": 20,
+        "type": 2,
+        "status": 1,
+        "fuzzy": ""
+    }),
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }
+  const res = await fetch('https://dlsjf.top/api/grabbag/getList',options) 
+  return res.json()
+}
 
-export default function Home() {
+export default async function Home(props) {
+  const { page } = props.searchParams 
+  const result = await getData(page||1)
+  const { list, currentPage, totalPage } = result.data
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          专业的人格测试网站&nbsp;
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main className="min-h-screen pl-2 pr-2">
+        <input></input>
+        <Image
+          src="https://images.pexels.com/photos/19837460/pexels-photo-19837460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          width={500}
+          height={500}
+          fill={false} 
+          object-fit="contain"
+          className={styles.headImage}
+          alt="Picture of the author"
+        />
+          {
+            list.map(e=>{
+                return (
+                  <>
+                    <div className='p-2 border-b border-slate-400 '>
+                      <a href={`/details/${e.id}`}>{ e.title }</a>
+                      <div className='text-slate-400'>
+                        {moment(e.created_date).format('MM-DD') }
+                      </div>
+
+                    </div>
+                  </>
+                )
+            })
+          }
+          <div className='p-2'>
+            {
+              page>1 && <a className={`${styles.btn} ${styles.btnLeft}`} href={`/?page=${Number(currentPage)-1}`}>
+                上一页
+              </a>
+            }
+            {
+              (Number(currentPage)< Number(totalPage))&&<a className={`${styles.btn} ${styles.btnRight}`} href={`/?page=${Number(currentPage)+1}`}>
+                下一页
+              </a>
+            }
+          </div>
+          <footer className='h-12'></footer>
     </main>
   )
 }
