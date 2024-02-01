@@ -1,8 +1,7 @@
-const fs = require('fs')
 const path = require('path')
 const express = require('express')
 const app = express()
-
+const viewRoute = require('./view-router')
 
 const self = {
     accessToken: {},
@@ -24,11 +23,11 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use('/',express.static(path.join(__dirname,'public/')))
+app.use(express.static('public'))
 
 // 设置ejs 模板引擎
-app.set('views',path.join(__dirname,'public/'))
+app.set('views', path.join(__dirname,'public'))
 app.set('view engine','ejs')
-
+viewRoute(app)
 
 module.exports = app
