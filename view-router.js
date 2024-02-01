@@ -3,19 +3,22 @@ const path = require('path');
 const express = require('express')
 const router = express.Router()
 
-function viewRoute(app) {
-    // app.use('/view', article);
-    // app.get('/view', (req, res) => {
-    //     res.render('index', {foo: 'FOO', delimiter: '?'});
-    // });
-    const files = fs.readdirSync('./route')
+function deep(dir,subdir){
+    const files = fs.readdirSync('./'+dir)
     for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        const fulepath = path.join(__dirname, 'route', file)
-        const func = require(fulepath)
-        router.get('/'+file.replace('.js',''), func)
+        const fulepath = path.join(dir, file)
+        const isDirectory = fs.statSync(fulepath).isDirectory()
+        if(isDirectory){
+            deep(dir+ '/' +file, subdir+ '/' +file)
+            continue
+        }
+        const func = require('./'+fulepath)
+        router.get(subdir+'/'+file.replace('.js',''), func)
     }
-    
+}
+function viewRoute(app) {
+    deep('route', '')
     router.get('/view/*', (req, res) => {
         res.status(301).redirect('/view')
     });
