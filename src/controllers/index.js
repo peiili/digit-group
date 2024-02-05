@@ -1,10 +1,18 @@
 const ejs = require('ejs')
 const fs = require('fs');  
 function index(req, res){
-   return res.render('index/index', { foo: '123123123' });
-    // let template = fs.readFileSync(__dirname+'/../public/index/index.ejs', 'utf-8')
-    // let html = ejs.render(template, { name: 'John' }); 
-    // console.log(html);
+    const list = [{
+        avatar:'123123',
+        title:'12323',
+        id:'1',
+        createDate: '2024-01-12'
+    },{
+        avatar:'123123',
+        title:'12323',
+        id:'1',
+        createDate: '2024-01-12'
+    }]
+   return res.render('index/index', { list: list });
 }
 
 module.exports = index

@@ -1,0 +1,59 @@
+.img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.img img {
+    width: 100%;
+}
+
+.page-btn-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 10px;
+}
+
+.card .card-body {
+    padding: .8rem;
+    box-sizing: border-box;
+    display: flex;
+    column-gap: 0.8rem;
+}
+
+.card .left {
+
+}
+
+
+.card .left .avatar {
+    width: 80px;
+    height: 80px;
+}
+
+.card .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card .right .title {
+    height: 50px;
+    overflow: hidden;
+}
+.card .right .title h6{
+    color: var(--bs-secondary-color);
+    line-height: 24px;
+}
+
+.card .right .public-data {
+    text-align: right;
+    color: #ccc;
+}
