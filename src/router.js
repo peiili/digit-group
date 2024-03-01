@@ -26,7 +26,7 @@ function viewRoute(app) {
     router.get('/view/*', (req, res) => {
         res.status(301).redirect('/view')
     });
-    app.use('/view', router)
+    app.use('/', router)
 }
 
 module.exports = viewRoute;

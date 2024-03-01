@@ -28,7 +28,7 @@ module.exports = {
     },
     "server": false,
     proxy: {
-        target: "http://192.168.1.7:8090/view",
+        target: "http://192.168.1.7:8090",
     },
     "port": 3000,
     "middleware": false,
