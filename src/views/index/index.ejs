@@ -4,56 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数字集合-mbti</title>
+    <meta
+        name="description"
+        content="MBTI十六人格测试是一款基于心理学的人格测试工具，它可以帮助你更好地了解自己的个性特点、优点、缺点以及适合的职业类型。通过回答一系列问题，测试将会分析出你的性格类型，并为你提供一份详细的人格报告。快来试试吧！"
+    />
+    <meta name="keywords" content="MBTI, 十六人格测试, 人格测试, 性格测试, 心理学测试, 自我认知, 职业发展, 人格类型, 性格特点, 优点缺点.">
     <link rel="stylesheet" href="/access/css/reset.css" />
     <link rel="stylesheet" href="/access/css/bootstrap.min.css" />
     <script src="/access/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/index/style.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand">数字集合</a>
-            </div>
-          </nav>
-        <div>
-            <!-- <form class="d-flex" role="search">
-                <input class="form-control me-1" type="search" placeholder="搜索" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">搜索</button>
-            </form> -->
-            <div class="img">
-                <img src="https://s.cn.bing.net/th?id=OHR.AlpineMarmot_ZH-CN3818584615_1920x1080.webp&qlt=50" alt="" srcset="">
-            </div>
+    <div class="main">
+        <div class="top-bg"></div>
+        <div class="head box">
+            <h2>数字集合</h2>
         </div>
-        <div class="content-list">
-            <% list.forEach(function(item){ %>
-                <div class="col-lg-6 col-sm-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="left">
-                                <img src="https://s.cn.bing.net/th?id=OHR.AlpineMarmot_ZH-CN3818584615_1920x1080.webp&qlt=50" class="rounded avatar" alt="...">
-                            </div>
-                            <div class="right">
-                                <div class="title">
-                                    <h6><%= item.title %></h6>
-                                </div>
-                                <div class="public-data">
-                                    <%= item.createDate %>
+        <div class="box mt_60">
+            <div>
+                <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-1" type="search" placeholder="搜索" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">搜索</button>
+                </form> -->
+                <div class="img">
+                    <img src="https://s.cn.bing.net/th?id=OHR.AlpineMarmot_ZH-CN3818584615_1920x1080.webp&qlt=50" alt="" srcset="">
+                </div>
+            </div>
+            <div class="content-list">
+                <% list.forEach(function(item){ %>
+                    <a href="/article/<%= item.id %>">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="left">
+                                        <img src="https://s.cn.bing.net/th?id=OHR.AlpineMarmot_ZH-CN3818584615_1920x1080.webp&qlt=50" class="rounded avatar" alt="...">
+                                    </div>
+                                    <div class="right">
+                                        <div class="title">
+                                            <h6><%= item.title %></h6>
+                                        </div>
+                                        <div class="public-data">
+                                            <%= item.createDate %>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            <% }); %>
-        </div>
-        <div class="page-btn-group">
-            <button type="button" class="btn btn-light">上一页</button>
-            <button type="button" class="btn btn-light">下一页</button>
-        </div>
-        <div class="police">
-          <a href="http://beian.miit.gov.cn">
-            豫ICP备2024050061号
-          </a>
+                    </a>
+                <% }); %>
+            </div>
+            <div class="page-btn-group">
+                <button type="button" class="btn btn-light">上一页</button>
+                <button type="button" class="btn btn-light">下一页</button>
+            </div>
+            <div class="police">
+              <a href="http://beian.miit.gov.cn">
+                豫ICP备2024050061号
+              </a>
+            </div>
         </div>
     </div>
 </body>

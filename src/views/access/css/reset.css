@@ -2,3 +2,12 @@ html, body {
     padding: 0;
     margin: 0;
 }
+a,area{outline:none;}
+a{
+    text-decoration:none !important; 
+    cursor: pointer;
+}
+a:hover{text-decoration:underline;outline:none}
+a.ie6:hover{zoom:1}
+a:focus{outline:none}
+a:hover,a:active{outline:none}:focus{outline:none}

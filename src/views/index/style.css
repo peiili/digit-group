@@ -1,7 +1,36 @@
+.main {
+    overflow: hidden;
+}
+.top-bg {
+    background-color: #3aa477;
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+    top: -800px;
+    z-index: -1;
+    border-radius: 50%;
+    left: -400px;
+}
+.head {
+    height: 50px;
+    position: fixed;
+    /* box-shadow: 0 5px 5px #ccc; */
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
+    display: flex;
+}
+.box {
+    padding: 10px;
+}
+.mt_60 {
+    margin-top: 60px;
+}
 .img {
     width: 100%;
     overflow: hidden;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    z-index: 10;
 }
 
 .img img {
@@ -62,4 +91,6 @@
 .police {
   text-align: center;
   margin-top: 10px;
+  line-height: 100px;
+  font-size: 12px;
 }
