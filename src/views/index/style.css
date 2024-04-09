@@ -2,7 +2,7 @@
     overflow: hidden;
 }
 .top-bg {
-    background-color: #3aa477;
+    /* background-color: #3aa477; */
     position: fixed;
     width: 1000px;
     height: 1000px;
@@ -14,11 +14,14 @@
 .head {
     height: 50px;
     position: fixed;
-    /* box-shadow: 0 5px 5px #ccc; */
     width: 100%;
-    background-color: #fff;
+    background-color: #ffffff50;
     z-index: 100;
     display: flex;
+    backdrop-filter: blur(10px);
+    /* color:antiquewhite; */
+    
+    font-size: 12px;
 }
 .box {
     padding: 10px;

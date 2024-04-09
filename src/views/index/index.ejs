@@ -1,68 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="wechat-enable-text-zoom-em" content="true">
     <title>数字集合-mbti</title>
-    <meta
-        name="description"
-        content="MBTI十六人格测试是一款基于心理学的人格测试工具，它可以帮助你更好地了解自己的个性特点、优点、缺点以及适合的职业类型。通过回答一系列问题，测试将会分析出你的性格类型，并为你提供一份详细的人格报告。快来试试吧！"
-    />
+    <meta name="description" content="MBTI十六人格测试是一款基于心理学的人格测试工具，它可以帮助你更好地了解自己的个性特点、优点、缺点以及适合的职业类型。通过回答一系列问题，测试将会分析出你的性格类型，并为你提供一份详细的人格报告。快来试试吧！" />
     <meta name="keywords" content="MBTI, 十六人格测试, 人格测试, 性格测试, 心理学测试, 自我认知, 职业发展, 人格类型, 性格特点, 优点缺点.">
+    <link rel="stylesheet" href="/access/css/weui.css" />
     <link rel="stylesheet" href="/access/css/reset.css" />
-    <link rel="stylesheet" href="/access/css/bootstrap.min.css" />
-    <script src="/access/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/index/style.css">
+
+    <!-- <link rel="stylesheet" href="/index/style.css"> -->
 </head>
-<body>
-    <div class="main">
-        <div class="top-bg"></div>
-        <div class="head box">
-            <h2>数字集合</h2>
-        </div>
-        <div class="box mt_60">
-            <div>
-                <!-- <form class="d-flex" role="search">
-                    <input class="form-control me-1" type="search" placeholder="搜索" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">搜索</button>
-                </form> -->
-                <div class="img">
-                    <img src="https://s.cn.bing.net/th?id=OHR.AlpineMarmot_ZH-CN3818584615_1920x1080.webp&qlt=50" alt="" srcset="">
-                </div>
-            </div>
-            <div class="content-list">
-                <% list.forEach(function(item){ %>
-                    <a href="/article/<%= item.id %>">
-                        <div class="col-lg-6 col-sm-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="left">
-                                        <img src="https://s.cn.bing.net/th?id=OHR.AlpineMarmot_ZH-CN3818584615_1920x1080.webp&qlt=50" class="rounded avatar" alt="...">
-                                    </div>
-                                    <div class="right">
-                                        <div class="title">
-                                            <h6><%= item.title %></h6>
-                                        </div>
-                                        <div class="public-data">
-                                            <%= item.createDate %>
-                                        </div>
-                                    </div>
+
+<body ontouchstart>
+    <script type="text/javascript">window.__wxWebEnv && (document.body.style.webkitTextSizeAdjust = JSON.parse(window.__wxWebEnv.getEnv()).fontScale + "%")</script>
+    <div class="container">
+        <div class="page panel js_show">
+            <div class="page__bd">
+                <div class="weui-panel weui-panel_access">
+                    <div class="weui-panel__bd">
+                        <% list.forEach(function(item){ %>
+                            <a aria-labelledby="js_p1m1_bd" href="/article/<%= item.id %>" class="weui-media-box weui-media-box_appmsg">
+                                <div aria-hidden="true" class="weui-media-box__hd">
+                                    <img class="weui-media-box__thumb"
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg=="
+                                        alt="">
                                 </div>
-                            </div>
-                        </div>
-                    </a>
-                <% }); %>
-            </div>
-            <div class="page-btn-group">
-                <button type="button" class="btn btn-light">上一页</button>
-                <button type="button" class="btn btn-light">下一页</button>
-            </div>
-            <div class="police">
-              <a href="http://beian.miit.gov.cn">
-                豫ICP备2024050061号
-              </a>
+                                <div aria-hidden="true" id="js_p1m1_bd" class="weui-media-box__bd">
+                                    <strong class="weui-media-box__title">
+                                        <%= item.title %>
+                                    </strong>
+                                    <p class="weui-media-box__desc">
+                                        <%= item.description %>
+                                    </p>
+                                </div>
+                            </a>
+                            <% }); %>
+                    </div>
+                    <div class="page-btn-group">
+                        <!-- <a href="javascript:" role="button" class="weui-btn weui-btn_primary">上一页</a>
+                        <a href="javascript:" role="button" class="weui-btn weui-btn_primary">下一页</a> -->
+                    </div>
+                 </div>
+                 <%- include('./../components/footer'); %>
             </div>
         </div>
-    </div>
 </body>
+
 </html>
