@@ -4,26 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数字集合--<%= title %></title>
+    <title>数字集合--<%= title %>
+    </title>
     <meta name="keywords" content="<%= keywords %>">
 
     <link rel="stylesheet" href="/access/css/weui.css" />
     <link rel="stylesheet" href="/access/css/reset.css" />
+    <link rel="stylesheet" href="/article/style.css">
 </head>
 
 <body>
     <div class="container" id="container">
         <div class="page article js_show" tabindex="-1">
-            <article class="weui-article">
-                <h1><%= title %></h1>
-                <div style="text-align: center;">
-                   发表于： <i><%= createDate %></i>
-                </div>
-                <section>
-                    <%- html %> 
-                </section>
-            </article>
-            <%- include('./../components/footer'); %>
+            <div class="page__bd">
+                <article class="weui-article">
+                    <h1>
+                        <%= title %>
+                    </h1>
+                    <div style="text-align: center;">
+                        发表于： <i>
+                            <%= createDate %>
+                        </i>
+                    </div>
+                    <section>
+                        <%- html %>
+                    </section>
+                </article>
+                <%- include('./../components/footer'); %>
+            </div>
         </div>
     </div>
 </body>

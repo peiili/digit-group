@@ -64,7 +64,7 @@ ul {
     left: 0;
     overflow: hidden;
     color: var(--weui-FG-0);
-    max-width: 960px; /* 设置最大宽度为500像素 */  
+    /* max-width: 960px; 设置最大宽度为500像素   */
     margin: 0 auto; /* 水平居中 */  
 }
 
@@ -73,7 +73,7 @@ ul {
 }
 
 .page__hd {
-    padding: 40px
+    padding: 40px;
 }
 
 .page__bd_spacing {
@@ -410,7 +410,7 @@ ul {
 }
 
 .page.panel .page__bd {
-    padding-bottom: 20px
+    padding-bottom: 20px;
 }
 
 .page.panel .weui-cell_example .weui-cell__hd img {
