@@ -9,6 +9,7 @@
     <meta name="keywords" content="MBTI, 十六人格测试, 人格测试, 性格测试, 心理学测试, 自我认知, 职业发展, 人格类型, 性格特点, 优点缺点.">
     <link rel="stylesheet" href="/access/css/weui.css" />
     <link rel="stylesheet" href="/access/css/reset.css" />
+    <script src="/access/js/apiFetch.js"></script>
 
     <link rel="stylesheet" href="/index/style.css">
 </head>
@@ -16,21 +17,20 @@
 <body ontouchstart>
     <script type="text/javascript">window.__wxWebEnv && (document.body.style.webkitTextSizeAdjust = JSON.parse(window.__wxWebEnv.getEnv()).fontScale + "%")</script>
     <div class="container">
+        <div class="load-previous"></div>
         <div class="page panel js_show">
             <div class="page__bd">
-                <div class="top-img">
-                    
-                </div>
+                <div class="top-img"></div>
                 <div class="weui-panel weui-panel_access">
-                    <div class="weui-panel__bd">
+                    <div class="weui-panel__bd article-list">
                         <% list.forEach(function(item){ %>
-                            <a aria-labelledby="js_p1m1_bd" href="/article/<%= item.id %>" class="weui-media-box weui-media-box_appmsg">
+                            <a aria-labelledby="js_p1m1_bd_<%= item.id %>" href="/article/<%= item.id %>" class="weui-media-box weui-media-box_appmsg">
                                 <div aria-hidden="true" class="weui-media-box__hd">
                                     <img class="weui-media-box__thumb"
                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg=="
                                         alt="">
                                 </div>
-                                <div aria-hidden="true" id="js_p1m1_bd" class="weui-media-box__bd">
+                                <div aria-hidden="true" id="js_p1m1_bd_<%= item.id %>" class="weui-media-box__bd">
                                     <strong class="weui-media-box__title">
                                         <%= item.title %>
                                     </strong>
@@ -39,34 +39,88 @@
                                     </p>
                                 </div>
                             </a>
-                            <% }); %>
+                        <% }); %>
                     </div>
-                    <div class="load-dom">
-                        <!-- <a href="javascript:" role="button" class="weui-btn weui-btn_primary">上一页</a>
-                        <a href="javascript:" role="button" class="weui-btn weui-btn_primary">下一页</a> -->
-                    </div>
+                    
+                    <div class="load-next"></div>
                  </div>
+                 <div class="current-page" data-current="<%= currentPage %>" data-total="<%= totalPage %>"></div>
+                 <%- include('./../components/pagination', { totalPage: totalPage, currentPage: currentPage}); %>
                  <%- include('./../components/footer'); %>
             </div>
         </div>
         <script>
-            var loadDom = document.querySelector('.load-dom')
+            var loadPreviousDom = document.querySelector('.load-previous')
+            var loadDom = document.querySelector('.load-next')
+            var articleList = document.querySelector('.article-list')
+            var currentDom = document.querySelector('.current-page')
+            var preDom = document.querySelector('.previous-code')
+            var nextDom = document.querySelector('.next-code')
         
             var throttle = false
       
             document.addEventListener('DOMContentLoaded', function() {
                 window.addEventListener('scroll',function(){
-                    if(throttle) {
-                        clearTimeout(timer)
+                    var currentPage = currentDom.dataset.current
+                    var totalPage = currentDom.dataset.total
+                    if(throttle||(currentPage==totalPage)) {
+                      return 
                     }
                     throttle = true
                     setTimeout(()=>{
-                        throttle = false
                         var rect = loadDom.getBoundingClientRect()
-                        console.log(rect);
-                    }, 200)
+                        if(rect.top< window.innerHeight+100){
+                            nextPage = nextDom.dataset.page
+                            getData(nextPage)
+                        } else {
+                            throttle = false
+                        }
+                    }, 100)
                 }, true)
             });
+            function render(item){
+                return `
+                    <a aria-labelledby="js_p1m1_bd_${item.id}" href="/article/${item.id}" class="weui-media-box weui-media-box_appmsg">
+                        <div aria-hidden="true" class="weui-media-box__hd">
+                            <img class="weui-media-box__thumb"
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg=="
+                                alt="">
+                        </div>
+                        <div aria-hidden="true" id="js_p1m1_bd_${item.id}" class="weui-media-box__bd">
+                            <strong class="weui-media-box__title">
+                                ${item.title}>
+                            </strong>
+                            <p class="weui-media-box__desc">
+                                ${item.description}
+                            </p>
+                        </div>
+                    </a>
+                `
+            }
+
+            function getData(page){
+                const body = {
+                    type: 2,
+                    status: 1,
+                    fuzzy: '',
+                    page: page,
+                    size: 20,
+                    website_id: 'bec0f745-f40f-4392-b7cd-2bf78eaf'
+                }
+                apiFetch.post('/api/article/page', body).then(e=>{
+                    if(e.success){
+                        throttle = false
+                        currentDom.setAttribute('data-current', e.data.currentPage)
+                        currentDom.setAttribute('data-total', e.data.totalPage)
+                        history.replaceState(null, null, `?page=${e.data.currentPage}`);
+                        var tempalte = ''
+                        e.data.list.forEach(item => {
+                            tempalte += render(item)
+                        });
+                        articleList.innerHTML += tempalte;
+                    }
+                })
+            }
            
         </script>
 </body>

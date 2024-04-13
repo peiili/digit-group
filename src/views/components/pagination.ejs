@@ -1,0 +1,7 @@
+<div class="pagination" current-page="<%= currentPage %>">
+  <a href="?page=<%= currentPage-1 %>" class="previous-code" data-page="<%= currentPage-1 %>">previous</a>
+  <% for (var i = 0; i < totalPage; i++) { %>
+      <a href="?page=<%= i+1 %>" class="page-code <% if(currentPage == (i+1)) { %> page-code_active <% } %>"><%= i+1 %></a>
+  <% } %>
+  <a href="?page=<%= currentPage+1 %>" class="next-code" data-page="<%= currentPage+1 %>">next</a>
+</div>

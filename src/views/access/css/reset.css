@@ -809,3 +809,11 @@ ul {
         display: block
     }
 }
+
+.pagination {
+    text-align: center;
+}
+
+.page-code_active {
+    color: red;
+}

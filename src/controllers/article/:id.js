@@ -13,7 +13,7 @@ function getArticle(id,cb){
   const options = {
     hostname:'127.0.0.1',
     port: 5166,
-    path: '/api/grabbag/getContent',
+    path: '/api/article/detail',
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
