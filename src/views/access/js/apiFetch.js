@@ -1,5 +1,6 @@
 function Api (){
-    this.baseUrl = 'http://127.0.0.1:5166'
+    // this.baseUrl = 'http://127.0.0.1:5166'
+    this.baseUrl = '/'
 }
 Api.prototype.apiFetch = function (url, method = 'GET', data = null, headers = {}) {  
     // 设置默认请求头  
