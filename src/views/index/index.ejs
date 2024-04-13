@@ -41,7 +41,7 @@
                             </a>
                             <% }); %>
                     </div>
-                    <div class="page-btn-group">
+                    <div class="load-dom">
                         <!-- <a href="javascript:" role="button" class="weui-btn weui-btn_primary">上一页</a>
                         <a href="javascript:" role="button" class="weui-btn weui-btn_primary">下一页</a> -->
                     </div>
@@ -49,6 +49,26 @@
                  <%- include('./../components/footer'); %>
             </div>
         </div>
+        <script>
+            var loadDom = document.querySelector('.load-dom')
+        
+            var throttle = false
+      
+            document.addEventListener('DOMContentLoaded', function() {
+                window.addEventListener('scroll',function(){
+                    if(throttle) {
+                        clearTimeout(timer)
+                    }
+                    throttle = true
+                    setTimeout(()=>{
+                        throttle = false
+                        var rect = loadDom.getBoundingClientRect()
+                        console.log(rect);
+                    }, 200)
+                }, true)
+            });
+           
+        </script>
 </body>
 
 </html>
