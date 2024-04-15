@@ -10,10 +10,10 @@ var website_id = 'bec0f745-f40f-4392-b7cd-2bf78eaf'
 function getList(page=1,cb){
   const postData = {
     type: 2,
-    status: 1,
+    status: 'release',
     fuzzy: '',
     page: page,
-    size:20,
+    size: 20,
     website_id: website_id
   }
   const options = {
