@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="wechat-enable-text-zoom-em" content="true">
-    <title>数字集合-mbti</title>
-    <meta name="description" content="MBTI十六人格测试是一款基于心理学的人格测试工具，它可以帮助你更好地了解自己的个性特点、优点、缺点以及适合的职业类型。通过回答一系列问题，测试将会分析出你的性格类型，并为你提供一份详细的人格报告。快来试试吧！" />
-    <meta name="keywords" content="MBTI, 十六人格测试, 人格测试, 性格测试, 心理学测试, 自我认知, 职业发展, 人格类型, 性格特点, 优点缺点.">
+    <title> <%= title %></title>
+    <meta name="description" content="<%= description %>" />
+    <meta name="keywords" content="<%= keywords %>">
     <link rel="stylesheet" href="/access/css/weui.css" />
     <link rel="stylesheet" href="/access/css/reset.css" />
     <script src="/access/js/apiFetch.js"></script>
@@ -46,7 +46,7 @@
                  </div>
                  <div class="current-page" data-current="<%= currentPage %>" data-total="<%= totalPage %>"></div>
                  <%- include('./../components/pagination', { totalPage: totalPage, currentPage: currentPage}); %>
-                 <%- include('./../components/footer'); %>
+                 <%- include('./../components/footer', { beian: beian }); %>
             </div>
         </div>
         <script>

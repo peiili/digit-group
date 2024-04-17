@@ -41,23 +41,45 @@ function getList(page=1,cb){
   req.end();
 }
 
+function getWebsiteInfo(cb){
+  var url = 'http://0.0.0.0:5166/api/website?id='+website_id
+  http.get(url, function(res){
+    let data = Buffer.alloc(0)
+    res.on('data',(chunk)=>{
+      data = Buffer.concat([data,chunk])
+    })
+    res.on('end',()=>{
+      const body = JSON.parse(data.toString())
+      cb(body.data)
+    })
+  })
+}
+
 function index(req, res){
     let list = []
     let page = req.query.page;
-    getList(page, (body)=>{
-      list = body.data.list.map(e=>{
-        const createDate =  thisYear(e.created_date)
-        return {
-          ...e,
-          createDate: createDate,
-        }
+    getWebsiteInfo((website)=>{
+      console.log(website);
+      getList(page, (body)=>{
+        list = body.data.list.map(e=>{
+          const createDate =  thisYear(e.created_date)
+          return {
+            ...e,
+            createDate: createDate,
+          }
+        })
+        res.render('index/index', {
+          title: website.name,
+          keywords: website.keywords,
+          description: website.description,
+          beian: website.beian,
+
+          list: list,
+          website_id: website_id,
+          totalPage: body.data.totalPage,
+          currentPage: body.data.currentPage 
+        });
       })
-      res.render('index/index', { 
-        list: list,
-        website_id: website_id,
-        totalPage: body.data.totalPage,
-        currentPage: body.data.currentPage 
-      });
     })
 }
 
