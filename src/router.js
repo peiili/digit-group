@@ -26,6 +26,13 @@ function viewRoute(app) {
     router.get('/view/*', (req, res) => {
         res.status(301).redirect('/view')
     });
+    router.get('/Home/Blog/Article/:id', (req, res)=>{
+        var id = req.params.id
+        res.status(301).redirect('/article/'+id)
+    })
+    router.get('/*', (req, res)=>{
+        res.status(301).redirect('/')
+    })
     app.use('/', router)
 }
 
