@@ -30,6 +30,9 @@ function viewRoute(app) {
         var id = req.params.id
         res.status(301).redirect('/article/'+id)
     })
+    // router.get('/site.txt', (req, res)=>{
+        
+    // })
     router.get('/*', (req, res)=>{
         res.status(301).redirect('/')
     })
