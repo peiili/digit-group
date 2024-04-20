@@ -36,7 +36,7 @@ function index(req, res){
                 createDate: createDate,
                 description: e.description,
                 keywords: e.keywords,
-                html: marked.parse(e.marked)
+                html: marked.parse(e.marked||'')
             });
     })
 }
