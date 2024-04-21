@@ -26,7 +26,7 @@
                     <div class="weui-panel__bd article-list">
                         <% list.forEach(function(item){ %>
                             <a aria-labelledby="js_p1m1_bd_<%= item.id %>" href="/article/<%= item.id %>" class="weui-media-box weui-media-box_appmsg">
-                                <div aria-hidden="true" class="weui-media-box__hd">
+                                <div aria-hidden="true" class="weui-media-box__hd thumbnail">
                                     <img class="weui-media-box__thumb"
                                         src="/access/img/avatar/<%= item.random %>.jpg"
                                         alt="<%= item.title %>">
@@ -83,7 +83,7 @@
                 /* html */
                 return `
                     <a aria-labelledby="js_p1m1_bd_${item.id}" href="/article/${item.id}" class="weui-media-box weui-media-box_appmsg">
-                        <div aria-hidden="true" class="weui-media-box__hd">
+                        <div aria-hidden="true" class="weui-media-box__hd thumbnail">
                             <img class="weui-media-box__thumb"
                                 src="/access/img/avatar/${item.random}.jpg"
                                 alt="${item.title}">
