@@ -6,7 +6,7 @@ function thisYear(date){
     return moment().format('YYYY') === moment(date).format('YYYY') ? moment(date).format('MM-DD'):moment(date).format('YYYY-MM-DD')
 }
 
-var website_id = 'bec0f745-f40f-4392-b7cd-2bf78eaf'
+var website_id = ''
 function getList(page=1,cb){
   const postData = {
     type: 2,
@@ -17,7 +17,7 @@ function getList(page=1,cb){
     website_id: website_id
   }
   const options = {
-    hostname:'127.0.0.1',
+    hostname:'0.0.0.0',
     port: 5166,
     path: '/api/article/page',
     method: 'post',
@@ -58,8 +58,8 @@ function getWebsiteInfo(cb){
 function index(req, res){
     let list = []
     let page = req.query.page;
+    website_id = req.self.hostToWebsite[req.host]
     getWebsiteInfo((website)=>{
-      console.log(website);
       getList(page, (body)=>{
         list = body.data.list.map(e=>{
           const createDate =  thisYear(e.created_date)

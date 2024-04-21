@@ -5,16 +5,15 @@ const viewRoute = require('./router')
 
 const self = {
     accessToken: {},
+    hostToWebsite: {},
 }
 app.use((req,res,next)=>{
     req.self = self
     next()
 })
 
-// 数据库
-const { db } = require('./models/db')
-app.use(db)
-
+const website = require('./models/getWebsite')
+app.use(website)
 // 跨域
 const cros = require('./models/cros')
 app.use(cros)

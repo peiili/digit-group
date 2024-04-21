@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="wechat-enable-text-zoom-em" content="true">
+    <meta name="website-id" content="<%= website_id %>">
     <title> <%= title %></title>
     <meta name="description" content="<%= description %>" />
     <meta name="keywords" content="<%= keywords %>">
@@ -106,7 +107,7 @@
                     fuzzy: '',
                     page: page,
                     size: 20,
-                    website_id: 'bec0f745-f40f-4392-b7cd-2bf78eaf'
+                    website_id: document.getElementsByName('website-id')[0].getAttribute('content')
                 }
                 apiFetch.post('/api/article/page', body).then(e=>{
                     if(e.success){
