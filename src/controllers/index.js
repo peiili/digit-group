@@ -65,6 +65,7 @@ function index(req, res){
           const createDate =  thisYear(e.created_date)
           return {
             ...e,
+            random: Math.floor(Math.random()*41)+1,
             createDate: createDate,
           }
         })
