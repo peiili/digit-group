@@ -1,5 +1,5 @@
 module.exports = function(req, res){
-    res.render('hsps', {
+    res.render('app/hsps', {
         question: [
             '我很注意周围环境的细节',
             '其他人的情绪会影响到我',

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你属于高敏感人群吗？-自我测试 -数字集合</title>
+  <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" />
+  <script src="/access/bootstrap@5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h2 class="text-center mb-4 mt-4">你属于高敏感人群吗？-自我测试</h2>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">说明</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Copyright, Elaine N. Aron, 1996</h6>
+        <p>来自: <a href="https://hsperson.com/test/highly-sensitive-test/">https://hsperson.com/test/highly-sensitive-test/</a> </p>
+        <p>使用指南: 请根据你的个人感受回答每一个问题。如果你感觉至少有部分认同该感受，请勾选它；如果你感觉差得比较远，或根本没有这种感受，则不勾选。</p>
+        <p>如果你是一位家长，想要对自己的孩子进行评估，请使用<a href="https://hsperson.com/test/highly-sensitive-child-test/">"你的孩子是高敏感的吗？</a>"这个测试。</p>
+      </div>
+    </div>
+    <form id="question-form" novalidate>
+      <%  question.forEach(function(item,index){  %>
+        <div class="form-check form-control-lg">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault<%= index %>">
+          <label class="form-check-label" for="flexCheckDefault<%= index %>">
+            <%= item %>
+          </label>
+        </div>
+      <% }); %>
+      <h2 class="text-center  mb-4 mt-4">
+        <button type="submit" class="btn btn-primary">
+          查看结果
+        </button>
+      </h2>
+    </form>
+    <div class="collapse mb-5" id="collapseMore">
+      <div class="card ">
+        <div class="card-body">
+          <div class="p-panel-content" data-pc-section="content">
+            <h4 id="score" style="color: #20c997;">0</h4>
+            <p class="lead">如果你的分数大于等于12分，那么你很可能是高敏感人士。(1题1分，共23分)</p>
+            <p class="lead">不过说实话，任何精神/心理学测试都不可能准确到值得你把你的人生构建在测试结果之上。另外，如果你只勾选了其中一两个问题， 但是对你来说你的感受极为强烈，那么你依然有可能是一个高敏感人士。 </p>
+            <p class="lead">请继阅读: <a href="http://mbti.ink/article/3023">《什么是高敏感人士(HSPs)》</a>，从中你可以发现自己到底是否属于高敏感人群，了解自己是解决问题的第一步。加油⛽️ </p></div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5"></div>
+</body>
+
+</html>
+<script>
+'use strict'
+var form = document.getElementById('question-form')
+var scoreDom = document.getElementById('score')
+form.addEventListener('submit', event => {
+  event.preventDefault()
+  event.stopPropagation()
+  const bsCollapse = new bootstrap.Collapse('#collapseMore', {
+    toggle: false
+  })
+  bsCollapse.show()
+  var form = event.target;
+  var score = 0
+  for (var i = 0; i < form.length; i++) {
+    if(form[i].checked){
+      score +=1;
+    }
+  }
+  scoreDom.innerText = score
+}, false)
+</script>
