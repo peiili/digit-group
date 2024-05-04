@@ -7,8 +7,7 @@
     <title><%= title %>--数字集合</title>
     <meta name="keywords" content="<%= keywords %>">
 
-    <link rel="stylesheet" href="/access/css/weui.css" />
-    <link rel="stylesheet" href="/access/css/reset.css" />
+    <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/article/style.css">
     <link rel="stylesheet" href="/access/highlight.js/cdn-release@11.9.0/default.min.css">
     <script src="/access/highlight.js/cdn-release@11.9.0/highlight.min.js"></script>
@@ -16,24 +15,19 @@
 </head>
 
 <body>
+    <%- include('./../components/nav', {current:'app' }); %>
     <div class="container" id="container">
-        <div class="page article js_show" tabindex="-1">
-            <div class="page__bd">
-                <article class="weui-article">
-                    <h1>
-                        <%= title %>
-                    </h1>
-                    <div style="text-align: center;">
-                        发表于： <i>
-                            <%= createDate %>
-                        </i>
-                    </div>
-                    <section>
-                        <%- html %>
-                    </section>
-                </article>
+        <h1 class="text-center mt-1">
+            <%= title %>
+        </h1>
+        <article>
+            <div class="text-center">
+                <%= createDate %>
             </div>
-        </div>
+            <section>
+                <%- html %>
+            </section>
+        </article>
     </div>
 </body>
 
