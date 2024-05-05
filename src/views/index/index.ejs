@@ -12,6 +12,7 @@
     <meta name="description" content="<%= description %>" />
     <meta name="keywords" content="<%= keywords %>">
     <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" />
+    <script src="/access/bootstrap@5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/access/css/reset.css" /> 
     <script src="/access/js/apiFetch.js"></script>
 
@@ -22,48 +23,33 @@
     <%- include('./../components/nav', {current:'app' }); %>
     <div class="container">
         <div class="load-previous"></div>
-        <div class="page panel js_show">
-            <div class="page__bd">
-                <div class="top-img"></div>
-                <h5 style="font-size: 22px;margin-top: 10px;"> <b>最近更新</b></h5>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <% list.forEach(function(item){ %>
-                        <div class="col">
-                            <a href="/article/<%= item.id %>">
-                                <div class="card h-100">
-                                    <img src="/access/img/avatar/<%= item.random %>.jpg" class="card-img-top" height="196px" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            <%= item.title %>
-                                        </h5>
-                                        <p class="card-text" style="display:-webkit-box; overflow: hidden; text-overflow: ellipsis; --webkit-line-clamp: 2;-webkit-box-orient:vertical;">
-                                            <%= item.description %>
-                                        </p>
-                                    </div>
+        <div class="page__bd">
+            <div class="top-img"></div>
+            <h5 style="font-size: 22px;margin-top: 10px;"> <b>最近更新</b></h5>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <% list.forEach(function(item){ %>
+                    <div class="col">
+                        <a href="/article/<%= item.id %>">
+                            <div class="card h-100">
+                                <img src="/access/img/avatar/<%= item.random %>.jpg" class="card-img-top" height="196px" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= item.title %>
+                                    </h5>
+                                    <p class="card-text" style="display:-webkit-box; overflow: hidden; text-overflow: ellipsis; --webkit-line-clamp: 2;-webkit-box-orient:vertical;">
+                                        <%= item.description %>
+                                    </p>
                                 </div>
-                            </a>
-                        </div>
-                        <% }); %>
-                </div>
-                <!-- <% list.forEach(function(item){ %>
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col-4">
-                            <img src="/access/img/avatar/<%= item.random %>.jpg" class="img-fluid rounded-start" alt="<%= item.title %>">
-                          </div>
-                          <div class="col-8">
-                            <div class="card-body">
-                              <h6 class="card-title"><%= item.title %></h6>
-                              <small class="card-text"><%= item.description %></small>
                             </div>
-                          </div>
-                        </div>
-                    <% }); %> -->
-                <div class="load-next"></div>
+                        </a>
+                    </div>
+                    <% }); %>
             </div>
-            <div class="current-page" data-current="<%= currentPage %>" data-total="<%= totalPage %>"></div>
-            <%- include('./../components/pagination', { totalPage: totalPage, currentPage: currentPage}); %>
-                <%- include('./../components/footer', { beian: beian }); %>
+            <div class="load-next"></div>
         </div>
+        <div class="current-page" data-current="<%= currentPage %>" data-total="<%= totalPage %>"></div>
+        <%- include('./../components/pagination', { totalPage: totalPage, currentPage: currentPage}); %>
+        <%- include('./../components/footer', { beian: beian }); %>
     </div>
     <script>
         var loadPreviousDom = document.querySelector('.load-previous')
