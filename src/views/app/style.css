@@ -1,0 +1,50 @@
+.page {
+    background: url(/access/img/app/bg.png) 0 0 / 100% 159px no-repeat #F6F9FF;
+    overflow: hidden;
+}
+.small {
+    font-size: 11px;
+}
+.emoji{
+    width: 47px;
+    height: 39px;
+}
+.emoji>img {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel {
+    height: 67px;
+    border-radius: 9px;
+    background: linear-gradient(348deg, #6FA7FF 0%, #B1CFFF 100%);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.grid {
+    height: 350px;
+    margin-right: 0;
+    margin-left: 0;
+}
+.grid-left {
+    background: url(/access/img/app/grid_left.png) 0 0 / 100% 100% no-repeat;
+
+}
+
+.grid-right {
+    height: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    row-gap: 10px;
+}
+.grid-right .grid-right_top {
+    background: url(/access/img/app/grid_right_top.png) 0 0 / 100% 100% no-repeat;
+
+}
+.grid-right .grid-right_bottom {
+    background: url(/access/img/app/grid_right_bottom.png) 0 0 / 100% 100% no-repeat;
+
+}
