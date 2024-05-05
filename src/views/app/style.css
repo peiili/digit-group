@@ -24,27 +24,32 @@
     align-items: center;
 }
 
-.grid {
-    height: 350px;
-    margin-right: 0;
-    margin-left: 0;
+.grid-container {  
+    display: grid;  
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: repeat(2, 120px); /* 定义两行，每行高度为100px */  
+    grid-gap: 10px; /* 可选：网格项之间的间距 */  
+    height: 320px; /* 确保容器足够高以容纳两行 */  
+}
+.grid-item {  
+    background-color: rgba(255, 255, 255, 0.8);  
+    padding: 20px;  
+    text-align: center;
+    border-radius: 10px;
 }
 .grid-left {
+    grid-column: 1; /* 放置在第一列 */  
+    grid-row: span 2; /* 跨越两行 */  
     background: url(/access/img/app/grid_left.png) 0 0 / 100% 100% no-repeat;
-
 }
 
-.grid-right {
-    height: 100%;
-    margin-right: 0;
-    margin-left: 0;
-    row-gap: 10px;
-}
-.grid-right .grid-right_top {
+.grid-right_top {
+    grid-column: 2; /* 放置在第二列 */  
+    grid-row: 1; /* 放置在第一行 */  
     background: url(/access/img/app/grid_right_top.png) 0 0 / 100% 100% no-repeat;
-
 }
-.grid-right .grid-right_bottom {
+.grid-right_bottom {
+    grid-column: 2; /* 放置在第二列 */  
+    grid-row: 2; /* 放置在第二行 */  
     background: url(/access/img/app/grid_right_bottom.png) 0 0 / 100% 100% no-repeat;
-
 }
