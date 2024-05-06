@@ -86,6 +86,52 @@
                 </div>  
             </div>
         </div>
+        <!-- 推荐测评 -->
+        <div class="column-title d-flex align-items-center mt-4">
+            <span class="list-line"></span>
+            <h4 class="mb-0 ms-1">推荐测评</h4>
+        </div>
+        <div>
+            <div class="mt-3 ">
+                <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
+                    <img src="/access/img/app/171367992453058.jpg" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
+                    <div class="flex-fill position-relative">
+                      <h5 class="mt-0">MBTI职业性格测评93题</h5>
+                      <p>快来试试MBTI职业性格测评93题</p>
+                      <a class="btn btn-outline-primary position-absolute end-0" href="http://test.mbti.ink" role="button">去测试</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="mt-3 ">
+                <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
+                    <img src="/access/img/app/170081463224698.png" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
+                    <div class="flex-fill position-relative">
+                      <h5 class="mt-0">高敏感人士</h5>
+                      <p>你属于高敏感人群吗？自我测试</p>
+                      <a class="btn btn-outline-primary position-absolute end-0" href="hsps.html" role="button">去测试</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <!-- 推荐好文 -->
+        <div class="column-title d-flex align-items-center mt-4">
+            <span class="list-line"></span>
+            <h4 class="mb-0 ms-1">推荐好文</h4>
+        </div>
+        <div>
+            <% list.forEach(function(item){ %>
+                <div class="mt-3">
+                    <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
+                        <img src="/access/img/avatar/<%= item.random %>.jpg" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
+                        <div class="flex-fill position-relative" style="height: 90px;">
+                          <h5 class="mt-0"> <%= item.title %></h5>
+                          <p> <%= item.description %></p>
+                        </div>
+                      </div>
+                </div>
+                <% }); %>
+        </div>
     </div>
+    <div style="height: 100px;"></div>
 </body>
 </html>

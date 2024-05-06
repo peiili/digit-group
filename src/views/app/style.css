@@ -29,7 +29,6 @@
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: repeat(2, 120px); /* 定义两行，每行高度为100px */  
     grid-gap: 10px; /* 可选：网格项之间的间距 */  
-    height: 320px; /* 确保容器足够高以容纳两行 */  
 }
 .grid-item {  
     background-color: rgba(255, 255, 255, 0.8);  
@@ -94,4 +93,16 @@
     padding: 2px 5px;
     background: rgb(255, 255, 255);
     bottom: 10px;
+}
+
+.list-line {
+    display: inline-block;
+    width: 4px;
+    height: 15px;
+    background: linear-gradient(360deg, #8BB2FF 0%, #5A92FF 100%);
+    border-radius: 2px;
+}
+
+.column-title {
+
 }
