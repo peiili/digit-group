@@ -34,13 +34,30 @@
 .grid-item {  
     background-color: rgba(255, 255, 255, 0.8);  
     padding: 20px;  
-    text-align: center;
     border-radius: 10px;
+    font-size: 14px;
 }
 .grid-left {
     grid-column: 1; /* 放置在第一列 */  
     grid-row: span 2; /* 跨越两行 */  
     background: url(/access/img/app/grid_left.png) 0 0 / 100% 100% no-repeat;
+}
+.grid-left .version {
+    background: linear-gradient(270deg, rgba(139, 178, 255, .6) 0%, rgba(90, 146, 255, .6) 100%);
+}
+.grid-left .num {
+    color: #2e72f5;
+    left: 10px;
+}
+.grid-rec {
+    width: 60px;
+    background: linear-gradient(270deg, #FF616C 0%, #FF959C 100%);
+    border-radius: 11px 11px 11px 0;
+    top: -5px;
+    right: -6px;
+    color: #fff;
+    font-size: 10px;
+    line-height: 20px;
 }
 
 .grid-right_top {
@@ -48,8 +65,33 @@
     grid-row: 1; /* 放置在第一行 */  
     background: url(/access/img/app/grid_right_top.png) 0 0 / 100% 100% no-repeat;
 }
+.grid-right_top .version {
+    background: linear-gradient(270deg, rgba(172, 159, 255, .6) 0%, rgba(149, 137, 255, .6) 100%);
+}
+.grid-right_top .num {
+    color: #9c8dff;
+}
+
 .grid-right_bottom {
     grid-column: 2; /* 放置在第二列 */  
     grid-row: 2; /* 放置在第二行 */  
     background: url(/access/img/app/grid_right_bottom.png) 0 0 / 100% 100% no-repeat;
+}
+
+.grid-right_bottom .version {
+    background: linear-gradient(270deg, rgba(255, 167, 151, .6) 0%, rgba(255, 133, 90, .6) 100%);
+}
+.grid-right_bottom .num {
+    color: #ff885f;
+}
+
+.version {
+    font-size: 11px;
+    padding: 2px 5px;
+}
+.num {
+    font-size: 11px;
+    padding: 2px 5px;
+    background: rgb(255, 255, 255);
+    bottom: 10px;
 }

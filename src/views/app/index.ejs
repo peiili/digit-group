@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
     <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" />
     <script src="/access/bootstrap@5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/access/css/reset.css">
@@ -21,7 +21,7 @@
             </div>
         </div>
         <!-- 轮播图 -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide mt-4" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="box">
@@ -41,11 +41,49 @@
             </div>
         </div>
         <!-- 置顶测试 -->
-        <div>
+        <div class="mt-4">
             <div class="grid-container">  
-                <div class="grid-item grid-left">左侧一列</div>  
-                <div class="grid-item grid-right_top">右侧第一行</div>  
-                <div class="grid-item grid-right_bottom">右侧第二行</div>  
+                <div class="grid-item  position-relative grid-left">
+                    <div class="grid-rec text-center position-absolute">热门推荐</div>
+                    <div>
+                        <b>焦虑与抑郁自评</b>
+                        <br />
+                        <b>(SCL-90)</b>
+                    </div>
+                    <span class="version text-light rounded-pill">
+                        专业版
+                    </span>
+
+                    <span class="num position-absolute rounded-pill">
+                        90题
+                    </span>
+                </div>  
+                <div class="grid-item position-relative grid-right_top">
+                    <div>
+                        <b>抑郁风险自测</b>
+                        <br />
+                        <b>(SDS)</b>
+                    </div>
+                    <span class="version text-light rounded-pill">
+                        专业版
+                    </span>
+                    <span class="num position-absolute end-0 rounded-start-pill">
+                        90题
+                    </span>
+                </div>  
+                <div class="grid-item  position-relative grid-right_bottom">
+                    <div>
+                        <b>抑郁程度测试</b>
+                        <br />
+                        <b>(SDS)</b>
+                    </div>
+                    <span class="version text-light rounded-pill">
+                        专业版
+                    </span>
+                    <span class="num  position-absolute end-0 rounded-start-pill">
+                        90题
+                    </span>
+                </div>  
             </div>
         </div>
     </div>
