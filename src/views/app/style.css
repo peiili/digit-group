@@ -106,3 +106,26 @@
 .column-title {
 
 }
+
+@keyframes identifier {
+    0% {
+        transform: translateY(0px);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: translateY( 6px);
+       box-shadow: 0 2px 0px 0px #ccc;
+    }
+
+    100% {
+        transform: translateY( 0px);
+        box-shadow: none;
+    }
+}
+
+.emoji {
+    position: absolute;
+    animation: identifier 3s infinite;
+    right: 0;
+}
