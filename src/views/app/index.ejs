@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
     <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" />
     <script src="/access/bootstrap@5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/access/css/reset.css">
     <link rel="stylesheet" href="./style.css">
     <title>应用</title>
+    <style>
+        .container {
+            max-width: 480px;
+        }
+    </style>
 </head>
 <body>
     <div class="container page">
@@ -114,9 +119,16 @@
             </div>
         </div>
         <!-- 推荐好文 -->
-        <div class="column-title d-flex align-items-center mt-4">
-            <span class="list-line"></span>
-            <h4 class="mb-0 ms-1">推荐好文</h4>
+        <div class="column-title d-flex align-items-center justify-content-between mt-4">
+            <div class="d-flex align-items-center">
+                <span class="list-line"></span>
+                <h4 class="mb-0 ms-1">推荐好文</h4>
+            </div>
+            <div>
+                <a href="/">
+                    全部》
+                </a>
+            </div>
         </div>
         <div>
             <% list.forEach(function(item){ %>
