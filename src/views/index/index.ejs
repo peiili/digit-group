@@ -83,21 +83,21 @@
         function render(item) {
             /* html */
             return `
-                    <a aria-labelledby="js_p1m1_bd_${item.id}" href="/article/${item.id}" class="weui-media-box weui-media-box_appmsg">
-                        <div aria-hidden="true" class="weui-media-box__hd thumbnail">
-                            <img class="weui-media-box__thumb"
-                                src="/access/img/avatar/${item.random}.jpg"
-                                alt="${item.title}">
-                        </div>
-                        <div aria-hidden="true" id="js_p1m1_bd_${item.id}" class="weui-media-box__bd">
-                            <strong class="weui-media-box__title">
-                                ${item.title}
-                            </strong>
-                            <p class="weui-media-box__desc">
-                                description}
-                            </p>
-                        </div>
-                    </a>
+                    <div class="col">
+                        <a href="/article/${item.id}">
+                            <div class="card h-100">
+                                <img src="/access/img/avatar/${item.random}.jpg" class="card-img-top" height="196px" alt="${item.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        ${item.title}
+                                    </h5>
+                                    <p class="card-text" style="display:-webkit-box; overflow: hidden; text-overflow: ellipsis; --webkit-line-clamp: 2;-webkit-box-orient:vertical;">
+                                        ${item.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 `
         }
 
