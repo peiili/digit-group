@@ -1,132 +1,158 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="wechat-enable-text-zoom-em" content="true">
-    <meta name="website-id" content="<%= website_id %>">
-    <title>
-        <%= title %>
-    </title>
-    <meta name="description" content="<%= description %>" />
-    <meta name="keywords" content="<%= keywords %>">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
     <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" />
     <script src="/access/bootstrap@5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/access/css/reset.css" /> 
-    <script src="/access/js/apiFetch.js"></script>
-
+    <link rel="stylesheet" href="/access/css/reset.css">
     <link rel="stylesheet" href="/index/style.css">
+    <title>MBTI测试工具|数字集合</title>
+    <meta name="keywords" content="mbti,mbti官网免费版,mbti人格测试,性格类型测评,16型人格,人格测试工具">
+    <style>
+        .container {
+            max-width: 480px;
+        }
+    </style>
 </head>
-
-<body ontouchstart>
-    <%- include('./../components/nav', {current:'app' }); %>
-    <div class="container">
-        <div class="load-previous"></div>
-        <div class="page__bd">
-            <div class="top-img"></div>
-            <h5 style="font-size: 22px;margin-top: 10px;"> <b>最近更新</b></h5>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <% list.forEach(function(item){ %>
-                    <div class="col">
-                        <a href="/article/<%= item.id %>">
-                            <div class="card h-100">
-                                <img src="/access/img/avatar/<%= item.random %>.jpg" class="card-img-top" height="196px" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <%= item.title %>
-                                    </h5>
-                                    <p class="card-text" style="display:-webkit-box; overflow: hidden; text-overflow: ellipsis; --webkit-line-clamp: 2;-webkit-box-orient:vertical;">
-                                        <%= item.description %>
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <% }); %>
+<body>
+    <div class="container page">
+        <div class="mt-5 d-flex justify-content-between align-items-center position-relative hello">
+            <div>
+                <div class="fs-5">Hi, 今天又是美好的一天</div>
+                <div class="small">幸福的人生从了解自己开始</div>
             </div>
-            <div class="load-next"></div>
+            <div class="emoji position-absolute">
+                <img src="/access/img/app/emoji.png" alt="">
+            </div>
         </div>
-        <div class="current-page" data-current="<%= currentPage %>" data-total="<%= totalPage %>"></div>
-        <%- include('./../components/pagination', { totalPage: totalPage, currentPage: currentPage}); %>
-        <%- include('./../components/footer', { beian: beian }); %>
-    </div>
-    <script>
-        var loadPreviousDom = document.querySelector('.load-previous')
-        var loadDom = document.querySelector('.load-next')
-        var articleList = document.querySelector('.article-list')
-        var currentDom = document.querySelector('.current-page')
-        var preDom = document.querySelector('.previous-code')
-        var nextDom = document.querySelector('.next-code')
-
-        var throttle = false
-
-        document.addEventListener('DOMContentLoaded', function () {
-            window.addEventListener('scroll', function () {
-                var currentPage = currentDom.dataset.current
-                var totalPage = currentDom.dataset.total
-                if (throttle || (currentPage == totalPage)) {
-                    return
-                }
-                throttle = true
-                setTimeout(() => {
-                    var rect = loadDom.getBoundingClientRect()
-                    if (rect.top < window.innerHeight + 100) {
-                        nextPage = nextDom.dataset.page
-                        getData(nextPage)
-                    } else {
-                        throttle = false
-                    }
-                }, 100)
-            }, true)
-        });
-        function render(item) {
-            /* html */
-            return `
-                    <div class="col">
-                        <a href="/article/${item.id}">
-                            <div class="card h-100">
-                                <img src="/access/img/avatar/${item.random}.jpg" class="card-img-top" height="196px" alt="${item.title}">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        ${item.title}
-                                    </h5>
-                                    <p class="card-text" style="display:-webkit-box; overflow: hidden; text-overflow: ellipsis; --webkit-line-clamp: 2;-webkit-box-orient:vertical;">
-                                        ${item.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
+        <!-- 轮播图 -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide mt-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="box">
+                    山上吹来每一股气息都是如此洋溢着生命，仿佛无论谁吸进了它，即使是气息奄奄的人，也会复活起来。
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box">
+                    你不愿意种花，你说，我不愿意看见它一点点凋落。是的，为了避免结束，你避免了一切开始。
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box">
+                    日日重复同样的事，遵循着与昨日相同的惯例；若能避开猛烈的欢喜，自然也不会有悲痛的来袭。
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- 置顶测试 -->
+        <div class="mt-4">
+            <div class="grid-container">
+                <a href="http://test.mbti.ink" class="grid-item  position-relative grid-left">
+                    <div>
+                        <div class="grid-rec text-center position-absolute">热门推荐</div>
+                        <div>
+                            <b>十六型人格测试</b>
+                            <br />
+                            <b>(MBTI)</b>
+                        </div>
+                        <span class="version text-light rounded-pill">
+                            专业版
+                        </span>
+    
+                        <span class="num position-absolute rounded-pill">
+                            93题
+                        </span>
                     </div>
-                `
-        }
-
-        function getData(page) {
-            const body = {
-                type: 2,
-                status: 'release',
-                fuzzy: '',
-                page: page,
-                size: 20,
-                website_id: document.getElementsByName('website-id')[0].getAttribute('content')
-            }
-            apiFetch.post('/api/article/page', body).then(e => {
-                if (e.success) {
-                    throttle = false
-                    currentDom.setAttribute('data-current', e.data.currentPage)
-                    currentDom.setAttribute('data-total', e.data.totalPage)
-                    history.replaceState(null, null, `?page=${e.data.currentPage}`);
-                    var tempalte = ''
-                    e.data.list.forEach(item => {
-                        item.random = Math.floor(Math.random() * 41) + 1,
-                            tempalte += render(item)
-                    });
-                    articleList.innerHTML += tempalte;
-                }
-            })
-        }
-
-    </script>
+                </a>
+                <a href="http://test.mbti.ink" class="grid-item position-relative grid-right_top">
+                    <div >
+                        <div>
+                            <b>十六型人格测试</b>
+                            <br />
+                            <b>(MBTI-200)</b>
+                        </div>
+                        <span class="version text-light rounded-pill">
+                            专业版
+                        </span>
+                        <span class="num position-absolute end-0 rounded-start-pill">
+                            200题
+                        </span>
+                    </div>  
+                </a>
+                <a href="/app/hsps.html" class="grid-item  position-relative grid-right_bottom">
+                    <div >
+                        <div>
+                            <b>高敏感人士测试</b>
+                            <br />
+                            <b>(HSPs)</b>
+                        </div>
+                        <span class="version text-light rounded-pill">
+                            专业版
+                        </span>
+                        <span class="num  position-absolute end-0 rounded-start-pill">
+                            23题
+                        </span>
+                    </div>  
+                </a>
+            </div>
+        </div>
+        <!-- 推荐测评 -->
+        <div class="column-title d-flex align-items-center mt-4">
+            <span class="list-line"></span>
+            <h4 class="mb-0 ms-1">推荐测评</h4>
+        </div>
+        <div>
+            <div class="mt-3 ">
+                <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
+                    <img src="/access/img/app/171367992453058.jpg" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
+                    <div class="flex-fill position-relative">
+                      <h5 class="mt-0">MBTI职业性格测评93题</h5>
+                      <p>快来试试MBTI职业性格测评93题</p>
+                      <a class="btn btn-outline-primary position-absolute end-0" href="http://test.mbti.ink" role="button">去测试</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="mt-3 ">
+                <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
+                    <img src="/access/img/app/170081463224698.png" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
+                    <div class="flex-fill position-relative">
+                      <h5 class="mt-0">高敏感人士</h5>
+                      <p>你属于高敏感人群吗？自我测试</p>
+                      <a class="btn btn-outline-primary position-absolute end-0" href="/app/hsps.html" role="button">去测试</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <!-- 推荐好文 -->
+        <div class="column-title d-flex align-items-center justify-content-between mt-4">
+            <div class="d-flex align-items-center">
+                <span class="list-line"></span>
+                <h4 class="mb-0 ms-1">推荐好文</h4>
+            </div>
+            <div>
+                <a href="/">
+                    全部》
+                </a>
+            </div>
+        </div>
+        <div>
+            <% list.forEach(function(item){ %>
+                <a class="mt-3 d-block" href="/article/<%= item.id %>">
+                    <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
+                        <img src="/access/img/avatar/<%= item.random %>.jpg" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
+                        <div class="flex-fill position-relative" style="height: 90px;">
+                          <h5 class="mt-0"> <%= item.title %></h5>
+                          <p> <%= item.description %></p>
+                        </div>
+                      </div>
+                </a>
+            <% }); %>
+        </div>
+    </div>
+    <%- include('./../components/footer', {current:'app' }); %>
+    <div style="height: 100px;"></div>
 </body>
-
+<script src="https://hm.baidu.com/hm.js?ad0c7ae274a12383e8fc3b19401019da"></script>
 </html>

@@ -65,11 +65,12 @@ function index(req, res){
           const createDate =  thisYear(e.created_date)
           return {
             ...e,
+            description: e.description.length>40? e.description.slice(0,40) +'...' : e.description,
             random: Math.floor(Math.random()*41)+1,
             createDate: createDate,
           }
         })
-        res.render('index/index', {
+        res.render('index', {
           title: website.name,
           keywords: website.keywords,
           description: website.description,
