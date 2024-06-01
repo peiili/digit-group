@@ -54,35 +54,54 @@ function getWebsiteInfo(cb){
     })
   })
 }
+function defaultIndex(req, res){
 
-function index(req, res){
-    let list = []
-    let page = req.query.page;
-    website_id = req.self.hostToWebsite[req.host]
-    getWebsiteInfo((website)=>{
-      getList(page, (body)=>{
-        list = body.data.list.map(e=>{
-          const createDate =  thisYear(e.created_date)
-          return {
-            ...e,
-            description: e.description.length>40? e.description.slice(0,40) +'...' : e.description,
-            random: Math.floor(Math.random()*41)+1,
-            createDate: createDate,
-          }
-        })
-        res.render('index', {
-          title: website.name,
-          keywords: website.keywords,
-          description: website.description,
-          beian: website.beian,
-
-          list: list,
-          website_id: website_id,
-          totalPage: body.data.totalPage,
-          currentPage: body.data.currentPage 
-        });
+  let list = []
+  let page = req.query.page;
+  website_id = req.self.hostToWebsite[req.host]
+  getWebsiteInfo((website)=>{
+    getList(page, (body)=>{
+      list = body.data.list.map(e=>{
+        const createDate =  thisYear(e.created_date)
+        return {
+          ...e,
+          description: e.description.length>40? e.description.slice(0,40) +'...' : e.description,
+          random: Math.floor(Math.random()*41)+1,
+          createDate: createDate,
+        }
       })
-    })
-}
+      res.render('index', {
+        title: website.name,
+        keywords: website.keywords,
+        description: website.description,
+        beian: website.beian,
 
+        list: list,
+        website_id: website_id,
+        totalPage: body.data.totalPage,
+        currentPage: body.data.currentPage 
+      });
+    })
+  })
+}
+function personalities(req, res){
+  res.render('16personalities', {
+    // title: website.name,
+    // keywords: website.keywords,
+    // description: website.description,
+    beian: '',
+
+    // list: list,
+    // website_id: website_id,
+    // totalPage: body.data.totalPage,
+    // currentPage: body.data.currentPage 
+  });
+}
+function index(req, res){
+  if(req.hostname==='192.168.1.7') {
+    personalities(req,res)
+  } else {
+      defaultIndex(req,res)
+  }
+}
 module.exports = index
