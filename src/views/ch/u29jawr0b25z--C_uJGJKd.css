@@ -1,0 +1,384 @@
+.share--vkontakte[data-v-176293ef] {
+    background-color: #fff;
+    border-color: rgba(76,117,163,.5)
+}
+
+.share--vkontakte .sp-icon g[data-v-176293ef],.share--vkontakte .sp-icon path[data-v-176293ef],.share--vkontakte .sp-icon polygon[data-v-176293ef] {
+    fill: #4c75a3
+}
+
+.share--vkontakte[data-v-176293ef] .sp-icon g,.share--vkontakte[data-v-176293ef] .sp-icon path,.share--vkontakte[data-v-176293ef] .sp-icon polygon {
+    fill: #4c75a3
+}
+
+.share--vkontakte[data-v-176293ef]:focus-visible,.share--vkontakte[data-v-176293ef]:hover {
+    background-color: #4c75a3;
+    border-color: #4c75a3
+}
+
+.share--vkontakte:focus-visible .sp-icon g[data-v-176293ef],.share--vkontakte:hover .sp-icon g[data-v-176293ef],.share--vkontakte:focus-visible .sp-icon path[data-v-176293ef],.share--vkontakte:hover .sp-icon path[data-v-176293ef],.share--vkontakte:focus-visible .sp-icon polygon[data-v-176293ef],.share--vkontakte:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--vkontakte[data-v-176293ef]:focus-visible .sp-icon g,.share--vkontakte[data-v-176293ef]:hover .sp-icon g,.share--vkontakte[data-v-176293ef]:focus-visible .sp-icon path,.share--vkontakte[data-v-176293ef]:hover .sp-icon path,.share--vkontakte[data-v-176293ef]:focus-visible .sp-icon polygon,.share--vkontakte[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #fff
+}
+
+.share--vkontakte.is--inverted[data-v-176293ef] {
+    background-color: #4c75a3;
+    border-color: #4c75a3
+}
+
+.share--vkontakte.is--inverted .sp-icon g[data-v-176293ef],.share--vkontakte.is--inverted .sp-icon path[data-v-176293ef],.share--vkontakte.is--inverted .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--vkontakte.is--inverted[data-v-176293ef] .sp-icon g,.share--vkontakte.is--inverted[data-v-176293ef] .sp-icon path,.share--vkontakte.is--inverted[data-v-176293ef] .sp-icon polygon {
+    fill: #fff
+}
+
+.share--vkontakte.is--inverted[data-v-176293ef]:focus-visible,.share--vkontakte.is--inverted[data-v-176293ef]:hover {
+    background-color: #fff
+}
+
+.share--vkontakte.is--inverted:focus-visible .sp-icon g[data-v-176293ef],.share--vkontakte.is--inverted:hover .sp-icon g[data-v-176293ef],.share--vkontakte.is--inverted:focus-visible .sp-icon path[data-v-176293ef],.share--vkontakte.is--inverted:hover .sp-icon path[data-v-176293ef],.share--vkontakte.is--inverted:focus-visible .sp-icon polygon[data-v-176293ef],.share--vkontakte.is--inverted:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #4c75a3
+}
+
+.share--vkontakte.is--inverted[data-v-176293ef]:focus-visible .sp-icon g,.share--vkontakte.is--inverted[data-v-176293ef]:hover .sp-icon g,.share--vkontakte.is--inverted[data-v-176293ef]:focus-visible .sp-icon path,.share--vkontakte.is--inverted[data-v-176293ef]:hover .sp-icon path,.share--vkontakte.is--inverted[data-v-176293ef]:focus-visible .sp-icon polygon,.share--vkontakte.is--inverted[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #4c75a3
+}
+
+.share--messenger[data-v-176293ef] {
+    background-color: #fff;
+    border-color: rgba(163,52,250,.5)
+}
+
+.share--messenger .sp-icon g[data-v-176293ef],.share--messenger .sp-icon path[data-v-176293ef],.share--messenger .sp-icon polygon[data-v-176293ef] {
+    fill: #a334fa
+}
+
+.share--messenger[data-v-176293ef] .sp-icon g,.share--messenger[data-v-176293ef] .sp-icon path,.share--messenger[data-v-176293ef] .sp-icon polygon {
+    fill: #a334fa
+}
+
+.share--messenger[data-v-176293ef]:focus-visible,.share--messenger[data-v-176293ef]:hover {
+    background-color: #a334fa;
+    border-color: #a334fa
+}
+
+.share--messenger:focus-visible .sp-icon g[data-v-176293ef],.share--messenger:hover .sp-icon g[data-v-176293ef],.share--messenger:focus-visible .sp-icon path[data-v-176293ef],.share--messenger:hover .sp-icon path[data-v-176293ef],.share--messenger:focus-visible .sp-icon polygon[data-v-176293ef],.share--messenger:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--messenger[data-v-176293ef]:focus-visible .sp-icon g,.share--messenger[data-v-176293ef]:hover .sp-icon g,.share--messenger[data-v-176293ef]:focus-visible .sp-icon path,.share--messenger[data-v-176293ef]:hover .sp-icon path,.share--messenger[data-v-176293ef]:focus-visible .sp-icon polygon,.share--messenger[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #fff
+}
+
+.share--messenger.is--inverted[data-v-176293ef] {
+    background-color: #a334fa;
+    border-color: #a334fa
+}
+
+.share--messenger.is--inverted .sp-icon g[data-v-176293ef],.share--messenger.is--inverted .sp-icon path[data-v-176293ef],.share--messenger.is--inverted .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--messenger.is--inverted[data-v-176293ef] .sp-icon g,.share--messenger.is--inverted[data-v-176293ef] .sp-icon path,.share--messenger.is--inverted[data-v-176293ef] .sp-icon polygon {
+    fill: #fff
+}
+
+.share--messenger.is--inverted[data-v-176293ef]:focus-visible,.share--messenger.is--inverted[data-v-176293ef]:hover {
+    background-color: #fff
+}
+
+.share--messenger.is--inverted:focus-visible .sp-icon g[data-v-176293ef],.share--messenger.is--inverted:hover .sp-icon g[data-v-176293ef],.share--messenger.is--inverted:focus-visible .sp-icon path[data-v-176293ef],.share--messenger.is--inverted:hover .sp-icon path[data-v-176293ef],.share--messenger.is--inverted:focus-visible .sp-icon polygon[data-v-176293ef],.share--messenger.is--inverted:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #a334fa
+}
+
+.share--messenger.is--inverted[data-v-176293ef]:focus-visible .sp-icon g,.share--messenger.is--inverted[data-v-176293ef]:hover .sp-icon g,.share--messenger.is--inverted[data-v-176293ef]:focus-visible .sp-icon path,.share--messenger.is--inverted[data-v-176293ef]:hover .sp-icon path,.share--messenger.is--inverted[data-v-176293ef]:focus-visible .sp-icon polygon,.share--messenger.is--inverted[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #a334fa
+}
+
+.share--facebook[data-v-176293ef] {
+    background-color: #fff;
+    border-color: rgba(24,119,242,.5)
+}
+
+.share--facebook .sp-icon g[data-v-176293ef],.share--facebook .sp-icon path[data-v-176293ef],.share--facebook .sp-icon polygon[data-v-176293ef] {
+    fill: #1877f2
+}
+
+.share--facebook[data-v-176293ef] .sp-icon g,.share--facebook[data-v-176293ef] .sp-icon path,.share--facebook[data-v-176293ef] .sp-icon polygon {
+    fill: #1877f2
+}
+
+.share--facebook[data-v-176293ef]:focus-visible,.share--facebook[data-v-176293ef]:hover {
+    background-color: #1877f2;
+    border-color: #1877f2
+}
+
+.share--facebook:focus-visible .sp-icon g[data-v-176293ef],.share--facebook:hover .sp-icon g[data-v-176293ef],.share--facebook:focus-visible .sp-icon path[data-v-176293ef],.share--facebook:hover .sp-icon path[data-v-176293ef],.share--facebook:focus-visible .sp-icon polygon[data-v-176293ef],.share--facebook:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--facebook[data-v-176293ef]:focus-visible .sp-icon g,.share--facebook[data-v-176293ef]:hover .sp-icon g,.share--facebook[data-v-176293ef]:focus-visible .sp-icon path,.share--facebook[data-v-176293ef]:hover .sp-icon path,.share--facebook[data-v-176293ef]:focus-visible .sp-icon polygon,.share--facebook[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #fff
+}
+
+.share--facebook.is--inverted[data-v-176293ef] {
+    background-color: #1877f2;
+    border-color: #1877f2
+}
+
+.share--facebook.is--inverted .sp-icon g[data-v-176293ef],.share--facebook.is--inverted .sp-icon path[data-v-176293ef],.share--facebook.is--inverted .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--facebook.is--inverted[data-v-176293ef] .sp-icon g,.share--facebook.is--inverted[data-v-176293ef] .sp-icon path,.share--facebook.is--inverted[data-v-176293ef] .sp-icon polygon {
+    fill: #fff
+}
+
+.share--facebook.is--inverted[data-v-176293ef]:focus-visible,.share--facebook.is--inverted[data-v-176293ef]:hover {
+    background-color: #fff
+}
+
+.share--facebook.is--inverted:focus-visible .sp-icon g[data-v-176293ef],.share--facebook.is--inverted:hover .sp-icon g[data-v-176293ef],.share--facebook.is--inverted:focus-visible .sp-icon path[data-v-176293ef],.share--facebook.is--inverted:hover .sp-icon path[data-v-176293ef],.share--facebook.is--inverted:focus-visible .sp-icon polygon[data-v-176293ef],.share--facebook.is--inverted:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #1877f2
+}
+
+.share--facebook.is--inverted[data-v-176293ef]:focus-visible .sp-icon g,.share--facebook.is--inverted[data-v-176293ef]:hover .sp-icon g,.share--facebook.is--inverted[data-v-176293ef]:focus-visible .sp-icon path,.share--facebook.is--inverted[data-v-176293ef]:hover .sp-icon path,.share--facebook.is--inverted[data-v-176293ef]:focus-visible .sp-icon polygon,.share--facebook.is--inverted[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #1877f2
+}
+
+.share--whatsapp[data-v-176293ef] {
+    background-color: #fff;
+    border-color: rgba(34,229,126,.5)
+}
+
+.share--whatsapp .sp-icon g[data-v-176293ef],.share--whatsapp .sp-icon path[data-v-176293ef],.share--whatsapp .sp-icon polygon[data-v-176293ef] {
+    fill: #22e57e
+}
+
+.share--whatsapp[data-v-176293ef] .sp-icon g,.share--whatsapp[data-v-176293ef] .sp-icon path,.share--whatsapp[data-v-176293ef] .sp-icon polygon {
+    fill: #22e57e
+}
+
+.share--whatsapp[data-v-176293ef]:focus-visible,.share--whatsapp[data-v-176293ef]:hover {
+    background-color: #22e57e;
+    border-color: #22e57e
+}
+
+.share--whatsapp:focus-visible .sp-icon g[data-v-176293ef],.share--whatsapp:hover .sp-icon g[data-v-176293ef],.share--whatsapp:focus-visible .sp-icon path[data-v-176293ef],.share--whatsapp:hover .sp-icon path[data-v-176293ef],.share--whatsapp:focus-visible .sp-icon polygon[data-v-176293ef],.share--whatsapp:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--whatsapp[data-v-176293ef]:focus-visible .sp-icon g,.share--whatsapp[data-v-176293ef]:hover .sp-icon g,.share--whatsapp[data-v-176293ef]:focus-visible .sp-icon path,.share--whatsapp[data-v-176293ef]:hover .sp-icon path,.share--whatsapp[data-v-176293ef]:focus-visible .sp-icon polygon,.share--whatsapp[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #fff
+}
+
+.share--whatsapp.is--inverted[data-v-176293ef] {
+    background-color: #22e57e;
+    border-color: #22e57e
+}
+
+.share--whatsapp.is--inverted .sp-icon g[data-v-176293ef],.share--whatsapp.is--inverted .sp-icon path[data-v-176293ef],.share--whatsapp.is--inverted .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--whatsapp.is--inverted[data-v-176293ef] .sp-icon g,.share--whatsapp.is--inverted[data-v-176293ef] .sp-icon path,.share--whatsapp.is--inverted[data-v-176293ef] .sp-icon polygon {
+    fill: #fff
+}
+
+.share--whatsapp.is--inverted[data-v-176293ef]:focus-visible,.share--whatsapp.is--inverted[data-v-176293ef]:hover {
+    background-color: #fff
+}
+
+.share--whatsapp.is--inverted:focus-visible .sp-icon g[data-v-176293ef],.share--whatsapp.is--inverted:hover .sp-icon g[data-v-176293ef],.share--whatsapp.is--inverted:focus-visible .sp-icon path[data-v-176293ef],.share--whatsapp.is--inverted:hover .sp-icon path[data-v-176293ef],.share--whatsapp.is--inverted:focus-visible .sp-icon polygon[data-v-176293ef],.share--whatsapp.is--inverted:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #22e57e
+}
+
+.share--whatsapp.is--inverted[data-v-176293ef]:focus-visible .sp-icon g,.share--whatsapp.is--inverted[data-v-176293ef]:hover .sp-icon g,.share--whatsapp.is--inverted[data-v-176293ef]:focus-visible .sp-icon path,.share--whatsapp.is--inverted[data-v-176293ef]:hover .sp-icon path,.share--whatsapp.is--inverted[data-v-176293ef]:focus-visible .sp-icon polygon,.share--whatsapp.is--inverted[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #22e57e
+}
+
+.share--twitter[data-v-176293ef] {
+    background-color: #fff;
+    border-color: rgba(29,155,240,.5)
+}
+
+.share--twitter .sp-icon g[data-v-176293ef],.share--twitter .sp-icon path[data-v-176293ef],.share--twitter .sp-icon polygon[data-v-176293ef] {
+    fill: #1d9bf0
+}
+
+.share--twitter[data-v-176293ef] .sp-icon g,.share--twitter[data-v-176293ef] .sp-icon path,.share--twitter[data-v-176293ef] .sp-icon polygon {
+    fill: #1d9bf0
+}
+
+.share--twitter[data-v-176293ef]:focus-visible,.share--twitter[data-v-176293ef]:hover {
+    background-color: #1d9bf0;
+    border-color: #1d9bf0
+}
+
+.share--twitter:focus-visible .sp-icon g[data-v-176293ef],.share--twitter:hover .sp-icon g[data-v-176293ef],.share--twitter:focus-visible .sp-icon path[data-v-176293ef],.share--twitter:hover .sp-icon path[data-v-176293ef],.share--twitter:focus-visible .sp-icon polygon[data-v-176293ef],.share--twitter:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--twitter[data-v-176293ef]:focus-visible .sp-icon g,.share--twitter[data-v-176293ef]:hover .sp-icon g,.share--twitter[data-v-176293ef]:focus-visible .sp-icon path,.share--twitter[data-v-176293ef]:hover .sp-icon path,.share--twitter[data-v-176293ef]:focus-visible .sp-icon polygon,.share--twitter[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #fff
+}
+
+.share--twitter.is--inverted[data-v-176293ef] {
+    background-color: #1d9bf0;
+    border-color: #1d9bf0
+}
+
+.share--twitter.is--inverted .sp-icon g[data-v-176293ef],.share--twitter.is--inverted .sp-icon path[data-v-176293ef],.share--twitter.is--inverted .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--twitter.is--inverted[data-v-176293ef] .sp-icon g,.share--twitter.is--inverted[data-v-176293ef] .sp-icon path,.share--twitter.is--inverted[data-v-176293ef] .sp-icon polygon {
+    fill: #fff
+}
+
+.share--twitter.is--inverted[data-v-176293ef]:focus-visible,.share--twitter.is--inverted[data-v-176293ef]:hover {
+    background-color: #fff
+}
+
+.share--twitter.is--inverted:focus-visible .sp-icon g[data-v-176293ef],.share--twitter.is--inverted:hover .sp-icon g[data-v-176293ef],.share--twitter.is--inverted:focus-visible .sp-icon path[data-v-176293ef],.share--twitter.is--inverted:hover .sp-icon path[data-v-176293ef],.share--twitter.is--inverted:focus-visible .sp-icon polygon[data-v-176293ef],.share--twitter.is--inverted:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #1d9bf0
+}
+
+.share--twitter.is--inverted[data-v-176293ef]:focus-visible .sp-icon g,.share--twitter.is--inverted[data-v-176293ef]:hover .sp-icon g,.share--twitter.is--inverted[data-v-176293ef]:focus-visible .sp-icon path,.share--twitter.is--inverted[data-v-176293ef]:hover .sp-icon path,.share--twitter.is--inverted[data-v-176293ef]:focus-visible .sp-icon polygon,.share--twitter.is--inverted[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #1d9bf0
+}
+
+.share--email[data-v-176293ef] {
+    background-color: #fff;
+    border-color: rgba(154,159,169,.5)
+}
+
+.share--email .sp-icon g[data-v-176293ef],.share--email .sp-icon path[data-v-176293ef],.share--email .sp-icon polygon[data-v-176293ef] {
+    fill: #9a9fa9
+}
+
+.share--email[data-v-176293ef] .sp-icon g,.share--email[data-v-176293ef] .sp-icon path,.share--email[data-v-176293ef] .sp-icon polygon {
+    fill: #9a9fa9
+}
+
+.share--email[data-v-176293ef]:focus-visible,.share--email[data-v-176293ef]:hover {
+    background-color: #9a9fa9;
+    border-color: #9a9fa9
+}
+
+.share--email:focus-visible .sp-icon g[data-v-176293ef],.share--email:hover .sp-icon g[data-v-176293ef],.share--email:focus-visible .sp-icon path[data-v-176293ef],.share--email:hover .sp-icon path[data-v-176293ef],.share--email:focus-visible .sp-icon polygon[data-v-176293ef],.share--email:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--email[data-v-176293ef]:focus-visible .sp-icon g,.share--email[data-v-176293ef]:hover .sp-icon g,.share--email[data-v-176293ef]:focus-visible .sp-icon path,.share--email[data-v-176293ef]:hover .sp-icon path,.share--email[data-v-176293ef]:focus-visible .sp-icon polygon,.share--email[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #fff
+}
+
+.share--email.is--inverted[data-v-176293ef] {
+    background-color: #9a9fa9;
+    border-color: #9a9fa9
+}
+
+.share--email.is--inverted .sp-icon g[data-v-176293ef],.share--email.is--inverted .sp-icon path[data-v-176293ef],.share--email.is--inverted .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--email.is--inverted[data-v-176293ef] .sp-icon g,.share--email.is--inverted[data-v-176293ef] .sp-icon path,.share--email.is--inverted[data-v-176293ef] .sp-icon polygon {
+    fill: #fff
+}
+
+.share--email.is--inverted[data-v-176293ef]:focus-visible,.share--email.is--inverted[data-v-176293ef]:hover {
+    background-color: #fff
+}
+
+.share--email.is--inverted:focus-visible .sp-icon g[data-v-176293ef],.share--email.is--inverted:hover .sp-icon g[data-v-176293ef],.share--email.is--inverted:focus-visible .sp-icon path[data-v-176293ef],.share--email.is--inverted:hover .sp-icon path[data-v-176293ef],.share--email.is--inverted:focus-visible .sp-icon polygon[data-v-176293ef],.share--email.is--inverted:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #9a9fa9
+}
+
+.share--email.is--inverted[data-v-176293ef]:focus-visible .sp-icon g,.share--email.is--inverted[data-v-176293ef]:hover .sp-icon g,.share--email.is--inverted[data-v-176293ef]:focus-visible .sp-icon path,.share--email.is--inverted[data-v-176293ef]:hover .sp-icon path,.share--email.is--inverted[data-v-176293ef]:focus-visible .sp-icon polygon,.share--email.is--inverted[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #9a9fa9
+}
+
+.share--pinterest[data-v-176293ef] {
+    background-color: #fff;
+    border-color: rgba(230,0,35,.5)
+}
+
+.share--pinterest .sp-icon g[data-v-176293ef],.share--pinterest .sp-icon path[data-v-176293ef],.share--pinterest .sp-icon polygon[data-v-176293ef] {
+    fill: #e60023
+}
+
+.share--pinterest[data-v-176293ef] .sp-icon g,.share--pinterest[data-v-176293ef] .sp-icon path,.share--pinterest[data-v-176293ef] .sp-icon polygon {
+    fill: #e60023
+}
+
+.share--pinterest[data-v-176293ef]:focus-visible,.share--pinterest[data-v-176293ef]:hover {
+    background-color: #e60023;
+    border-color: #e60023
+}
+
+.share--pinterest:focus-visible .sp-icon g[data-v-176293ef],.share--pinterest:hover .sp-icon g[data-v-176293ef],.share--pinterest:focus-visible .sp-icon path[data-v-176293ef],.share--pinterest:hover .sp-icon path[data-v-176293ef],.share--pinterest:focus-visible .sp-icon polygon[data-v-176293ef],.share--pinterest:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--pinterest[data-v-176293ef]:focus-visible .sp-icon g,.share--pinterest[data-v-176293ef]:hover .sp-icon g,.share--pinterest[data-v-176293ef]:focus-visible .sp-icon path,.share--pinterest[data-v-176293ef]:hover .sp-icon path,.share--pinterest[data-v-176293ef]:focus-visible .sp-icon polygon,.share--pinterest[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #fff
+}
+
+.share--pinterest.is--inverted[data-v-176293ef] {
+    background-color: #e60023;
+    border-color: #e60023
+}
+
+.share--pinterest.is--inverted .sp-icon g[data-v-176293ef],.share--pinterest.is--inverted .sp-icon path[data-v-176293ef],.share--pinterest.is--inverted .sp-icon polygon[data-v-176293ef] {
+    fill: #fff
+}
+
+.share--pinterest.is--inverted[data-v-176293ef] .sp-icon g,.share--pinterest.is--inverted[data-v-176293ef] .sp-icon path,.share--pinterest.is--inverted[data-v-176293ef] .sp-icon polygon {
+    fill: #fff
+}
+
+.share--pinterest.is--inverted[data-v-176293ef]:focus-visible,.share--pinterest.is--inverted[data-v-176293ef]:hover {
+    background-color: #fff
+}
+
+.share--pinterest.is--inverted:focus-visible .sp-icon g[data-v-176293ef],.share--pinterest.is--inverted:hover .sp-icon g[data-v-176293ef],.share--pinterest.is--inverted:focus-visible .sp-icon path[data-v-176293ef],.share--pinterest.is--inverted:hover .sp-icon path[data-v-176293ef],.share--pinterest.is--inverted:focus-visible .sp-icon polygon[data-v-176293ef],.share--pinterest.is--inverted:hover .sp-icon polygon[data-v-176293ef] {
+    fill: #e60023
+}
+
+.share--pinterest.is--inverted[data-v-176293ef]:focus-visible .sp-icon g,.share--pinterest.is--inverted[data-v-176293ef]:hover .sp-icon g,.share--pinterest.is--inverted[data-v-176293ef]:focus-visible .sp-icon path,.share--pinterest.is--inverted[data-v-176293ef]:hover .sp-icon path,.share--pinterest.is--inverted[data-v-176293ef]:focus-visible .sp-icon polygon,.share--pinterest.is--inverted[data-v-176293ef]:hover .sp-icon polygon {
+    fill: #e60023
+}
+
+.social__brand[data-v-176293ef] {
+    color: #4b5464;
+    margin: 10px 0 0;
+    text-align: center
+}
+
+.q-td .sp-socialbuttons .button--social[data-v-176293ef] {
+    width: 40px;
+    height: 40px
+}
+
+.q-td .sp-socialbuttons .button--social>.sp-icon[data-v-176293ef] {
+    width: 18px;
+    height: 18px
+}
+
+@media (min-width: 768px) {
+    .q-td .sp-socialbuttons .button--social[data-v-176293ef] {
+        width:60px;
+        height: 60px
+    }
+
+    .q-td .sp-socialbuttons .button--social>.sp-icon[data-v-176293ef] {
+        width: 26px;
+        height: 26px
+    }
+}
