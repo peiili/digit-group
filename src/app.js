@@ -12,8 +12,8 @@ app.use((req,res,next)=>{
     next()
 })
 
-const website = require('./models/getWebsite')
-app.use(website)
+// const website = require('./models/getWebsite')
+// app.use(website)
 // 跨域
 const cros = require('./models/cros')
 app.use(cros)

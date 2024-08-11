@@ -23,7 +23,7 @@ main.q-pt.accessible select {
 }
 
 main.q-pt header {
-    background-color: #33a474;
+    background-color: #4298b4;
     position: relative;
     padding: 5px 15px 15px
 }
@@ -53,7 +53,7 @@ main.q-pt .tips {
     position: relative;
     padding: 15px;
     overflow: hidden;
-    background-color: #33a474
+    background-color: #4298b4;
 }
 
 main.q-pt .tips .tip-highlight {

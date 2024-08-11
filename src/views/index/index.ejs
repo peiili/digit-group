@@ -1,160 +1,276 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
-    <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" />
-    <script src="/access/bootstrap@5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/access/css/reset.css">
-    <link rel="stylesheet" href="/index/style.css">
-    <title>MBTI测试工具|数字集合</title>
-    <title><%= title %>--数字集合</title>
-    <meta name="keywords" content="<%= keywords %>">
-    <meta name="description" content="<%= description %>">
-    <style>
-        .container {
-            max-width: 480px;
-        }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index/static/index.css">
+  <link rel="stylesheet" href="./index/static/navbar.css">
+  <link rel="stylesheet" href="./index/static/tabbar.css">
+  <link rel="stylesheet" href="./index/static/goods.css">
+  <title>免费MBTI人格测试 | 16Personalities中文版</title>
 </head>
-<body>
-    <div class="container page">
-        <div class="mt-5 d-flex justify-content-between align-items-center position-relative hello">
-            <div>
-                <div class="fs-5">Hi, 今天又是美好的一天</div>
-                <div class="small">幸福的人生从了解自己开始</div>
-            </div>
-            <div class="emoji position-absolute">
-                <img src="/access/img/app/emoji.png" alt="">
-            </div>
-        </div>
-        <!-- 轮播图 -->
-        <div id="carouselExampleSlidesOnly" class="carousel slide mt-4" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="box">
-                    山上吹来每一股气息都是如此洋溢着生命，仿佛无论谁吸进了它，即使是气息奄奄的人，也会复活起来。
-                </div>
+
+<body style="zoom: 1;">
+  <%- include('./../components/16personalities-navbar'); %>
+  <div id="app">
+    <!-- 头部 -->
+    <div class="header">
+      <!--<h1 class="page-title">MBTI人格测试：发现你的性格优势，解锁你的发展潜力。</h1>-->
+      <h1 class="page-title">MBTI人格测试中文版</h1>
+      <div id="goods-placehold">
+        <div class="row">
+          <% goods.forEach(function(e){ %>
+            <div class="col" data-id='<%= e.id %>' data-info='<%= e.infomation_id %>'>
+              <div class="img">
+                <%- e.cover %>
               </div>
-              <div class="carousel-item">
-                <div class="box">
-                    你不愿意种花，你说，我不愿意看见它一点点凋落。是的，为了避免结束，你避免了一切开始。
-                </div>
+              <div class="h_2">
+                <%= e.goods_name; %>
               </div>
-              <div class="carousel-item">
-                <div class="box">
-                    日日重复同样的事，遵循着与昨日相同的惯例；若能避开猛烈的欢喜，自然也不会有悲痛的来袭。
-                </div>
+              <div class="h_1">
+                <%=e.goods_description; %>
               </div>
+              <a class="button" href="/app/<%=e.id; %>">
+                开始测试
+              </a>
             </div>
-        </div>
-        <!-- 置顶测试 -->
-        <div class="mt-4">
-            <div class="grid-container">
-                <a href="http://test.mbti.ink" class="grid-item  position-relative grid-left">
-                    <div>
-                        <div class="grid-rec text-center position-absolute">热门推荐</div>
-                        <div>
-                            <b>十六型人格测试</b>
-                            <br />
-                            <b>(MBTI)</b>
-                        </div>
-                        <span class="version text-light rounded-pill">
-                            专业版
-                        </span>
-    
-                        <span class="num position-absolute rounded-pill">
-                            93题
-                        </span>
-                    </div>
-                </a>
-                <a href="http://test.mbti.ink" class="grid-item position-relative grid-right_top">
-                    <div >
-                        <div>
-                            <b>十六型人格测试</b>
-                            <br />
-                            <b>(MBTI-200)</b>
-                        </div>
-                        <span class="version text-light rounded-pill">
-                            专业版
-                        </span>
-                        <span class="num position-absolute end-0 rounded-start-pill">
-                            200题
-                        </span>
-                    </div>  
-                </a>
-                <a href="/app/hsps.html" class="grid-item  position-relative grid-right_bottom">
-                    <div >
-                        <div>
-                            <b>高敏感人士测试</b>
-                            <br />
-                            <b>(HSPs)</b>
-                        </div>
-                        <span class="version text-light rounded-pill">
-                            专业版
-                        </span>
-                        <span class="num  position-absolute end-0 rounded-start-pill">
-                            23题
-                        </span>
-                    </div>  
-                </a>
-            </div>
-        </div>
-        <!-- 推荐测评 -->
-        <div class="column-title d-flex align-items-center mt-4">
-            <span class="list-line"></span>
-            <h4 class="mb-0 ms-1">推荐测评</h4>
-        </div>
-        <div>
-            <div class="mt-3 ">
-                <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
-                    <img src="/access/img/app/171367992453058.jpg" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
-                    <div class="flex-fill position-relative">
-                      <h5 class="mt-0">MBTI职业性格测评93题</h5>
-                      <p>快来试试MBTI职业性格测评93题</p>
-                      <a class="btn btn-outline-primary position-absolute end-0" href="http://test.mbti.ink" role="button">去测试</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="mt-3 ">
-                <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
-                    <img src="/access/img/app/170081463224698.png" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
-                    <div class="flex-fill position-relative">
-                      <h5 class="mt-0">高敏感人士</h5>
-                      <p>你属于高敏感人群吗？自我测试</p>
-                      <a class="btn btn-outline-primary position-absolute end-0" href="/app/hsps.html" role="button">去测试</a>
-                    </div>
-                  </div>
-            </div>
-        </div>
-        <!-- 推荐好文 -->
-        <div class="column-title d-flex align-items-center justify-content-between mt-4">
-            <div class="d-flex align-items-center">
-                <span class="list-line"></span>
-                <h4 class="mb-0 ms-1">推荐好文</h4>
-            </div>
-            <div>
-                <a href="/">
-                    全部》
-                </a>
-            </div>
-        </div>
-        <div>
-            <% list.forEach(function(item){ %>
-                <a class="mt-3 d-block" href="/article/<%= item.id %>">
-                    <div class="d-flex position-relative bg-white shadow-sm p-3 rounded-4">
-                        <img src="/access/img/avatar/<%= item.random %>.jpg" class="flex-shrink-0 me-3 w-25 rounded" alt="...">
-                        <div class="flex-fill position-relative" style="height: 90px;">
-                          <h5 class="mt-0"> <%= item.title %></h5>
-                          <p> <%= item.description %></p>
-                        </div>
-                      </div>
-                </a>
             <% }); %>
         </div>
+      </div>
+      <div class="top_msg">
+        <div class="top_left">
+          <img class="top_left_img" src="./index/static/index_top_left_img.png" alt="你是I人还是E人？你的16型人格是什么？你最适合的工作什么？什么是i人e人？">
+          <div class="left_list">
+            <div class="left_list_item">
+              如果人格类型是 <span class="yellow">ESTP</span> 型，适合做企业家
+            </div>
+            <div class="left_list_item">
+              如果人格类型是 <span class="yellow">ISFP</span> 型，&nbsp;适合做艺术家
+            </div>
+            <div class="left_list_item">
+              如果人格类型是 <span class="yellow">INTP</span> 型，则适合多数工作
+            </div>
+          </div>
+        </div>
+        <div class="top_right">
+          <img class="top_right_img" src="./index/static/index_top_right_img.png" alt="《MBTI官网免费版人格测试》准确分析你的性格、职业、感情、人际">
+          <div class="right_list">
+            <div class="right_list_item">
+              <div class="right_list_item_icon">
+                <img class="right_list_item_icon_url1" src="./index/static/index_top_right_icon1.png" alt="国际标准试题">
+              </div>
+              <p class="right_list_item_title">国际标准试题</p>
+              <p class="right_list_item_tip">93/200题(专业版)</p>
+            </div>
+            <div class="right_list_item">
+              <div class="right_list_item_icon">
+                <img class="right_list_item_icon_url2" src="./index/static/index_top_right_icon2.png" alt="mbti客观详尽报告">
+              </div>
+              <p class="right_list_item_title">客观详尽报告</p>
+              <p class="right_list_item_tip">10/14页</p>
+            </div>
+            <div class="right_list_item">
+              <div class="right_list_item_icon">
+                <img class="right_list_item_icon_url3" src="./index/static/index_top_right_icon3.png" alt="8个维度">
+              </div>
+              <p class="right_list_item_title">完成时间</p>
+              <p class="right_list_item_tip">12/15分钟</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <img width="377" height="201" class="header-bottom-img" srcset="https://www.16personalities.com/static/images/homepage/header-mountains-mobile.svg 768w, https://www.16personalities.com/static/images/homepage/header-mountains-desktop.svg 1600w"
+          sizes="(max-width: 768px) 100vw, 100vw" src="https://www.16personalities.com/static/images/homepage/header-mountains-desktop.svg" alt="一群朋友在火堆旁野餐，背景是树木和山脉">
+        <!-- <img class="header-bottom-img" src="./index/static/index_header_bg.png" alt="mbti官网免费版测试入口,16personalities完整中文版,2024版MBTI测试"> -->
+      </div>
     </div>
-    <%- include('./../components/footer', {current:'app' }); %>
-    <div style="height: 100px;"></div>
+
+    <!-- 内容 -->
+    <div class="block1">
+      <h2 class="title">MBTI人格测试的发展历程！</h2>
+      <p class="content1">MBTI测评基于瑞士心理学家荣格(Carl Jung)的《人格分类》理论，及美国心理学家迈尔斯(Isabel Briggs Myers)与其母亲凯瑟琳·库克·布里格斯（Katharine Cook Briggs）的实证研究，是国际十分流行的性格测试模型。</p>
+      <p class="content1">1979年心理类型学学会(APT) 成立。同年，《心理类型学研究》(Research in Psychological Type)出版，后来的《心理类型学》(sychological Type，简称JPT) 杂志专门致力于MBTI的研究。2001 CPP公司发布了MBTI第二步(Step II) 问卷Q (Form Q)。2018 Myers Briggs公司发布了国际修订版，即全球Step I和全球Step II测评。</p>
+      <p class="content1">2024MBTI官网免费版人格测试(16personalities16型人格中文完整版)是依据MBTI理论模型及荣格八维人格测试的理论研究，结合中国本土情况及千万级大数据优化升级的人格测评工具。它具有更高的效度和信度，它是依靠大规模样本实践来验证，并优化迭代的产品。它的试题具有多样性、场景化及多重验效，因此测评精准度更高！</p>
+    </div>
+
+    <div class="block2">
+      <h2 class="title">选对职业比努力更重要！</h2>
+      <img class="img2" src="./index/static/index_img2.png">
+      <div class="block2_main">
+        <p class="content2">你是否时常感到职场迷茫或怀才不遇？</p>
+        <p class="content2">当看到昔日同学去了更好的企业、拿更高的薪水，是否怀疑过自己？</p>
+        <p class="content2">无须怀疑！选择重于努力，MBTI会帮你深入了解自己个性并做出正确的选择！</p>
+      </div>
+    </div>
+
+    <div class="block3">
+      <h2 class="title" style="width: 100%;">改善人际关系、助你幸福人生！</h2>
+      <img class="img3" src="./index/static/index_img3.png">
+      <div class="block3_main">
+        <p class="content3">MBTI人格测试可以在恋爱关系、朋友关系、亲子关系等方面，帮助双方更好了解彼此的性格特点和行为模式，进而更好地沟通和理解对方，从而帮助双方建立更好地信任和亲密关系。</p>
+        <p class="tip3">
+          <span>注:</span>
+          <span>《2024MBTI官网免费版人格测试》的报告更加详实和本土化，相较国外版本更加便于阅读与理解。</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="block4">
+      <h2 class="title">4大专业维度，16种人格类型</h2>
+      <h4 class="smtitle4">帮助你找到适合的职业</h4>
+      <div class="block4_main">
+        <p class="title4">全维度精准的测评分析报告，可以帮您全方位了解：</p>
+        <p class="content4">您的职场性格类型、职业优劣势、适合的岗位特质和匹配的职业。</p>
+        <p class="content4">您适合的恋爱关系、朋友关系及人际关系的相处及经营方式。</p>
+        <p class="content4">针对您性格特点和优劣势的个人发展建议。</p>
+      </div>
+      <img class="img4" src="./index/static/index_img4.png" alt="4个维度16人格">
+    </div>
+
+    <div class="jump_more">
+      <div>
+        <!-- <span><a href="/article.html">更多</a></span> -->
+        <!-- <img class="more_arrow" src="./index/static/more_arrow.png"> -->
+      </div>
+    </div>
+
+    <!-- 备案 -->
+    <p class="beian">mbti.ink©版权所有&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/">豫备案ICP备2024050061号</a></p>
+  </div>
+  <!-- 顶部导航栏、h5 侧边导航栏 -->
+  <!-- <script src="./index/static/navbar.js"></script> -->
+  <!-- 底部导航栏 -->
+  <script src="./index/static/tabbar.js"></script>
+
+  <div class="navbar">
+    <div class="navbar-pc">
+      <img class="navbar-pc-logo" src="./index/static/logo.svg">
+      <div class="navbar-pc-right">
+        <!-- <div class="navbar-pc-login">登录</div> -->
+        <div class="navbar-pc-language">
+          <svg t="1723131116408" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10765" width="20" height="20">
+            <path
+              d="M960 512c0-246.4-201.6-448-448-448-80 0-156.8 22.4-220.8 57.6-48 25.6-86.4 60.8-112 92.8A441.6 441.6 0 0 0 64 512c0 246.4 201.6 448 448 448 19.2 0 38.4-3.2 57.6-3.2h6.4c67.2-3.2 118.4-28.8 160-57.6 134.4-76.8 224-220.8 224-387.2z m-64 0c0 92.8-32 179.2-89.6 246.4-28.8-16-115.2-54.4-131.2-64-16-6.4-41.6-3.2-70.4 12.8-3.2-3.2-3.2-6.4-6.4-9.6l-105.6-102.4c0-9.6 0-22.4 6.4-25.6 9.6 0 35.2 19.2 51.2 41.6 6.4 9.6 19.2 12.8 28.8 9.6 12.8-3.2 19.2-9.6 25.6-19.2 3.2-6.4 25.6-76.8-9.6-115.2l-3.2-3.2c3.2-16 60.8-48 89.6-64 54.4-32 99.2-57.6 105.6-96 3.2-16 6.4-38.4-105.6-118.4-12.8-9.6-32-6.4-41.6 3.2L566.4 288l-48-32 64-35.2c12.8-6.4 19.2-19.2 16-32-3.2-12.8-12.8-22.4-25.6-25.6l-118.4-25.6c16-6.4 38.4-9.6 57.6-9.6 211.2 0 384 172.8 384 384z m-268.8 364.8c9.6-41.6 6.4-83.2 0-108.8 9.6-6.4 22.4-12.8 28.8-12.8 16 6.4 60.8 28.8 96 44.8-12.8 16-32 32-57.6 48-22.4 12.8-44.8 22.4-67.2 28.8z m-195.2-265.6c-6.4-9.6-9.6-16-16-25.6-44.8-70.4-76.8-115.2-112-121.6h-9.6c-9.6 0-16 3.2-25.6 6.4-19.2-19.2-48-96-67.2-179.2 6.4-9.6 19.2-28.8 35.2-48l3.2-3.2c0-3.2 3.2-3.2 6.4-6.4 19.2-16 41.6-35.2 67.2-51.2 16-9.6 35.2-16 54.4-22.4l54.4 32c3.2 0 6.4 3.2 9.6 3.2l44.8 9.6-35.2 19.2c-9.6 6.4-16 16-16 25.6s6.4 22.4 12.8 28.8l115.2 73.6c12.8 9.6 28.8 6.4 41.6-6.4l73.6-76.8c22.4 16 41.6 35.2 51.2 44.8-12.8 12.8-48 32-70.4 44.8-57.6 32-112 64-118.4 112-3.2 12.8 0 28.8 9.6 44.8-22.4-12.8-48-19.2-70.4-3.2-38.4 25.6-41.6 70.4-38.4 99.2zM128 512c0-51.2 9.6-99.2 28.8-140.8 19.2 67.2 51.2 144 92.8 160 16 6.4 32 3.2 44.8-3.2 16 12.8 51.2 64 67.2 92.8 38.4 57.6 57.6 92.8 89.6 92.8 12.8 3.2 67.2 19.2 112 35.2v16s19.2 76.8-6.4 128c-16 3.2-28.8 3.2-44.8 3.2-211.2 0-384-172.8-384-384z"
+              fill="#666666" p-id="10766"></path>
+          </svg>
+          <span class="navbar-pc-language-text">CH</span>
+        </div>
+      </div>
+      <div class="navbar-pc-list">
+        <a class="navbar-pc-list-item" href="https://16personalities.vip/">人格测试</a>
+        <a class="navbar-pc-list-item" href="https://16personalities.vip/personalitytype.html">人格类型</a>
+        <a class="navbar-pc-list-item" href="https://16personalities.vip/testprompt.html">测试提示</a>
+        <a class="navbar-pc-list-item" href="https://16personalities.vip/article.html">相关文章</a>
+      </div>
+    </div>
+    <div class="navbar-h5">
+      <img class="navbar-h5-logo" src="./index/static/logo.svg">
+      <div class="navbar-h5-right">
+        <div class="navbar-h5-language">
+          <img class="navbar-h5-language-img" src="./index/static/global.png">
+          <span class="navbar-h5-language-text">CH</span>
+        </div>
+        <div class="navbar-h5-menu">
+          <div class="navbar-h5-menu-line"></div>
+          <div class="navbar-h5-menu-line"></div>
+          <div class="navbar-h5-menu-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-menu-mask">
+    <div class="drawer-menu">
+      <div class="drawer-menu-header">
+        <div class="drawer-menu-header-test">开始测试</div>
+        <div class="drawer-menu-header-close">
+          <img class="drawer-menu-header-close-icon" src="./index/static/drawer_menu_close_icon.png">
+        </div>
+      </div>
+      <div class="drawer-menu-list">
+        <a class="drawer-menu-list-item" href="https://16personalities.vip/">测试首页</a>
+        <a class="drawer-menu-list-item" href="https://16personalities.vip/personalitytype.html">人格类型</a>
+        <a class="drawer-menu-list-item" href="https://16personalities.vip/testprompt.html">测试提示</a>
+        <a class="drawer-menu-list-item" href="https://16personalities.vip/article.html">相关文章</a>
+      </div>
+      <div class="drawer-menu-login">
+        登录
+      </div>
+    </div>
+  </div>
+  <div class="login-mask">
+    <!-- 登录 -->
+    <div id="loginPop" class="login">
+      <div class="login-title">登录</div>
+      <div class="login-block">
+        <div class="login-smtitle">电子邮件</div>
+        <div class="login-wrapper">
+          <div class="login-icon email">
+            <img src="./index/static/login_email.png">
+          </div>
+          <input class="login-input" type="text" placeholder="your@email.com">
+        </div>
+      </div>
+      <div class="login-block">
+        <div class="login-smtitle">密码</div>
+        <div class="login-wrapper">
+          <div class="login-icon password">
+            <img src="./index/static/login_password.png">
+          </div>
+          <input class="login-input" type="password" placeholder="********">
+          <div id="passwordvisible" class="login-icon">
+            <img src="./index/static/login_password_hide.png">
+          </div>
+        </div>
+      </div>
+      <button id="submitLogin" class="login-submit">登录</button>
+      <div id="switchForgot" class="login-forgot">忘记密码？</div>
+      <div id="loginPopClose" class="login-close">
+        <img src="./index/static/login_close_icon.png" class="login-close-icon">
+      </div>
+    </div>
+    <!-- 忘记密码 -->
+    <div id="forgotPasswordPop" class="login">
+      <div class="login-title">忘记密码？</div>
+      <div class="login-tip">输入你的电子邮件地址。</div>
+      <div class="login-block">
+        <div class="login-smtitle">电子邮件</div>
+        <div class="login-wrapper">
+          <div class="login-icon email">
+            <img src="./index/static/login_email.png">
+          </div>
+          <input class="login-input" type="text" placeholder="your@email.com">
+        </div>
+      </div>
+      <button id="submitForgot" class="login-submit">发送</button>
+      <div id="switchLogin" class="login-forgot">登录</div>
+      <div id="forgotPasswordPopClose" class="login-close">
+        <img src="./index/static/login_close_icon.png" class="login-close-icon">
+      </div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <a class="tabbar_item" href="https://16personalities.vip/">
+      <img class="tabbar_item_icon" src="./index/static/tabbar_1.png">
+      <p class="tabbar_item_title">首页</p>
+    </a>
+    <a class="tabbar_item" href="https://16personalities.vip/personalitytype.html">
+      <img class="tabbar_item_icon" src="./index/static/tabbar_2.png">
+      <p class="tabbar_item_title">类型</p>
+    </a>
+    <a class="tabbar_item" href="javascript:void(0)" onclick="jumpStandard()">
+      <img class="tabbar_item_icon" src="./index/static/tabbar_3.png">
+      <p class="tabbar_item_title">标准版测试</p>
+    </a>
+    <a class="tabbar_item" href="javascript:void(0)" onclick="jumpProfessional()">
+      <img class="tabbar_item_icon" src="./index/static/tabbar_4.png">
+      <p class="tabbar_item_title">专业版测试</p>
+    </a>
+  </div>
+  <div class="tabbar-holder"></div>
 </body>
-<script src="https://hm.baidu.com/hm.js?ad0c7ae274a12383e8fc3b19401019da"></script>
+
 </html>
+<script>var viewWidth = window.innerWidth; viewWidth > 500 && (viewWidth = 500), document.documentElement.style.fontSize = viewWidth / 39 + "px"</script>
