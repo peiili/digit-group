@@ -2,6 +2,14 @@
     border-bottom: none
 }
 
+body.has--stickysubnav .navbar {
+    border-bottom: 1px solid #EEEFF1
+}
+
+.navbar:has(~main .tools__progressbar.is--stuck) {
+    border-bottom: 1px solid #EEEFF1
+}
+
 main.q-pt.accessible header .note {
     text-align: center;
     color: #fff;
@@ -23,7 +31,7 @@ main.q-pt.accessible select {
 }
 
 main.q-pt header {
-    background-color: #4298b4;
+    background-color: #33a474;
     position: relative;
     padding: 5px 15px 15px
 }
@@ -53,7 +61,7 @@ main.q-pt .tips {
     position: relative;
     padding: 15px;
     overflow: hidden;
-    background-color: #4298b4;
+    background-color: #33a474
 }
 
 main.q-pt .tips .tip-highlight {
