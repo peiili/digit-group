@@ -1,0 +1,69 @@
+#form-container {
+    padding: 10px;
+}
+.input__label {
+    font-size: 1.125rem;
+    line-height: 1;
+    /* margin: 10px 0; */
+    width: 100%;
+    text-align: center;
+    text-wrap: balance;
+
+
+}
+
+
+.questions .statement {
+    font-weight: var(--font-text-semibold-weight);
+    max-width: 900px;
+    margin: 0 auto;
+    color: #576071;
+    text-align: center;
+    line-height: 1.5
+}
+
+.inputoptions {
+    margin: 35px 0 0;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #DDDFE2;
+}
+
+.group__options {
+    display: flex;
+    column-gap: 6px;
+    color: #fff;
+    padding: 25px 0 35px;
+}
+
+.option {
+    flex: 1;
+    padding: .6rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.option-left {
+    border: 2px solid #33a474;
+    color: #33a474;
+    border-top-left-radius: .6rem;
+    border-bottom-left-radius: .6rem;
+}
+.option-left.active {
+    color: #fff;
+    background-color: #33a474;
+}
+
+.option-right {
+    justify-content: end;
+    border: 2px solid #88619a;
+    color: #88619a;
+    /* background-color: #88619a; */
+    border-top-right-radius: .6rem;
+    border-bottom-right-radius: .6rem;
+    transition: all .5s ease-in-out; 
+}
+.option-right.active {
+    color: #fff;
+    background-color: #88619a;
+}
