@@ -52,26 +52,10 @@
         </section>
         <div>
           <div id="form-container" class="questions">
-            <!-- <% list.forEach(function(item) { %>
-              <div class="inputoptions">
-                <div class="input__label">
-                  <span class="statement text-center">
-                    <%= item.question %>
-                  </span>
-                </div>
-                <div class="group__options">
-                  <div class="option option-left">
-                    同意
-                  </div>
-                  <div class="option option-right">
-                    反对
-                  </div>
-                </div>
-              </div>
-              <% }) %> -->
+
           </div>
           <div class="action-row">
-            <button type="button" class="sp-action sp-button button--action button--purple button--lg button--pill button--fixed button--icon-rt" aria-label="Go to next set of questions">
+            <button type="button" class="sp-action sp-button button--action button--purple button--lg button--pill button--fixed button--icon-rt next">
               <span class="button__text">下一个</span>
               <span data-v-683dd134="" class="sp-icon size--inherit color--inherit icon--rotatable icon--dir-rt icon--arrow button__icon--rt">
                 <svg aria-labelledby="i_tiifo832yt" viewBox="0 0 48 48" role="img" xmlns="http://www.w3.org/2000/svg">
@@ -88,23 +72,21 @@
       </main>
   </div>
 </body>
+
 <script>
-  const list = [{
-    id: '1',
-    question: '你经常交新朋友。',
-    checked: '',
-    answer: [
-      { key: "我强烈同意", value: '-3', class: 'size--70 color--green' },
-      { key: "我比较同意", value: '-2', class: 'size--56 color--green' },
-      { key: "我同意", value: '-1', class: 'size--46 color--green' },
-      { key: "我不确定", value: '0', class: 'size--36 color--neutral' },
-      { key: "我不同意", value: '1', class: 'size--46 color--purple' },
-      { key: "我比较不同意", value: '2', class: 'size--56 color--purple' },
-      { key: "我强烈不同意", value: '3', class: 'size--70 color--purple' }
-    ]
-  }]
+  var listString = `<%- JSON.stringify(list) %>`
+
+  var list = JSON.parse(listString)
+  var page = 0;
+  var answer = {}
+  var currentPage = {}
   function render() {
-    return list.map(item => {
+
+    var _list = list.slice(page * 5, page * 5 + 5)
+    currentPage = {}
+    console.log(_list);
+    tempalte = _list.map((item, index) => {
+      currentPage[item.question] = ''
       return `
          <div class="inputoptions">
             <div class="input__label">
@@ -113,41 +95,46 @@
               </span>
             </div>
             <div class="group__options">
-             <div class="option option-left">同意</div>
-             <div class="option option-right">反对</div>
+             <div class="option option-left" data-option=${item.question} data-value=${'i'}>同意</div>
+             <div class="option option-right" data-option=${item.question} data-value=${'e'}>反对</div>
             </div>
           </div>`
     }).join('')
-  }
-  const tempalte = render()
+    document.getElementById('form-container').innerHTML = tempalte;
+    var buttons = document.querySelectorAll('.option');
 
-  document.getElementById('form-container').innerHTML = tempalte;
-
-  var buttons = document.querySelectorAll('.option');  
-  buttons.forEach(button=>{
-    button.addEventListener('click', function(el) {  
-        // el.target.parent.children
+    buttons.forEach(button => {
+      button.addEventListener('click', function (el) {
+        console.log(el);
+        var index = el.target.dataset.option;
+        var value = el.target.dataset.value;
         var args = [...el.target.parentNode.children]
-        args.forEach(node=>{
+        args.forEach(node => {
           node.classList.remove('active')
         })
         el.target.classList.add('active')
-      });   
+        currentPage[index] = value
+        console.log(currentPage);
+      });
 
-  })
-
-  function radioClick(id, value) {
-    console.log(id, value);
-    var question = list.find(e => {
-      console.log(e.id);
-      return e.id == id
     })
-    question.checked = String(value)
-    const tempalte = render()
-    // var box = document.getElementById('form-container').innerHTML = tempalte
   }
 
-  
+  var tempalte = render()
+  function radioClick() {
+    for (const key in currentPage) {
+      if (Object.hasOwnProperty.call(currentPage, key)) {
+        if(!currentPage[key]){
+          return
+        }
+      }
+    }
+    Object.assign(answer, currentPage)
+    page++;
+    render()
+  }
+  document.querySelector('.next').addEventListener('click', radioClick)
+
 </script>
 
 </html>

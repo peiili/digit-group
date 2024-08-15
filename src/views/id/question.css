@@ -24,7 +24,6 @@
 
 .inputoptions {
     margin: 35px 0 0;
-    padding: 0 0 20px;
     border-bottom: 1px solid #DDDFE2;
 }
 
@@ -32,7 +31,7 @@
     display: flex;
     column-gap: 6px;
     color: #fff;
-    padding: 25px 0 35px;
+    padding: 15px 0 35px;
 }
 
 .option {
