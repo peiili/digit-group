@@ -105,7 +105,7 @@
 
     buttons.forEach(button => {
       button.addEventListener('click', function (el) {
-        console.log(el);
+        smoothScrollUp(el.target.parentNode.parentNode.offsetHeight);
         var index = el.target.dataset.option;
         var value = el.target.dataset.value;
         var args = [...el.target.parentNode.children]
@@ -114,7 +114,6 @@
         })
         el.target.classList.add('active')
         currentPage[index] = value
-        console.log(currentPage);
       });
 
     })
@@ -124,7 +123,7 @@
   function radioClick() {
     for (const key in currentPage) {
       if (Object.hasOwnProperty.call(currentPage, key)) {
-        if(!currentPage[key]){
+        if (!currentPage[key]) {
           return
         }
       }
@@ -134,6 +133,26 @@
     render()
   }
   document.querySelector('.next').addEventListener('click', radioClick)
+  function smoothScrollUp(distance) {
+    let start = document.documentElement.scrollTop || document.body.scrollTop;
+    const end = start + distance;
+    const duration = 100; // 动画时长（毫秒）
+    const startTime = performance.now();
+
+    function animateScroll() {
+      const now = performance.now();
+      const progress = Math.min((now - startTime) / duration, 1);
+      const currentPosition = start + (end - start) * progress;
+
+      window.scrollTo(0, currentPosition);
+
+      if (currentPosition !== end) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
+  }
 
 </script>
 
