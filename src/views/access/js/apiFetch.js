@@ -1,6 +1,7 @@
 function Api (){
     // this.baseUrl = 'http://127.0.0.1:5166'
-    this.baseUrl = 'http://192.168.1.7:5166'
+    // this.baseUrl = 'http://192.168.1.7:5166'
+    this.baseUrl = 'http://test.mbti.ink'
     // this.baseUrl = ''
 }
 Api.prototype.apiFetch = function (url, method = 'GET', data = null, headers = {}) {  

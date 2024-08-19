@@ -614,3 +614,9 @@ main.q-pt .action-row .sp-button {
         padding: 15px 30px;
     }
 } */
+
+.err-msg {
+    color: #d63147;
+    text-align: center;
+    visibility: hidden;
+}

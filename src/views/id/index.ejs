@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>性格测试 | 16Personalities</title>
   <link rel="stylesheet" href="/16personalities/style.css">
-  <link rel="stylesheet" href="c3r5bgnvcmu--Dz_RZSrT.css">
   <link rel="stylesheet" href="/index/static/navbar.css">
   <link rel="stylesheet" href="/id/style.css">
   <link rel="stylesheet" href="/id/style1.css">
   <link rel="stylesheet" href="/id/question.css">
   <link rel="stylesheet" href="/id/aw50zxlszxm--B5xG79hP.css">
+  <script src="/access/js/apiFetch.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <%- include('./../components/16personalities-navbar'); %>
       <main id="test-app" class="q-pt">
         <header>
-          <h1>200题-完整版</h1>
+          <h1><%= name %></h1>
         </header>
         <section class="tips">
           <div class="tip">
@@ -54,6 +54,7 @@
           <div id="form-container" class="questions">
 
           </div>
+          <div class="err-msg">请检查选择项</div>
           <div class="action-row">
             <button type="button" class="sp-action sp-button button--action button--purple button--lg button--pill button--fixed button--icon-rt next">
               <span class="button__text">下一个</span>
@@ -78,61 +79,83 @@
 
   var list = JSON.parse(listString)
   var page = 0;
+  var size = 2;
+  var total = Math.ceil(list.length/size)-1
   var answer = {}
   var currentPage = {}
+  var msgTips = document.querySelector('.err-msg')
+  var nextBtn = document.querySelector('.next')
   function render() {
-
-    var _list = list.slice(page * 5, page * 5 + 5)
+    var _list = list.slice(page * 2, page * 2 + 2)
     currentPage = {}
-    console.log(_list);
     tempalte = _list.map((item, index) => {
-      currentPage[item.question] = ''
+      var name = item.name.trim()
+      currentPage[name] = ''
+      console.log(item.name);
       return `
          <div class="inputoptions">
             <div class="input__label">
               <span class="statement text-center">
-                ${item.question}
+                ${name}
               </span>
             </div>
             <div class="group__options">
-             <div class="option option-left" data-option=${item.question} data-value=${'i'}>同意</div>
-             <div class="option option-right" data-option=${item.question} data-value=${'e'}>反对</div>
+             <div class="option option-left" data-option=${name} data-value=${item.option[0].character_type}>${item.option[0].name}</div>
+             <div class="option option-right" data-option=${name} data-value=${item.option[1].character_type}>${item.option[1].name}</div>
             </div>
           </div>`
     }).join('')
     document.getElementById('form-container').innerHTML = tempalte;
+    if(page === total){
+      nextBtn.textContent = '提交'
+    }
     var buttons = document.querySelectorAll('.option');
 
     buttons.forEach(button => {
       button.addEventListener('click', function (el) {
         smoothScrollUp(el.target.parentNode.parentNode.offsetHeight);
-        var index = el.target.dataset.option;
+        var option = el.target.dataset.option;
         var value = el.target.dataset.value;
         var args = [...el.target.parentNode.children]
         args.forEach(node => {
           node.classList.remove('active')
         })
         el.target.classList.add('active')
-        currentPage[index] = value
+        console.log(option);
+        currentPage[option] = value
+        msgTips.style.visibility = 'hidden'
       });
 
     })
   }
 
-  var tempalte = render()
-  function radioClick() {
+  render()
+
+  nextBtn.addEventListener('click', commit)
+  
+  function commit() {
     for (const key in currentPage) {
       if (Object.hasOwnProperty.call(currentPage, key)) {
+        console.log(currentPage);
         if (!currentPage[key]) {
+          msgTips.style.visibility = 'visible'
           return
         }
       }
     }
+    msgTips.style.visibility = 'hidden'
+    window.scrollTo(0, 0);
     Object.assign(answer, currentPage)
-    page++;
-    render()
+    if(page === total){
+      console.log('开始提交');
+      console.log(answer);
+    } else {
+      page++;
+      render()
+
+    }
   }
-  document.querySelector('.next').addEventListener('click', radioClick)
+ 
   function smoothScrollUp(distance) {
     let start = document.documentElement.scrollTop || document.body.scrollTop;
     const end = start + distance;
