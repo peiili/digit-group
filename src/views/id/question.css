@@ -66,3 +66,14 @@
     color: #fff;
     background-color: #88619a;
 }
+.fixed-bottom .box{
+    height: 50px;
+    background-color: #fff;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    padding: 0 10px;
+}
+.fixed-bottom .box .progress{
+    flex: 1;
+}
