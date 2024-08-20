@@ -24,7 +24,7 @@
           <% goods.forEach(function(e){ %>
             <div class="col" data-id='<%= e.id %>' data-info='<%= e.infomation_id %>'>
               <div class="img">
-                <%- e.cover %>
+                <%- e.cover; %>
               </div>
               <div class="h_2">
                 <%= e.goods_name; %>
@@ -32,7 +32,7 @@
               <div class="h_1">
                 <%=e.goods_description; %>
               </div>
-              <a class="button" href="/app/<%= e.infomation_id %>">
+              <a class="button" href="/app/<%= e.infomation_id; %>?id=<%= e.id; %>">
                 开始测试
               </a>
             </div>

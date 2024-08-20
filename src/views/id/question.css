@@ -8,8 +8,6 @@
     width: 100%;
     text-align: center;
     text-wrap: balance;
-
-
 }
 
 
@@ -76,4 +74,8 @@
 }
 .fixed-bottom .box .progress{
     flex: 1;
+}
+
+.action-row svg {
+    display: block;
 }

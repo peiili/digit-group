@@ -83,7 +83,9 @@
 </body>
 
 <script>
-  var listString = `<%- JSON.stringify(list) %>`
+  var listString = `<%- JSON.stringify(list); %>`
+  var goods_id = `<%- goods_id; %>`
+  var info_id= `<%- info_id; %>`
 
   var list = JSON.parse(listString)
   var page = 0;
@@ -157,6 +159,20 @@
     if(page === total){
       console.log('开始提交');
       console.log(answer);
+      var url = '/mbti_api/order/create'
+      var data = {
+        "bd_vid":"",
+        "host": location.href,
+        "info_id": info_id,
+        "goods_id": goods_id,
+        "from":""
+      }
+      api.post(url, data).then(function(e){
+        if(e.success){
+          var orderid = e.data.id;
+          update(answer, orderid)
+        }
+      })
     } else {
       page++;
       var progress = Math.ceil(page/total* 100)  + '%'
@@ -166,7 +182,18 @@
 
     }
   }
- 
+  function update(answer, orderid) {
+    var url = '/mbti_api/order/update'
+      var data = {
+        "detail": JSON.stringify(answer),
+        "id": orderid
+      }
+      api.put(url, data).then(function(e){
+        if(e.success){
+          location.href = '/wait-pay?id='+ orderid
+        }
+      })
+  }
   function smoothScrollUp(distance) {
     let start = document.documentElement.scrollTop || document.body.scrollTop;
     const end = start + distance;
