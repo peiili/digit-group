@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/wait-pay/style.css">
 </head>
+
 <body>
-    123123
+    <div class="pay_plane" id='pay_plane'>
+        <div id="prices" class="row"></div>
+    </div>
 </body>
+
 </html>
+<script>
+    var listString = `<%- JSON.stringify(list); %>`
+    var prices = JSON.parse(listString);
+
+
+    var currentIndex = 0;
+    var price = {
+        price:0,
+        name: '',
+        priceId:'',
+        original_price: 0,
+        coupon: 0,
+        coupon_description: '',
+    }
+    var hotPrice = '';
+
+    let defaultPrice = prices.find((e,i)=>{
+        if(e.def_select === 'Y'){
+            currentIndex = i
+            return true
+        }else{
+            return false
+        }
+    })
+    if(defaultPrice){
+        hotPrice = defaultPrice.price_id
+    } else {
+        defaultPrice = prices[prices.length - 1]
+    }
+    if(defaultPrice){
+        price = {
+            name: defaultPrice.name,
+            price: defaultPrice.price,
+            priceId: defaultPrice.price_id,
+            original_price: defaultPrice.original_price,
+            coupon: defaultPrice.coupon,
+            coupon_description: defaultPrice.coupon_description,
+        }
+    }
+
+    var content = ''
+    prices.forEach((e, index) => {
+        content += `<div data-index="${index}" key={e.price_id} class="col_normal ${price.priceId == e.price_id ? 'col_normal-active' : ''}">
+                ${hotPrice === e.price_id ? '<div class="hotPrice">92%的人选择</div>' : ''}
+                ${index === 2 ? '<div class="hotPrice hotPriceToday">仅限今日</div>' : ''}
+                <div class="title">
+                    ${e.name}
+                </div>
+                <div class="price">
+                    <div style="lineHeight: 16px">
+                        ¥&nbsp;${computePrice(e)}&nbsp;
+                    </div>
+                </div>
+                <div style="color: #a0a0a0">
+                    <del style="textDecoration: line-through">${e.original_price}</del>
+                </div>
+                <div class="desc">
+                    <div>
+                        ${e.attributes}
+                    </div>
+                </div>
+            </div>`
+    })
+    
+    document.getElementById('prices').innerHTML = content;
+    var goodsCol = document.querySelectorAll('.col_normal');
+    goodsCol.forEach(e=>{
+           e.addEventListener('click', function(){
+                goodsCol.forEach(child=>{
+                    child.classList.remove('col_normal-active');
+                    // child.querySelector('.choose').style.display = 'none'
+                })
+                // this.querySelector('.choose').style.display = 'block'
+                // currentGoodsId = this.dataset.id
+                // currentInfoId = this.dataset.info
+                var index = this.dataset.index
+                var defaultPrice = prices[index]
+                hasCoupon = false
+                price = {
+                    name: defaultPrice.name,
+                    price: defaultPrice.price,
+                    priceId: defaultPrice.price_id,
+                    original_price: defaultPrice.original_price,
+                    coupon: defaultPrice.coupon,
+                    coupon_description: defaultPrice.coupon_description,
+                };
+
+                
+                currentIndex = index;
+
+                this.classList.add('col_normal-active')
+           }) 
+    })
+
+    var hasCoupon = false
+    
+    function computePrice(item){
+        return (hasCoupon&&price.priceId===item.price_id)?((item.price-item.coupon).toFixed(2)):item.price
+
+    }
+    // function setCurrentPriceFun(event){      
+    //     var index = event.dataset.index
+    //     var defaultPrice = prices[index]
+    //     hasCoupon = false
+    //     price = {
+    //         name: defaultPrice.name,
+    //         price: defaultPrice.price,
+    //         priceId: defaultPrice.price_id,
+    //         original_price: defaultPrice.original_price,
+    //         coupon: defaultPrice.coupon,
+    //         coupon_description: defaultPrice.coupon_description,
+    //     };
+    //     currentIndex = index;
+    // }
+</script>
