@@ -8,9 +8,9 @@ function getPrice(id, cb){
 
 function index(req, res){
     const id = req.query.id
-    getPrice(id, function(res){
+    getPrice(id, function(e){
         res.render('wait-pay', { 
-            list: res.data
+            list: e.data
         });
     })
 }
