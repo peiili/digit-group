@@ -4250,7 +4250,7 @@ nav.bottom {
     }
 
     #sales__page.sales__page--completesuite .sales__header .action-row {
-        display: flex;
+        /* display: flex; */
         align-items: center
     }
 
@@ -4259,7 +4259,7 @@ nav.bottom {
     }
 
     #sales__page.sales__page--completesuite .sales__header .action-row .action__guarantee {
-        margin-top: 0
+        /* margin-top: 0 */
     }
 
     #sales__page.sales__page--completesuite .sales__prosuite.sales__prosuite--upper {
@@ -4429,4 +4429,18 @@ nav.bottom {
     #sales__page.sales__page--completesuite .sales__header .col--img {
         margin-right: 60px
     }
+}
+
+.ali-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 42px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 42px;
+    text-align: center;
+    background: linear-gradient(to right, #1677ff, #1a57ff);
+    border-radius: 4px;
 }
