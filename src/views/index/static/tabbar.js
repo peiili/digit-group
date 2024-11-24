@@ -3,11 +3,11 @@ const loadTabbar = () => {
   tabbarDiv.classList.add('tabbar')
   tabbarDiv.innerHTML = `
     <a class="tabbar_item" href="/">
-      <img class="tabbar_item_icon" src="./img/tabbar_1.png">
+      <img class="tabbar_item_icon" src="static/img/tabbar_1.png">
       <p class="tabbar_item_title">首页</p>
     </a>
     <a class="tabbar_item" href="/personalitytype.html">
-      <img class="tabbar_item_icon" src="./img/tabbar_2.png">
+      <img class="tabbar_item_icon" src="static/img/tabbar_2.png">
       <p class="tabbar_item_title">类型</p>
     </a>
     <a class="tabbar_item" href="javascript:void(0)" onclick="jumpStandard()">
@@ -26,7 +26,7 @@ const loadTabbar = () => {
 }
 // 标准版
 function jumpStandard() {
-  let msg='你是否愿意测试：更准确的才智专业版MBTI呢？'
+  let msg='你是否愿意测试：更准确的知己专业版MBTI呢？'
   if (confirm(msg) == true) {
     window.location.href = 'https://iqeq.com.cn/mbtics-v2.html?vip'
   } else {
@@ -38,4 +38,4 @@ function jumpProfessional() {
   window.location.href = 'https://iqeq.com.cn/mbtics-v2.html?vip'
 }
 
-window.addEventListener('load', loadTabbar)
+// window.addEventListener('load', loadTabbar)

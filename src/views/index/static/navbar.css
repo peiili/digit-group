@@ -151,10 +151,12 @@ input::placeholder {
     z-index: 999;
   }
   .navbar-pc-logo {
-    width: calc((420/ 1920) * 100vw);
+    /* width: calc((420/ 1920) * 100vw); */
     padding-left: 10px;
     max-width: 420px;
     pointer-events: none;
+    width: 260px;
+    height: 53.3333px;
   }
   .navbar-pc-right {
     display: flex;

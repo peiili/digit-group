@@ -1,55 +1,153 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
-    <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css" />
-    <script src="/access/bootstrap@5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/access/css/reset.css">
+    <link rel="stylesheet" href="./index/static/navbar.css">
     <link rel="stylesheet" href="/16personalities/style.css">
-    <link rel="stylesheet" href="/16personalities/ag9tzxbhz2u--Co-J4gnD.css">
-    <link rel="stylesheet" href="/16personalities/yxbwyxbw--BxtxZlwU.css">
-    <title>免费性格测试、类型描述、人际关系和职业建议 | 16Personalities</title>
-    <style>
-        .container {
-            max-width: 480px;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="main-app" class="g-wrp int ch">
-        <%- include('./../components/16personalities-navbar'); %>
-        <main class="q-hm">
+    <%- include('./../components/16personalities-navbar'); %>
+        <main class="q-tl">
             <div class="hero">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 60" preserveAspectRatio="none" aria-hidden="true" class="angular-1920-1 hero__shape hero__shape--top">
-                    <path d="m0 20 420 40L800 0l750 60 370-45V0H0z"></path>
-                </svg>
-                <div class="hero__text p-lg">
-                    <h1>“终于被理解的感觉真好。”</h1>
-                    <p>只需10分钟，就能“惊人般准确”地描述出你是谁，以及你为何以这样的方式行事。</p>
-                    <a href="/app/ch" class="sp-action sp-button button--action button--purple button--lg button--pill button--auto button--icon-rt">
-                        <span class="button__text">参加测试</span>
-                        <span data-v-683dd134="" class="sp-icon size--inherit color--inherit icon--rotatable icon--dir-rt icon--arrow button__icon--rt" aria-hidden="true">
-                            <svg aria-labelledby="i_d9wvywxcbt" viewBox="0 0 48 48" role="img"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <title id="i_d9wvywxcbt">Go</title>
-                                <path
-                                    d="M23.296875,3.421875 L22.63125,4.0875 C22.190625,4.528125 22.190625,5.240625 22.63125,5.68125 L39.365625,22.40625 L4.125,22.40625 C3.50625,22.40625 3,22.9125 3,23.53125 L3,24.46875 C3,25.0875 3.50625,25.59375 4.125,25.59375 L39.365625,25.59375 L22.63125,42.328125 C22.190625,42.76875 22.190625,43.48125 22.63125,43.921875 L23.296875,44.5875 C23.7375,45.028125 24.45,45.028125 24.890625,44.5875 L44.68125,24.796875 C45.121875,24.35625 45.121875,23.64375 44.68125,23.203125 L24.890625,3.421875 C24.440625,2.98125 23.7375,2.98125 23.296875,3.421875 Z">
-                                </path>
-                            </svg>
-                        </span>
-                    </a>
-                </div>
+                <h1>性格类型</h1>
             </div>
-            <div class="scene">
-                <img width="377" height="201" srcset="http://xek.dlsjf.top/net_image/header-mountains-mobile.svg 768w, http://xek.dlsjf.top/net_image/header-mountains-desktop.svg 1600w" sizes="(max-width: 768px) 100vw, 100vw"
-                    src="http://xek.dlsjf.top/net_image/header-mountains-desktop.svg" alt="A group of friends having a picnic around a fire, with trees and mountains in the background">
+            <div class="type-group analysts"><svg aria-hidden="true" viewBox="0 0 1920 155" preserveAspectRatio="none" class="background">
+                    <polygon points="1920 823 0 823 0 0 396 101 835 31 1574 149 1920 17 1920 823" class="c1"></polygon>
+                </svg>
+                <h2 id="analysts">分析家</h2>
+                <div class="types"><a href="https://www.16personalities.com/ch/intj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_c9hayf6ku2" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/intj-architect.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>建筑师</h4>
+                        <h5>INTJ-A / INTJ-T</h5>
+                        <div class="snippet text--bal">富有想象力和战略性思维，一切皆在计划之中。</div>
+                    </a> <a href="https://www.16personalities.com/ch/intp-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_ni295r1168" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/intp-logician.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>逻辑学家</h4>
+                        <h5>INTP-A / INTP-T</h5>
+                        <div class="snippet text--bal">具有创造力的发明家，对知识有着不可抑制的渴望。</div>
+                    </a> <a href="https://www.16personalities.com/ch/entj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_rkh0n9k0mw" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/entj-commander.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>指挥官</h4>
+                        <h5>ENTJ-A / ENTJ-T</h5>
+                        <div class="snippet text--bal">大胆、富有想象力且意志强大的领导者，总能找到或创造解决方法。</div>
+                    </a> <a href="https://www.16personalities.com/ch/entp-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_p9mbgvpm29" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/entp-debater.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>辩论家</h4>
+                        <h5>ENTP-A / ENTP-T</h5>
+                        <div class="snippet text--bal">聪明好奇的思考者，无法抵挡智力挑战的诱惑。</div>
+                    </a></div>
+            </div>
+            <div class="type-group diplomats">
+                <h2 id="diplomats">外交家</h2>
+                <div class="types"><a href="https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_v5t2urbgtp" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/infj-advocate.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>提倡者</h4>
+                        <h5>INFJ-A / INFJ-T</h5>
+                        <div class="snippet text--bal">安静神秘，但非常鼓舞人心且不知疲倦的理想主义者。</div>
+                    </a> <a href="https://www.16personalities.com/ch/infp-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_z20kr9fi0e" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/infp-mediator.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>调停者</h4>
+                        <h5>INFP-A / INFP-T</h5>
+                        <div class="snippet text--bal">富有诗意、善良且无私的人，总是热衷于帮助正义事业。</div>
+                    </a> <a href="https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_dsdy7ztxli" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/enfj-protagonist.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>主人公</h4>
+                        <h5>ENFJ-A / ENFJ-T</h5>
+                        <div class="snippet text--bal">具有魅力并能激励人心的领导者，能够让听众为之着迷。</div>
+                    </a> <a href="https://www.16personalities.com/ch/enfp-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_yz15iu6eew" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/enfp-campaigner.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>竞选者</h4>
+                        <h5>ENFP-A / ENFP-T</h5>
+                        <div class="snippet text--bal">充满活力，富有创意，善于交际的自由之人，总能找到微笑的理由。</div>
+                    </a></div>
+            </div>
+            <div class="type-group sentinels">
+                <h2 id="sentinels">守护者</h2>
+                <div class="types"><a href="https://www.16personalities.com/ch/istj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_cy66905aa1" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/istj-logistician.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>物流师</h4>
+                        <h5>ISTJ-A / ISTJ-T</h5>
+                        <div class="snippet text--bal">务实且注重事实的人，可靠性不容怀疑。</div>
+                    </a> <a href="https://www.16personalities.com/ch/isfj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_j22o5vj5th" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/isfj-defender.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>守卫者</h4>
+                        <h5>ISFJ-A / ISFJ-T</h5>
+                        <div class="snippet text--bal">非常专注和热情的保护者，总是随时准备保护他们所爱的人。</div>
+                    </a> <a href="https://www.16personalities.com/ch/estj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_nljbuc75in" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/estj-executive.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>总经理</h4>
+                        <h5>ESTJ-A / ESTJ-T</h5>
+                        <div class="snippet text--bal">出色的管理者，在管理事物或人的方面无与伦比。</div>
+                    </a> <a href="https://www.16personalities.com/ch/esfj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_t243npcl4j" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/esfj-consul.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>执政官</h4>
+                        <h5>ESFJ-A / ESFJ-T</h5>
+                        <div class="snippet text--bal">非常关心他人，善于社交，受人欢迎，总是乐于助人。</div>
+                    </a></div>
+            </div>
+            <div class="type-group explorers">
+                <h2 id="explorers">探险家</h2>
+                <div class="types"><a href="https://www.16personalities.com/ch/istp-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_y975plzczb" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/istp-virtuoso.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>鉴赏家</h4>
+                        <h5>ISTP-A / ISTP-T</h5>
+                        <div class="snippet text--bal">大胆而实际的实验家，擅长使用各种形式的工具。</div>
+                    </a> <a href="https://www.16personalities.com/ch/isfp-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_ppcj3y3s9r" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/isfp-adventurer.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>探险家</h4>
+                        <h5>ISFP-A / ISFP-T</h5>
+                        <div class="snippet text--bal">灵活有魅力的艺术家，时刻准备着探索和体验新鲜事物。</div>
+                    </a> <a href="https://www.16personalities.com/ch/estp-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_hlul724psg" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/estp-entrepreneur.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>企业家</h4>
+                        <h5>ESTP-A / ESTP-T</h5>
+                        <div class="snippet text--bal">聪明、充满活力且洞察力极强的人，真正喜欢充满刺激和危险的生活。</div>
+                    </a> <a href="https://www.16personalities.com/ch/esfp-%E4%BA%BA%E6%A0%BC" class="type">
+                        <div id="anim_fknqckls68" class="sp-animation"><!---->
+                            <div role="img" class="image animated" style="display: none;"></div> <img loading="lazy" src="https://www.16personalities.com/static/images/personality-types/avatars/esfp-entertainer.svg" draggable="false" class="image static" style="">
+                        </div>
+                        <h4>表演者</h4>
+                        <h5>ESFP-A / ESFP-T</h5>
+                        <div class="snippet text--bal">精力充沛、热情，总是心血来潮--有他们在身边，生活永远不会无聊。</div>
+                    </a></div>
             </div>
         </main>
-        <%- include('./../components/16personalities-footer'); %>
-        <div style="height: 100px;"></div>
-    </div>
-    <script src="https://hm.baidu.com/hm.js?ad0c7ae274a12383e8fc3b19401019da"></script>
+</body>
 
 </html>
