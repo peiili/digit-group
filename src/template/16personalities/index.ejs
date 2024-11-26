@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知己MBTI-16人格类型</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/access/css/reset.css">
+    <link rel="stylesheet" href="./index/static/navbar.css">
+    <link rel="stylesheet" href="/16personalities/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.2/lottie.min.js"></script>
+</head>
+
+<body>
+    <%- include('./../components/16personalities-navbar'); %>
+        <main class="q-tl">
+            <div class="hero">
+                <h1>性格类型</h1>
+            </div>
+            <%  typesGroup.forEach(function(item,index){  %>
+                <div class="type-group <%= item.title; %>">
+                    <% if (index===0) { %>
+                        <svg aria-hidden="true" viewBox="0 0 1920 155" preserveAspectRatio="none" class="background">
+                            <polygon points="1920 823 0 823 0 0 396 101 835 31 1574 149 1920 17 1920 823" class="c1"></polygon>
+                        </svg>
+                      <% } %>
+                   
+                    <h2 id="<%= item.title; %>"> <%=item.title_locale; %></h2>
+                    <div class="types">
+                        <%  item.types.forEach(function(typeItem,index){  %>
+                        <a href="https://www.16personalities.com/ch/intj-%E4%BA%BA%E6%A0%BC" class="type">
+                            <div id="anim_<%=typeItem.name; %>" class="sp-animation">
+                              
+                            </div>
+                            <img loading="lazy" src="<%=typeItem.img; %>" draggable="false" class="image static" data-animation="<%=typeItem.name; %>">
+                            <animation
+                                animation-file="/animations/avatars/defaults/<%=typeItem.name; %>.json"
+                                delayed
+                                loop="hover"
+                                name="<%=typeItem.name; %>"
+                                replace-sel="[data-animation=<%=typeItem.name; %>]"
+                            ></animation>
+                            <h4><%=typeItem.name_local; %></h4>
+                            <h5><%=typeItem.type; %>-A / <%=typeItem.type; %>-T</h5>
+                            <div class="snippet text--bal"><%=typeItem.snippet; %></div>
+                        </a>
+                        <% }); %>
+                    </div>
+                </div>
+              <% }); %>
+            
+       
+        </main>
+</body>
+
+</html>
+<script>
+ var animationTags = document.getElementsByTagName('animation')
+ 
+function loadAnimation(index) {
+    const element = animationTags[index]
+    if(element) {
+        var container = document.getElementById('anim_'+ element.getAttribute('name'))
+      
+        var animation = {
+            container: container,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: element.getAttribute('animation-file')
+        };
+
+        var anim = lottie.loadAnimation(animation);
+        console.log(anim);
+        
+        container.addEventListener('mouseenter', function(){
+            anim.loop = true
+            anim.play()
+        })
+        container.addEventListener('mouseleave', function(){
+            anim.loop = false
+        })
+
+        document.querySelector(element.getAttribute('replace-sel')).remove()
+
+        loadAnimation(index+1)
+    }
+}
+loadAnimation(0)
+</script>

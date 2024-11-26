@@ -22,7 +22,7 @@ function deep(dir,subdir){
     }
 }
 function viewRoute(app) {
-    deep('controllers', '')
+    deep('controllers/view', '')
     router.get('/view/*', (req, res) => {
         res.status(301).redirect('/view')
     });
