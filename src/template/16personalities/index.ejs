@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>知己MBTI-16人格类型</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/access/css/reset.css">
     <link rel="stylesheet" href="./index/static/navbar.css">
     <link rel="stylesheet" href="/16personalities/style.css">
@@ -13,7 +12,8 @@
 </head>
 
 <body>
-    <%- include('./../components/16personalities-navbar'); %>
+
+         <%- include('./../components/16personalities-navbar'); %>
         <main class="q-tl">
             <div class="hero">
                 <h1>性格类型</h1>
@@ -29,7 +29,7 @@
                     <h2 id="<%= item.title; %>"> <%=item.title_locale; %></h2>
                     <div class="types">
                         <%  item.types.forEach(function(typeItem,index){  %>
-                        <a href="https://www.16personalities.com/ch/intj-%E4%BA%BA%E6%A0%BC" class="type">
+                        <a href="" class="type">
                             <div id="anim_<%=typeItem.name; %>" class="sp-animation">
                               
                             </div>
@@ -52,6 +52,7 @@
             
        
         </main>
+        <p class="beian">mbti.ink©版权所有&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/">豫备案ICP备2024050061号</a></p>
 </body>
 
 </html>
@@ -74,11 +75,11 @@ function loadAnimation(index) {
         var anim = lottie.loadAnimation(animation);
         console.log(anim);
         
-        container.addEventListener('mouseenter', function(){
+        container.addEventListener('pointerenter', function(){
             anim.loop = true
             anim.play()
         })
-        container.addEventListener('mouseleave', function(){
+        container.addEventListener('pointerleave', function(){
             anim.loop = false
         })
 
