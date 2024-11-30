@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./index/static/navbar.css">
   <link rel="stylesheet" href="./index/static/tabbar.css">
   <link rel="stylesheet" href="./index/static/goods.css">
+  <link rel="stylesheet" href="./index/static/footer.css">
+
   <title>免费MBTI人格测试 | 16Personalities中文版</title>
 </head>
 
@@ -138,7 +140,8 @@
     </div>
 
     <!-- 备案 -->
-    <p class="beian">mbti.ink©版权所有&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/">豫备案ICP备2024050061号</a></p>
+    <%- include('./../components/footer', {beian: '豫备案ICP备2024050061号'}); %>
+    <!-- <p class="beian">mbti.ink©版权所有&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/">豫备案ICP备2024050061号</a></p> -->
   </div>
   <!-- 顶部导航栏、h5 侧边导航栏 -->
   <!-- <script src="./index/static/navbar.js"></script> -->
