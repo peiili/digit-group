@@ -416,7 +416,7 @@ main.q-pt .action-row .sp-button {
 
     main.q-pt .tips .shadow {
         display: block;
-        box-shadow: none;
+        box-shadow: none !important;
         bottom: 0
     }
 

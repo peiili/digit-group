@@ -1,6 +1,16 @@
 #form-container {
     padding: 10px;
+    width: 960px;
+    margin: 0 auto;
 }
+
+@media screen and (max-width: 960px) {
+    #form-container {
+        padding: 10px;
+        width: 100%;
+    }
+}
+
 .input__label {
     font-size: 1.125rem;
     line-height: 1;
@@ -45,8 +55,8 @@
 .option-left {
     border: 2px solid #33a474;
     color: #33a474;
-    border-top-left-radius: .6rem;
-    border-bottom-left-radius: .6rem;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
 .option-left.active {
     color: #fff;
@@ -58,8 +68,8 @@
     border: 2px solid #88619a;
     color: #88619a;
     /* background-color: #88619a; */
-    border-top-right-radius: .6rem;
-    border-bottom-right-radius: .6rem;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
     transition: all .5s ease-in-out; 
 }
 .option-right.active {

@@ -17,8 +17,6 @@
 @media screen and (max-width: 500px) {
     #goods-placehold  .row {
         display: flex;
-        grid-gap: 8px;
-        gap: 8px;
         width: 100%;
         text-align: center;
         box-sizing: border-box;
@@ -28,14 +26,10 @@
 
 #goods-placehold  .row .col {
     padding: 2rem 1rem;
-    border-radius: 1.2rem;
-    /* border: .4rem solid #87629820; */
-    /* opacity: .5; */
     flex: 1;
-    background-color: #ffffff90;
     color: initial;
     font-size: 1.2rem;
-    position: relative;
+    justify-content: center;
 }
 
 #goods-placehold .row .col .choose {

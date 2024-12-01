@@ -93,7 +93,7 @@ body, p {
 .top_left_img {
   width: calc((500 / 1920) * 100vw);
   /* height: calc((150 / 1920) * 100vw); */
-  margin-bottom: calc((24 / 1920) * 100vw);
+  /* margin-bottom: calc((24 / 1920) * 100vw); */
 }
 .top_right_img {
   width: calc((500 / 1920) * 100vw);
