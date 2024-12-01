@@ -5207,7 +5207,7 @@ body[class*=body--freeze--]:not(.is--touch) .scrollbar-measure {
     --font-btn-50-size: 1rem;
     --font-btn-50-line-height: 1.5;
     --font-btn-50-spacing: -.1px;
-    --font-btn-60-size: 1.125rem;
+    --font-btn-60-size: 1.4rem;
     --font-btn-60-line-height: 1.55555556;
     --font-btn-60-spacing: -.1px;
     --font-btn-80-size: 1.25rem;
@@ -6004,7 +6004,7 @@ a.sp-button[type=button] {
     line-height: var(--font-btn-40-line-height);
     letter-spacing: var(--font-btn-40-spacing);
     height: 40px;
-    padding: 6px 20px
+    padding: 6px 10px
 }
 
 .button--tn>.sp-icon {
@@ -6103,7 +6103,8 @@ a.sp-button[type=button] {
     line-height: var(--font-btn-60-line-height);
     letter-spacing: var(--font-btn-60-spacing);
     height: 60px;
-    padding: 14px 40px
+    padding: 14px 20px;
+    flex: 1;
 }
 
 .button--lg>.sp-icon {
@@ -7757,7 +7758,9 @@ html[dir=rtl] .sp-nav__mobiletoggle {
 
 .sp-nav__mobile .menu .part.top.guest .info .sp-button {
     width: auto;
-    margin-top: 10px
+    margin-top: 10px;
+    flex: 1;
+    
 }
 
 .sp-nav__mobile .menu .part.top .avatar {
