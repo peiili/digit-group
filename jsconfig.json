@@ -2,7 +2,7 @@
     "compilerOptions": {
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "baseUrl": "./src/views",
+        "baseUrl": "src/template",
         "paths": {
             "/*": ["./views/*"]
         }

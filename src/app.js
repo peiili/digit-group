@@ -22,10 +22,11 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use(express.static('src/views'))
+app.use(express.static('src/static'))
+app.use(express.static('src/template'))
 
 // 设置ejs 模板引擎
-app.set('views', path.join(__dirname,'views'))
+app.set('views', path.join(__dirname,'template'))
 app.set('view engine','ejs')
 viewRoute(app)
 

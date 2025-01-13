@@ -8,7 +8,9 @@ function website(req,res,next){
         next()
         return 
     }
-    var url = 'http://0.0.0.0:5166/api/website/by-host?host='+ req.hostname
+    // const hostname = req.hostname 
+    const hostname = 'app.mbti.ink' 
+    var url = 'http://0.0.0.0:5166/api/website/by-host?host='+ hostname
     http.get(url, function(result){
         if(result.statusCode===200){
             var body = Buffer.alloc(0)

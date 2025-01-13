@@ -1,0 +1,845 @@
+
+@keyframes showDropdown {
+    0% {
+        opacity: 0;
+        transform: scale(.9)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes pulseCircle {
+    0% {
+        transform: scale(.5);
+        opacity: 0
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1
+    }
+
+    to {
+        transform: scale(.5);
+        opacity: 0
+    }
+}
+
+@keyframes moveArrowRight {
+    0%,to {
+        transform: none
+    }
+
+    50% {
+        transform: translate(5px)
+    }
+}
+
+@keyframes moveArrowLeft {
+    0%,to {
+        transform: scaleX(-1)
+    }
+
+    50% {
+        transform: scaleX(-1) translate(5px)
+    }
+}
+
+@keyframes moveDown {
+    0%,to {
+        transform: none
+    }
+
+    50% {
+        transform: translateY(4px)
+    }
+}
+
+@keyframes moveArrowDown {
+    0%,to {
+        transform: rotate(90deg)
+    }
+
+    50% {
+        transform: rotate(90deg) translate(4px)
+    }
+}
+
+@keyframes moveArrowUp {
+    0%,to {
+        transform: rotate(-90deg)
+    }
+
+    50% {
+        transform: rotate(-90deg) translate(4px)
+    }
+}
+
+@keyframes academyNav {
+    0% {
+        background-position: 100% 50%
+    }
+
+    50% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes shake {
+    50% {
+        transform: translate(2px)
+    }
+}
+
+@keyframes fa-spin {
+    0% {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes bell {
+    0%,to {
+        transform: none
+    }
+
+    33% {
+        transform: rotate(10deg)
+    }
+
+    66% {
+        transform: rotate(-10deg)
+    }
+}
+
+
+.sp-button {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family-text);
+    font-weight: var(--font-btn-font-weight);
+    line-height: 2;
+    text-decoration: none;
+    color: #fff;
+    outline: 0;
+    width: auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+}
+.sp-button .sp-icon>svg {
+    vertical-align: baseline;
+    width: 100%;
+    height: 100%;
+}
+
+.sp-button:not(.button--full)+.sp-button.button--has-gutter {
+    margin-left: 20px
+}
+
+.sp-button:not(.button--full)+.sp-button.button--has-gutter.button--lg {
+    margin-left: unset;
+    margin-top: 20px
+}
+
+.sp-button .icon--angle.icon--rotatable {
+    transition: .1s ease-in-out opacity,.1s ease-in-out transform
+}
+
+.sp-button:focus-visible .icon--dir-rt,.sp-button:hover .icon--dir-rt {
+    animation: moveArrowRight .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--dir-lt,.sp-button:hover .icon--dir-lt {
+    animation: moveArrowLeft .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--dir-up,.sp-button:hover .icon--dir-up {
+    animation: moveArrowUp .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--dir-dn,.sp-button:hover .icon--dir-dn {
+    animation: moveArrowDown .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--16psearch:not(.no--animate),.sp-button:hover .icon--16psearch:not(.no--animate) {
+    animation: shake .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--bell,.sp-button:hover .icon--bell,.sp-button:focus-visible .icon--16pbell,.sp-button:hover .icon--16pbell {
+    animation: bell .3s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--16psettings,.sp-button:hover .icon--16psettings {
+    animation: fa-spin .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--16pthumb,.sp-button:hover .icon--16pthumb {
+    animation: thumbsUp .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--16ppencil,.sp-button:hover .icon--16ppencil {
+    animation: moveDown .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--16pemoji,.sp-button:hover .icon--16pemoji {
+    animation: bell .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--16pformatting,.sp-button:hover .icon--16pformatting {
+    animation: shake .5s ease-in-out both
+}
+
+.sp-button:focus-visible .icon--trash,.sp-button:hover .icon--trash {
+    animation: shake .5s ease-in-out both
+}
+
+.sp-button:active:not(.tooltip__button):not(.select__button):not(.tags__button) {
+    transform: translateY(1px)
+}
+
+.sp-button:disabled,.sp-button.is--disabled,.sp-button.is--busy {
+    pointer-events: none
+}
+
+.sp-button:disabled .sp-icon,.sp-button.is--disabled .sp-icon,.sp-button.is--busy .sp-icon,.sp-button:disabled .button__text,.sp-button.is--disabled .button__text,.sp-button.is--busy .button__text {
+    opacity: .75
+}
+
+a.sp-button[type=button] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+@keyframes thumbsUp {
+    0%,to {
+        transform: none
+    }
+
+    50% {
+        transform: rotate(-10deg) translateY(-2px)
+    }
+}
+
+.button--unstyled {
+    font-size: unset;
+    line-height: unset;
+    letter-spacing: unset;
+    font-weight: unset;
+    vertical-align: baseline;
+    height: auto;
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    display: inline;
+    background-color: transparent
+}
+
+.button--unstyled:focus-visible,.button--unstyled:hover,.button--unstyled:active {
+    background: none
+}
+
+.button--unstyled:focus-visible,.button--unstyled:hover {
+    background-color: transparent
+}
+
+.button--legacy {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family-text);
+    font-weight: var(--font-btn-font-weight);
+    line-height: 2;
+    text-decoration: none;
+    color: #fff;
+    outline: 0;
+    width: auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+}
+
+.button--legacy:active {
+    transform: translateY(1px)
+}
+
+.a11y--focus-visible .button--legacy:focus-visible {
+    outline: 4px solid rgba(123,183,202,.6)
+}
+
+.button--legacy:disabled {
+    opacity: .75
+}
+
+.button--legacy.btn-action,.button--legacy.btn-action-2 {
+    border-radius: 40px;
+    font-size: var(--font-btn-50-size);
+    line-height: var(--font-btn-50-line-height);
+    letter-spacing: var(--font-btn-50-spacing);
+    height: 50px;
+    padding: 10px 25px
+}
+
+.button--sst {
+    height: 22px
+}
+
+.button--sst.button--circle {
+    width: 22px
+}
+
+.button--sst>.sp-icon {
+    width: 10px;
+    height: 10px
+}
+
+.button--st {
+    font-size: var(--font-btn-30-size);
+    line-height: var(--font-btn-30-line-height);
+    letter-spacing: var(--font-btn-30-spacing);
+    height: 30px;
+    padding: 1px 15px
+}
+
+.button--st>.sp-icon {
+    width: 12px;
+    height: 12px
+}
+
+.button--st.button--icon-rt>.sp-icon {
+    margin-inline-start:6px}
+
+.button--st.button--icon-lt>.sp-icon,.button--st.button--icon-lt>.sp-spinner {
+    margin-inline-end:6px}
+
+.button--st.button--circle {
+    width: 30px;
+    padding: 0
+}
+
+.button--st.button--circle>.sp-icon {
+    width: 14px;
+    height: 14px
+}
+
+.button--st .button--fixed {
+    min-width: 200px
+}
+
+.button--tn {
+    font-size: var(--font-btn-40-size);
+    line-height: var(--font-btn-40-line-height);
+    letter-spacing: var(--font-btn-40-spacing);
+    height: 40px;
+    padding: 6px 20px
+}
+
+.button--tn>.sp-icon {
+    width: 14px;
+    height: 14px
+}
+
+.button--tn.button--icon-rt>.sp-icon {
+    margin-inline-start:6px}
+
+.button--tn.button--icon-lt>.sp-icon,.button--tn.button--icon-lt>.sp-spinner {
+    margin-inline-end:6px}
+
+.button--tn.button--circle {
+    width: 40px;
+    padding: 0
+}
+
+.button--tn.button--circle>.sp-icon {
+    width: 18px;
+    height: 18px
+}
+
+.button--tn.button--fixed {
+    min-width: 220px
+}
+
+.button--sm {
+    font-size: var(--font-btn-40-size);
+    line-height: var(--font-btn-40-line-height);
+    letter-spacing: var(--font-btn-40-spacing);
+    height: 40px;
+    padding: 6px 20px
+}
+
+.button--sm>.sp-icon {
+    width: 14px;
+    height: 14px
+}
+
+.button--sm.button--icon-rt>.sp-icon {
+    margin-inline-start:6px}
+
+.button--sm.button--icon-lt>.sp-icon,.button--sm.button--icon-lt>.sp-spinner {
+    margin-inline-end:6px}
+
+.button--sm.button--circle {
+    width: 40px;
+    padding: 0
+}
+
+.button--sm.button--circle>.sp-icon {
+    width: 18px;
+    height: 18px
+}
+
+.button--sm.button--fixed {
+    min-width: 220px
+}
+
+.button--md {
+    font-size: var(--font-btn-50-size);
+    line-height: var(--font-btn-50-line-height);
+    letter-spacing: var(--font-btn-50-spacing);
+    height: 50px;
+    padding: 10px 25px
+}
+
+.button--md>.sp-icon {
+    width: 16px;
+    height: 16px
+}
+
+.button--md.button--icon-rt>.sp-icon {
+    margin-inline-start:8px}
+
+.button--md.button--icon-lt>.sp-icon,.button--md.button--icon-lt>.sp-spinner {
+    margin-inline-end:8px}
+
+.button--md.button--circle {
+    width: 50px;
+    padding: 0
+}
+
+.button--md.button--circle>.sp-icon {
+    width: 22px;
+    height: 22px
+}
+
+.button--md.button--fixed {
+    min-width: 240px
+}
+
+.button--lg {
+    font-size: var(--font-btn-60-size);
+    line-height: var(--font-btn-60-line-height);
+    letter-spacing: var(--font-btn-60-spacing);
+    height: 60px;
+    padding: 14px 40px
+}
+
+.button--lg>.sp-icon {
+    width: 18px;
+    height: 18px
+}
+
+.button--lg.button--icon-rt>.sp-icon {
+    margin-inline-start:10px}
+
+.button--lg.button--icon-lt>.sp-icon,.button--lg.button--icon-lt>.sp-spinner {
+    margin-inline-end:10px}
+
+.button--lg.button--circle {
+    width: 60px;
+    padding: 0
+}
+
+.button--lg.button--circle>.sp-icon {
+    width: 26px;
+    height: 26px
+}
+
+.button--lg.button--fixed {
+    min-width: 260px
+}
+
+.button--full {
+    width: 100%
+}
+
+.button--circle {
+    padding: 0;
+    border-radius: 100px
+}
+
+.button--rounded {
+    border-radius: 10px
+}
+
+.button--rounded.button--st {
+    border-radius: 5px
+}
+
+.button--pill {
+    border-radius: 40px
+}
+
+.button--analysts,.button--purple {
+    background-color: #88619a;
+    border-color: #88619a
+}
+
+.button--analysts,.button--purple,.button--analysts:focus-visible,.button--purple:focus-visible,.button--analysts:hover,.button--purple:hover {
+    color: #fff
+}
+
+.button--analysts .sp-icon.color--inherit g,.button--purple .sp-icon.color--inherit g,.button--analysts:focus-visible .sp-icon.color--inherit g,.button--purple:focus-visible .sp-icon.color--inherit g,.button--analysts:hover .sp-icon.color--inherit g,.button--purple:hover .sp-icon.color--inherit g,.button--analysts .sp-icon.color--inherit path,.button--purple .sp-icon.color--inherit path,.button--analysts:focus-visible .sp-icon.color--inherit path,.button--purple:focus-visible .sp-icon.color--inherit path,.button--analysts:hover .sp-icon.color--inherit path,.button--purple:hover .sp-icon.color--inherit path,.button--analysts .sp-icon.color--inherit polygon,.button--purple .sp-icon.color--inherit polygon,.button--analysts:focus-visible .sp-icon.color--inherit polygon,.button--purple:focus-visible .sp-icon.color--inherit polygon,.button--analysts:hover .sp-icon.color--inherit polygon,.button--purple:hover .sp-icon.color--inherit polygon {
+    fill: #fff
+}
+
+.button--analysts :deep(.sp-icon.color--inherit) g,.button--purple :deep(.sp-icon.color--inherit) g,.button--analysts:focus-visible :deep(.sp-icon.color--inherit) g,.button--purple:focus-visible :deep(.sp-icon.color--inherit) g,.button--analysts:hover :deep(.sp-icon.color--inherit) g,.button--purple:hover :deep(.sp-icon.color--inherit) g,.button--analysts :deep(.sp-icon.color--inherit) path,.button--purple :deep(.sp-icon.color--inherit) path,.button--analysts:focus-visible :deep(.sp-icon.color--inherit) path,.button--purple:focus-visible :deep(.sp-icon.color--inherit) path,.button--analysts:hover :deep(.sp-icon.color--inherit) path,.button--purple:hover :deep(.sp-icon.color--inherit) path,.button--analysts :deep(.sp-icon.color--inherit) polygon,.button--purple :deep(.sp-icon.color--inherit) polygon,.button--analysts:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--purple:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--analysts:hover :deep(.sp-icon.color--inherit) polygon,.button--purple:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #fff
+}
+
+.button--analysts:focus-visible,.button--purple:focus-visible,.button--analysts:hover,.button--purple:hover {
+    background-color: #6c4d7b;
+    border-color: #6c4d7b
+}
+
+.button--analysts:disabled,.button--purple:disabled,.button--analysts.is--disabled,.button--purple.is--disabled,.button--analysts.is--busy,.button--purple.is--busy {
+    background-color: #c3b0cd;
+    border-color: #c3b0cd
+}
+
+.button--sentinels,.button--blue {
+    background-color: rgb(var(--rgb-blue));
+    border-color: rgb(var(--rgb-blue))
+}
+
+.button--sentinels,.button--blue,.button--sentinels:focus-visible,.button--blue:focus-visible,.button--sentinels:hover,.button--blue:hover {
+    color: #fff
+}
+
+.button--sentinels .sp-icon.color--inherit g,.button--blue .sp-icon.color--inherit g,.button--sentinels:focus-visible .sp-icon.color--inherit g,.button--blue:focus-visible .sp-icon.color--inherit g,.button--sentinels:hover .sp-icon.color--inherit g,.button--blue:hover .sp-icon.color--inherit g,.button--sentinels .sp-icon.color--inherit path,.button--blue .sp-icon.color--inherit path,.button--sentinels:focus-visible .sp-icon.color--inherit path,.button--blue:focus-visible .sp-icon.color--inherit path,.button--sentinels:hover .sp-icon.color--inherit path,.button--blue:hover .sp-icon.color--inherit path,.button--sentinels .sp-icon.color--inherit polygon,.button--blue .sp-icon.color--inherit polygon,.button--sentinels:focus-visible .sp-icon.color--inherit polygon,.button--blue:focus-visible .sp-icon.color--inherit polygon,.button--sentinels:hover .sp-icon.color--inherit polygon,.button--blue:hover .sp-icon.color--inherit polygon {
+    fill: #fff
+}
+
+.button--sentinels :deep(.sp-icon.color--inherit) g,.button--blue :deep(.sp-icon.color--inherit) g,.button--sentinels:focus-visible :deep(.sp-icon.color--inherit) g,.button--blue:focus-visible :deep(.sp-icon.color--inherit) g,.button--sentinels:hover :deep(.sp-icon.color--inherit) g,.button--blue:hover :deep(.sp-icon.color--inherit) g,.button--sentinels :deep(.sp-icon.color--inherit) path,.button--blue :deep(.sp-icon.color--inherit) path,.button--sentinels:focus-visible :deep(.sp-icon.color--inherit) path,.button--blue:focus-visible :deep(.sp-icon.color--inherit) path,.button--sentinels:hover :deep(.sp-icon.color--inherit) path,.button--blue:hover :deep(.sp-icon.color--inherit) path,.button--sentinels :deep(.sp-icon.color--inherit) polygon,.button--blue :deep(.sp-icon.color--inherit) polygon,.button--sentinels:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--blue:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--sentinels:hover :deep(.sp-icon.color--inherit) polygon,.button--blue:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #fff
+}
+
+.button--sentinels:focus-visible,.button--blue:focus-visible,.button--sentinels:hover,.button--blue:hover {
+    background-color: #347990;
+    border-color: #347990
+}
+
+.button--sentinels:disabled,.button--blue:disabled,.button--sentinels.is--disabled,.button--blue.is--disabled,.button--sentinels.is--busy,.button--blue.is--busy {
+    background-color: #a1ccda;
+    border-color: #a1ccda
+}
+
+.button--darkblue {
+    background-color: #2e6a7d;
+    border-color: #2e6a7d
+}
+
+.button--darkblue,.button--darkblue:focus-visible,.button--darkblue:hover {
+    color: #fff
+}
+
+.button--darkblue .sp-icon.color--inherit g,.button--darkblue:focus-visible .sp-icon.color--inherit g,.button--darkblue:hover .sp-icon.color--inherit g,.button--darkblue .sp-icon.color--inherit path,.button--darkblue:focus-visible .sp-icon.color--inherit path,.button--darkblue:hover .sp-icon.color--inherit path,.button--darkblue .sp-icon.color--inherit polygon,.button--darkblue:focus-visible .sp-icon.color--inherit polygon,.button--darkblue:hover .sp-icon.color--inherit polygon {
+    fill: #fff
+}
+
+.button--darkblue :deep(.sp-icon.color--inherit) g,.button--darkblue:focus-visible :deep(.sp-icon.color--inherit) g,.button--darkblue:hover :deep(.sp-icon.color--inherit) g,.button--darkblue :deep(.sp-icon.color--inherit) path,.button--darkblue:focus-visible :deep(.sp-icon.color--inherit) path,.button--darkblue:hover :deep(.sp-icon.color--inherit) path,.button--darkblue :deep(.sp-icon.color--inherit) polygon,.button--darkblue:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--darkblue:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #fff
+}
+
+.button--darkblue:focus-visible,.button--darkblue:hover {
+    background-color: #204b59;
+    border-color: #204b59
+}
+
+.button--darkblue:disabled,.button--darkblue.is--disabled,.button--darkblue.is--busy {
+    background-color: #97b5be;
+    border-color: #97b5be
+}
+
+.button--explorers,.button--yellow {
+    background-color: rgb(var(--rgb-yellow));
+    border-color: rgb(var(--rgb-yellow))
+}
+
+.button--explorers,.button--yellow,.button--explorers:focus-visible,.button--yellow:focus-visible,.button--explorers:hover,.button--yellow:hover {
+    color: #fff
+}
+
+.button--explorers .sp-icon.color--inherit g,.button--yellow .sp-icon.color--inherit g,.button--explorers:focus-visible .sp-icon.color--inherit g,.button--yellow:focus-visible .sp-icon.color--inherit g,.button--explorers:hover .sp-icon.color--inherit g,.button--yellow:hover .sp-icon.color--inherit g,.button--explorers .sp-icon.color--inherit path,.button--yellow .sp-icon.color--inherit path,.button--explorers:focus-visible .sp-icon.color--inherit path,.button--yellow:focus-visible .sp-icon.color--inherit path,.button--explorers:hover .sp-icon.color--inherit path,.button--yellow:hover .sp-icon.color--inherit path,.button--explorers .sp-icon.color--inherit polygon,.button--yellow .sp-icon.color--inherit polygon,.button--explorers:focus-visible .sp-icon.color--inherit polygon,.button--yellow:focus-visible .sp-icon.color--inherit polygon,.button--explorers:hover .sp-icon.color--inherit polygon,.button--yellow:hover .sp-icon.color--inherit polygon {
+    fill: #fff
+}
+
+.button--explorers :deep(.sp-icon.color--inherit) g,.button--yellow :deep(.sp-icon.color--inherit) g,.button--explorers:focus-visible :deep(.sp-icon.color--inherit) g,.button--yellow:focus-visible :deep(.sp-icon.color--inherit) g,.button--explorers:hover :deep(.sp-icon.color--inherit) g,.button--yellow:hover :deep(.sp-icon.color--inherit) g,.button--explorers :deep(.sp-icon.color--inherit) path,.button--yellow :deep(.sp-icon.color--inherit) path,.button--explorers:focus-visible :deep(.sp-icon.color--inherit) path,.button--yellow:focus-visible :deep(.sp-icon.color--inherit) path,.button--explorers:hover :deep(.sp-icon.color--inherit) path,.button--yellow:hover :deep(.sp-icon.color--inherit) path,.button--explorers :deep(.sp-icon.color--inherit) polygon,.button--yellow :deep(.sp-icon.color--inherit) polygon,.button--explorers:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--yellow:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--explorers:hover :deep(.sp-icon.color--inherit) polygon,.button--yellow:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #fff
+}
+
+.button--explorers:focus-visible,.button--yellow:focus-visible,.button--explorers:hover,.button--yellow:hover {
+    background-color: #b68b2e;
+    border-color: #b68b2e
+}
+
+.button--explorers:disabled,.button--yellow:disabled,.button--explorers.is--disabled,.button--yellow.is--disabled,.button--explorers.is--busy,.button--yellow.is--busy {
+    background-color: #f2d79d;
+    border-color: #f2d79d
+}
+
+.button--diplomats,.button--green {
+    background-color: rgb(var(--rgb-green));
+    border-color: rgb(var(--rgb-green))
+}
+
+.button--diplomats,.button--green,.button--diplomats:focus-visible,.button--green:focus-visible,.button--diplomats:hover,.button--green:hover {
+    color: #fff
+}
+
+.button--diplomats .sp-icon.color--inherit g,.button--green .sp-icon.color--inherit g,.button--diplomats:focus-visible .sp-icon.color--inherit g,.button--green:focus-visible .sp-icon.color--inherit g,.button--diplomats:hover .sp-icon.color--inherit g,.button--green:hover .sp-icon.color--inherit g,.button--diplomats .sp-icon.color--inherit path,.button--green .sp-icon.color--inherit path,.button--diplomats:focus-visible .sp-icon.color--inherit path,.button--green:focus-visible .sp-icon.color--inherit path,.button--diplomats:hover .sp-icon.color--inherit path,.button--green:hover .sp-icon.color--inherit path,.button--diplomats .sp-icon.color--inherit polygon,.button--green .sp-icon.color--inherit polygon,.button--diplomats:focus-visible .sp-icon.color--inherit polygon,.button--green:focus-visible .sp-icon.color--inherit polygon,.button--diplomats:hover .sp-icon.color--inherit polygon,.button--green:hover .sp-icon.color--inherit polygon {
+    fill: #fff
+}
+
+.button--diplomats :deep(.sp-icon.color--inherit) g,.button--green :deep(.sp-icon.color--inherit) g,.button--diplomats:focus-visible :deep(.sp-icon.color--inherit) g,.button--green:focus-visible :deep(.sp-icon.color--inherit) g,.button--diplomats:hover :deep(.sp-icon.color--inherit) g,.button--green:hover :deep(.sp-icon.color--inherit) g,.button--diplomats :deep(.sp-icon.color--inherit) path,.button--green :deep(.sp-icon.color--inherit) path,.button--diplomats:focus-visible :deep(.sp-icon.color--inherit) path,.button--green:focus-visible :deep(.sp-icon.color--inherit) path,.button--diplomats:hover :deep(.sp-icon.color--inherit) path,.button--green:hover :deep(.sp-icon.color--inherit) path,.button--diplomats :deep(.sp-icon.color--inherit) polygon,.button--green :deep(.sp-icon.color--inherit) polygon,.button--diplomats:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--green:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--diplomats:hover :deep(.sp-icon.color--inherit) polygon,.button--green:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #fff
+}
+
+.button--diplomats:focus-visible,.button--green:focus-visible,.button--diplomats:hover,.button--green:hover {
+    background-color: #28835c;
+    border-color: #28835c
+}
+
+.button--diplomats:disabled,.button--green:disabled,.button--diplomats.is--disabled,.button--green.is--disabled,.button--diplomats.is--busy,.button--green.is--busy {
+    background-color: #99d2ba;
+    border-color: #99d2ba
+}
+
+.button--red {
+    background-color: rgb(var(--rgb-red));
+    border-color: rgb(var(--rgb-red))
+}
+
+.button--red,.button--red:focus-visible,.button--red:hover {
+    color: #fff
+}
+
+.button--red .sp-icon.color--inherit g,.button--red:focus-visible .sp-icon.color--inherit g,.button--red:hover .sp-icon.color--inherit g,.button--red .sp-icon.color--inherit path,.button--red:focus-visible .sp-icon.color--inherit path,.button--red:hover .sp-icon.color--inherit path,.button--red .sp-icon.color--inherit polygon,.button--red:focus-visible .sp-icon.color--inherit polygon,.button--red:hover .sp-icon.color--inherit polygon {
+    fill: #fff
+}
+
+.button--red :deep(.sp-icon.color--inherit) g,.button--red:focus-visible :deep(.sp-icon.color--inherit) g,.button--red:hover :deep(.sp-icon.color--inherit) g,.button--red :deep(.sp-icon.color--inherit) path,.button--red:focus-visible :deep(.sp-icon.color--inherit) path,.button--red:hover :deep(.sp-icon.color--inherit) path,.button--red :deep(.sp-icon.color--inherit) polygon,.button--red:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--red:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #fff
+}
+
+.button--red:focus-visible,.button--red:hover {
+    background-color: #c14b4e;
+    border-color: #c14b4e
+}
+
+.button--red:disabled,.button--red.is--disabled,.button--red.is--busy {
+    background-color: #f9afb1;
+    border-color: #f9afb1
+}
+
+.button--darkgray {
+    background-color: #68707f;
+    border-color: #68707f
+}
+
+.button--darkgray,.button--darkgray:focus-visible,.button--darkgray:hover {
+    color: #fff
+}
+
+.button--darkgray .sp-icon.color--inherit g,.button--darkgray:focus-visible .sp-icon.color--inherit g,.button--darkgray:hover .sp-icon.color--inherit g,.button--darkgray .sp-icon.color--inherit path,.button--darkgray:focus-visible .sp-icon.color--inherit path,.button--darkgray:hover .sp-icon.color--inherit path,.button--darkgray .sp-icon.color--inherit polygon,.button--darkgray:focus-visible .sp-icon.color--inherit polygon,.button--darkgray:hover .sp-icon.color--inherit polygon {
+    fill: #fff
+}
+
+.button--darkgray :deep(.sp-icon.color--inherit) g,.button--darkgray:focus-visible :deep(.sp-icon.color--inherit) g,.button--darkgray:hover :deep(.sp-icon.color--inherit) g,.button--darkgray :deep(.sp-icon.color--inherit) path,.button--darkgray:focus-visible :deep(.sp-icon.color--inherit) path,.button--darkgray:hover :deep(.sp-icon.color--inherit) path,.button--darkgray :deep(.sp-icon.color--inherit) polygon,.button--darkgray:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--darkgray:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #fff
+}
+
+.button--darkgray:focus-visible,.button--darkgray:hover {
+    background-color: #51596a;
+    border-color: #51596a
+}
+
+.button--darkgray:disabled,.button--darkgray.is--disabled,.button--darkgray.is--busy {
+    background-color: #b3b8bf;
+    border-color: #b3b8bf
+}
+
+.button--midgray {
+    background-color: rgb(var(--rgb-midgray));
+    border-color: rgb(var(--rgb-midgray))
+}
+
+.button--midgray,.button--midgray:focus-visible,.button--midgray:hover {
+    color: #fff
+}
+
+.button--midgray .sp-icon.color--inherit g,.button--midgray:focus-visible .sp-icon.color--inherit g,.button--midgray:hover .sp-icon.color--inherit g,.button--midgray .sp-icon.color--inherit path,.button--midgray:focus-visible .sp-icon.color--inherit path,.button--midgray:hover .sp-icon.color--inherit path,.button--midgray .sp-icon.color--inherit polygon,.button--midgray:focus-visible .sp-icon.color--inherit polygon,.button--midgray:hover .sp-icon.color--inherit polygon {
+    fill: #fff
+}
+
+.button--midgray :deep(.sp-icon.color--inherit) g,.button--midgray:focus-visible :deep(.sp-icon.color--inherit) g,.button--midgray:hover :deep(.sp-icon.color--inherit) g,.button--midgray :deep(.sp-icon.color--inherit) path,.button--midgray:focus-visible :deep(.sp-icon.color--inherit) path,.button--midgray:hover :deep(.sp-icon.color--inherit) path,.button--midgray :deep(.sp-icon.color--inherit) polygon,.button--midgray:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--midgray:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #fff
+}
+
+.button--midgray:focus-visible,.button--midgray:hover {
+    background-color: #9a9fa9;
+    border-color: #9a9fa9
+}
+
+.button--midgray:disabled,.button--midgray.is--disabled,.button--midgray.is--busy {
+    background-color: #dddfe3;
+    border-color: #dddfe3
+}
+
+.button--allwhite {
+    background-color: #fff;
+    border: none;
+    color: rgba(52,60,75,.5)
+}
+
+.button--allwhite .sp-icon.color--inherit g,.button--allwhite .sp-icon.color--inherit path,.button--allwhite .sp-icon.color--inherit polygon {
+    fill: rgba(52,60,75,.5)
+}
+
+.button--allwhite :deep(.sp-icon.color--inherit) g,.button--allwhite :deep(.sp-icon.color--inherit) path,.button--allwhite :deep(.sp-icon.color--inherit) polygon {
+    fill: rgba(52,60,75,.5)
+}
+
+.button--allwhite:focus-visible,.button--allwhite:hover,.button--allwhite.is--active:not(.is--router) {
+    background-color: #ebeced;
+    color: #343c4b
+}
+
+.button--allwhite:focus-visible .sp-icon.color--inherit g,.button--allwhite:hover .sp-icon.color--inherit g,.button--allwhite.is--active:not(.is--router) .sp-icon.color--inherit g,.button--allwhite:focus-visible .sp-icon.color--inherit path,.button--allwhite:hover .sp-icon.color--inherit path,.button--allwhite.is--active:not(.is--router) .sp-icon.color--inherit path,.button--allwhite:focus-visible .sp-icon.color--inherit polygon,.button--allwhite:hover .sp-icon.color--inherit polygon,.button--allwhite.is--active:not(.is--router) .sp-icon.color--inherit polygon {
+    fill: #343c4b
+}
+
+.button--allwhite:focus-visible :deep(.sp-icon.color--inherit) g,.button--allwhite:hover :deep(.sp-icon.color--inherit) g,.button--allwhite.is--active:not(.is--router) :deep(.sp-icon.color--inherit) g,.button--allwhite:focus-visible :deep(.sp-icon.color--inherit) path,.button--allwhite:hover :deep(.sp-icon.color--inherit) path,.button--allwhite.is--active:not(.is--router) :deep(.sp-icon.color--inherit) path,.button--allwhite:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--allwhite:hover :deep(.sp-icon.color--inherit) polygon,.button--allwhite.is--active:not(.is--router) :deep(.sp-icon.color--inherit) polygon {
+    fill: #343c4b
+}
+
+.button--allwhite:disabled,.button--allwhite.is--disabled,.button--allwhite.is--busy {
+    background-color: rgba(255,255,255,.5)
+}
+
+.button--allwhite:disabled .sp-icon,.button--allwhite.is--disabled .sp-icon,.button--allwhite.is--busy .sp-icon,.button--allwhite:disabled .button__text,.button--allwhite.is--disabled .button__text,.button--allwhite.is--busy .button__text {
+    opacity: .5
+}
+
+.button--white {
+    background-color: #fff;
+    border: 1px solid #DDDFE2
+}
+
+.button--white,.button--white:focus-visible,.button--white:hover {
+    color: #343c4b
+}
+
+.button--white .sp-icon.color--inherit g,.button--white:focus-visible .sp-icon.color--inherit g,.button--white:hover .sp-icon.color--inherit g,.button--white .sp-icon.color--inherit path,.button--white:focus-visible .sp-icon.color--inherit path,.button--white:hover .sp-icon.color--inherit path,.button--white .sp-icon.color--inherit polygon,.button--white:focus-visible .sp-icon.color--inherit polygon,.button--white:hover .sp-icon.color--inherit polygon {
+    fill: #343c4b
+}
+
+.button--white :deep(.sp-icon.color--inherit) g,.button--white:focus-visible :deep(.sp-icon.color--inherit) g,.button--white:hover :deep(.sp-icon.color--inherit) g,.button--white :deep(.sp-icon.color--inherit) path,.button--white:focus-visible :deep(.sp-icon.color--inherit) path,.button--white:hover :deep(.sp-icon.color--inherit) path,.button--white :deep(.sp-icon.color--inherit) polygon,.button--white:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--white:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #343c4b
+}
+
+.button--white:focus-visible,.button--white:hover {
+    background-color: #f9fafa;
+    border-color: #4298b4
+}
+
+.button--white.is--active:not(.is--router) {
+    background-color: #ebeced;
+    border-color: #ebeced
+}
+
+.button--white:disabled,.button--white.is--disabled,.button--white.is--busy {
+    background-color: #fff;
+    border-color: #eeeff1
+}
+
+.button--white:disabled .sp-icon,.button--white.is--disabled .sp-icon,.button--white.is--busy .sp-icon,.button--white:disabled .button__text,.button--white.is--disabled .button__text,.button--white.is--busy .button__text {
+    opacity: .5
+}
+
+.button--white.button--circle .sp-icon.color--inherit g,.button--white.button--circle .sp-icon.color--inherit path,.button--white.button--circle .sp-icon.color--inherit polygon {
+    fill: rgba(52,60,75,.5)
+}
+
+.button--white.button--circle:focus-visible .sp-icon.color--inherit g,.button--white.button--circle:hover .sp-icon.color--inherit g,.button--white.button--circle:focus-visible .sp-icon.color--inherit path,.button--white.button--circle:hover .sp-icon.color--inherit path,.button--white.button--circle:focus-visible .sp-icon.color--inherit polygon,.button--white.button--circle:hover .sp-icon.color--inherit polygon {
+    fill: #343c4b
+}
+
+.button--allgray {
+    color: #343c4b
+}
+
+.button--allgray:focus-visible,.button--allgray:hover {
+    background-color: #eeeff1;
+    border-color: #eeeff1
+}
+
+.button--allgray:focus-visible .sp-icon,.button--allgray:hover .sp-icon,.button--allgray:focus-visible .button__text,.button--allgray:hover .button__text {
+    opacity: 1
+}
+
+.button--allgray,.button--allgray:disabled,.button--allgray.is--disabled,.button--allgray.is--busy {
+    background-color: #f6f6f7;
+    border-color: #f6f6f7
+}
+
+.button--allgray .sp-icon,.button--allgray:disabled .sp-icon,.button--allgray.is--disabled .sp-icon,.button--allgray.is--busy .sp-icon,.button--allgray .button__text,.button--allgray:disabled .button__text,.button--allgray.is--disabled .button__text,.button--allgray.is--busy .button__text {
+    opacity: .5
+}
+
+.button--allgray:disabled,.button--allgray.is--disabled,.button--allgray.is--busy {
+    opacity: .5
+}
+
+.button--lightgray {
+    background-color: #f9fafa;
+    border: 1px solid #DDDFE2
+}
+
+.button--lightgray,.button--lightgray:focus-visible,.button--lightgray:hover {
+    color: #343c4b
+}
+
+.button--lightgray .sp-icon.color--inherit g,.button--lightgray:focus-visible .sp-icon.color--inherit g,.button--lightgray:hover .sp-icon.color--inherit g,.button--lightgray .sp-icon.color--inherit path,.button--lightgray:focus-visible .sp-icon.color--inherit path,.button--lightgray:hover .sp-icon.color--inherit path,.button--lightgray .sp-icon.color--inherit polygon,.button--lightgray:focus-visible .sp-icon.color--inherit polygon,.button--lightgray:hover .sp-icon.color--inherit polygon {
+    fill: #343c4b
+}
+
+.button--lightgray :deep(.sp-icon.color--inherit) g,.button--lightgray:focus-visible :deep(.sp-icon.color--inherit) g,.button--lightgray:hover :deep(.sp-icon.color--inherit) g,.button--lightgray :deep(.sp-icon.color--inherit) path,.button--lightgray:focus-visible :deep(.sp-icon.color--inherit) path,.button--lightgray:hover :deep(.sp-icon.color--inherit) path,.button--lightgray :deep(.sp-icon.color--inherit) polygon,.button--lightgray:focus-visible :deep(.sp-icon.color--inherit) polygon,.button--lightgray:hover :deep(.sp-icon.color--inherit) polygon {
+    fill: #343c4b
+}
+
+.button--lightgray:focus-visible,.button--lightgray:hover {
+    background-color: #f6f6f7;
+    border-color: #bbbfc6
+}
+
+.button--lightgray:disabled,.button--lightgray.is--disabled,.button--lightgray.is--busy {
+    background-color: #fcfdfd;
+    border-color: #eeeff1
+}
+
+.button--lightgray:disabled .sp-icon,.button--lightgray.is--disabled .sp-icon,.button--lightgray.is--busy .sp-icon,.button--lightgray:disabled .button__text,.button--lightgray.is--disabled .button__text,.button--lightgray.is--busy .button__text {
+    opacity: .5
+}

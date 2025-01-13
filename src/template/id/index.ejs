@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>性格测试 | 16Personalities</title>
+  <link rel="stylesheet" href="/16personalities/style.css">
+  <!-- <link rel="stylesheet" href="/access/css/reset.css"> -->
+  <link rel="stylesheet" href="/index/static/navbar.css">
+  <link rel="stylesheet" href="/id/style.css">
+  <link rel="stylesheet" href="/id/aw50zxlszxm--B5xG79hP.css">
+  <link rel="stylesheet" href="/id/c3r5bgnvcmu--Dz_RZSrT.css">
+  <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/id/question.css">
+  <link rel="stylesheet" href="/id/button.css">
+  <link rel="stylesheet" href="/access/weui/2.5.16/weui.min.css">
+<script type="text/javascript" src="/access/weui/1.2.21/weui.min.js"></script>
+  <script src="/access/js/apiFetch.js"></script>
+</head>
+
+<body>
+  <div id="main-app" class="g-wrp int ch">
+    <%- include('./../components/16personalities-navbar'); %>
+      <main id="test-app" class="q-pt">
+        <header>
+          <h1><%= name %></h1>
+        </header>
+        <section class="tips">
+          <div class="tip-highlight first"></div>
+          <div class="tip-highlight second"></div>
+          <div class="tip-highlight third"></div>
+          <div class="tip">
+            <div class="background"></div>
+            <img src="https://www.16personalities.com/static/images/test-header-2.svg">
+            <div class="text">
+              <div class="title">
+                做你自己，诚实回答，找出你的性格类型。
+              </div>
+            </div>
+          </div>
+          <div class="tip">
+            <img src="https://www.16personalities.com/static/images/academy/explorers/icons/theory.svg">
+            <div class="text">
+              <div class="title">
+                了解你的性格类型如何在你生活的各个领域中产生影响。
+              </div>
+            </div>
+          </div>
+          <div class="tip last">
+            <img src="https://www.16personalities.com/static/images/academy/analysts/exercise.svg">
+            <div class="text">
+              <div class="title">
+                借助我们的精选材料，塑造你想要的自我。
+              </div>
+            </div>
+          </div>
+          <div class="shape"></div>
+          <div class="shadow"></div>
+        </section>
+        <div>
+          <div class="m-3">
+            <div class="box">
+              <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" style="width: 0%">0%</div>
+              </div>
+            </div>
+          </div>
+          <div id="form-container" class="questions">
+
+          </div>
+          <div class="err-msg">请检查选择项</div>
+          <div class="action-row">
+            <button type="button" class="sp-action sp-button button--action button--purple button--lg button--pill button--fixed button--icon-rt next">
+              <span class="button__text">下一个</span>
+              <span data-v-683dd134="" class="sp-icon size--inherit color--inherit icon--rotatable icon--dir-rt icon--arrow button__icon--rt">
+                <svg aria-labelledby="i_tiifo832yt" viewBox="0 0 48 48" role="img" xmlns="http://www.w3.org/2000/svg">
+                  <title id="i_tiifo832yt">Go</title>
+                  <path
+                    d="M23.296875,3.421875 L22.63125,4.0875 C22.190625,4.528125 22.190625,5.240625 22.63125,5.68125 L39.365625,22.40625 L4.125,22.40625 C3.50625,22.40625 3,22.9125 3,23.53125 L3,24.46875 C3,25.0875 3.50625,25.59375 4.125,25.59375 L39.365625,25.59375 L22.63125,42.328125 C22.190625,42.76875 22.190625,43.48125 22.63125,43.921875 L23.296875,44.5875 C23.7375,45.028125 24.45,45.028125 24.890625,44.5875 L44.68125,24.796875 C45.121875,24.35625 45.121875,23.64375 44.68125,23.203125 L24.890625,3.421875 C24.440625,2.98125 23.7375,2.98125 23.296875,3.421875 Z">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+        <!-- <%- include('./../components/16personalities-footer'); %> -->
+      </main>
+  </div>
+</body>
+
+<script>
+  var listString = `<%- JSON.stringify(list); %>`
+  var goods_id = `<%- goods_id; %>`
+  var info_id= `<%- info_id; %>`
+
+  var list = JSON.parse(listString)
+  var page = 0;
+  var size = 5;
+  var total = Math.ceil(list.length/size)-1
+  var answer = {}
+  var currentPage = {}
+  var msgTips = document.querySelector('.err-msg')
+  var nextBtn = document.querySelector('.next')
+  var progressBar = document.querySelector('.progress-bar')
+  function render() {
+    var _list = list.slice(page * size, page * size + size)
+    currentPage = {}
+    tempalte = _list.map((item, index) => {
+      var name = item.name.trim()
+      var id = item.id
+      currentPage[id] = ''
+      return `
+         <div class="inputoptions">
+            <div class="input__label">
+              <span class="statement text-center">
+                ${name}
+              </span>
+            </div>
+            <div class="group__options">
+             <div class="option option-left" data-option=${id} data-value=${item.option[0].character_type}>${item.option[0].name}</div>
+             <div class="option option-right" data-option=${id} data-value=${item.option[1].character_type}>${item.option[1].name}</div>
+            </div>
+          </div>`
+    }).join('')
+    document.getElementById('form-container').innerHTML = tempalte;
+    if(page === total){
+      nextBtn.textContent = '提交'
+    }
+    var buttons = document.querySelectorAll('.option');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function (el) {
+        smoothScrollUp(el.target.parentNode.parentNode.offsetHeight);
+        var option = el.target.dataset.option;
+        var value = el.target.dataset.value;
+        var args = [...el.target.parentNode.children]
+        args.forEach(node => {
+          node.classList.remove('active')
+        })
+        el.target.classList.add('active')
+        console.log(option);
+        currentPage[option] = value
+        msgTips.style.visibility = 'hidden'
+      });
+
+    })
+  }
+  var orderid = ''
+  function createOrder(){
+    var url = '/mbti_api/order/create'
+    var body = {
+      "bd_vid": '',
+      "host": location.href,
+      "info_id": 8,
+      "goods_id":"6",
+      "from": ""
+    }
+    apiFetch.post(url,body).then(e=>{
+      if(e.success){
+        var id = e.data.id
+        orderid = id
+        render()
+        localStorage.setItem('orderId' ,id)
+      } else {
+
+      }
+    })
+  }
+  const historyOrderId = localStorage.getItem('orderId')
+  if(historyOrderId) {
+    orderid = historyOrderId
+    var historyDone = localStorage.getItem(historyOrderId)
+    console.log(historyDone);
+    if(historyDone){
+      weui.dialog({
+        title: '提示',
+        content: '已经有完成测试的报告，是否重新测试？',
+        className: 'custom-classname',
+        buttons: [{
+            label: '否',
+            type: 'default',
+            onClick: function () {
+              location.href = '//test.mbti.ink/wait-pay?id='+ historyOrderId
+            }
+        }, {
+            label: '是',
+            type: 'primary',
+            onClick: function () {
+              createOrder()
+            }
+        }]
+    });
+
+    } else {
+      render()
+    }
+  } else {
+    createOrder()
+  }
+
+
+
+  nextBtn.addEventListener('click', commit)
+
+  function commit() {
+    for (const key in currentPage) {
+      if (Object.hasOwnProperty.call(currentPage, key)) {
+        console.log(currentPage);
+        if (!currentPage[key]) {
+          msgTips.style.visibility = 'visible'
+          return
+        }
+      }
+    }
+    msgTips.style.visibility = 'hidden'
+
+    Object.assign(answer, currentPage)
+    if(page === total){
+      console.log('开始提交');
+      console.log(answer);
+      var url = '/mbti_api/order/create'
+      var data = {
+        "bd_vid":"",
+        "host": location.href,
+        "info_id": info_id,
+        "goods_id": goods_id,
+        "from":""
+      }
+      api.post(url, data).then(function(e){
+        if(e.success){
+          var orderid = e.data.id;
+          update(answer, orderid)
+        }
+      })
+    } else {
+      page++;
+      var progress = Math.ceil(page/total * 100)  + '%'
+      progressBar.style.width = progress
+      progressBar.textContent = progress
+      window.scrollTo(0, 0);
+      render()
+
+    }
+  }
+  function update(answer, orderid) {
+    var url = '/mbti_api/order/update'
+      var data = {
+        "detail": JSON.stringify(answer),
+        "id": orderid
+      }
+      api.put(url, data).then(function(e){
+        if(e.success){
+          location.href = '/wait-pay?id='+ orderid
+        }
+      })
+  }
+  function smoothScrollUp(distance) {
+    let start = document.documentElement.scrollTop || document.body.scrollTop;
+    const end = start + distance;
+    const duration = 100; // 动画时长（毫秒）
+    const startTime = performance.now();
+
+    function animateScroll() {
+      const now = performance.now();
+      const progress = Math.min((now - startTime) / duration, 1);
+      const currentPosition = start + (end - start) * progress;
+
+      window.scrollTo(0, currentPosition);
+
+      if (currentPosition !== end) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    requestAnimationFrame(animateScroll);
+  }
+
+</script>
+
+</html>
