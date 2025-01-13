@@ -6,16 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MBTI文章列表</title>
   <link rel="stylesheet" href="./index/static/navbar.css">
+  <link rel="stylesheet" href="./access/css/reset.css">
   <link rel="stylesheet" href="./articles/style.css">
+  <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css">
+
 </head>
 <body>
   <%- include('./../components/16personalities-navbar'); %>
   <div class="container">
-    <div class="catalog">
-      <div class="item_body">
-        <hr />
-
-      </div>
+    <div class="catalog row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-3 gy-3">
+      <% list.forEach(function(item){ %>
+        <div class="col">
+          <div class="item_body">
+            <hr />
+            <div class="item_text">
+              <h3>
+                <a href="">
+                  <span>
+                    <%- item.title %>
+                  </span>
+                </a>
+              </h3>
+              <p>
+                <%- item.content %>
+              </p>
+            </div>
+            <div class="item__actions">
+              <a href="">更多</a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
     </div>
   </div>
 </body>

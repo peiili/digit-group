@@ -15,7 +15,7 @@ const loadNavbar = () => {
         <a class="navbar-pc-list-item" href="/">人格测试</a>
         <a class="navbar-pc-list-item" href="/personalitytype.html">人格类型</a>
         <a class="navbar-pc-list-item" href="/testprompt.html">测试提示</a>
-        <a class="navbar-pc-list-item" href="/article.html">相关文章</a>
+        <a class="navbar-pc-list-item" href="/articles.html">相关文章</a>
       </div>
     </div>
     <div class="navbar-h5">
@@ -48,7 +48,7 @@ const loadNavbar = () => {
         <a class="drawer-menu-list-item" href="/">测试首页</a>
         <a class="drawer-menu-list-item" href="/personalitytype.html">人格类型</a>
         <a class="drawer-menu-list-item" href="/testprompt.html">测试提示</a>
-        <a class="drawer-menu-list-item" href="/article.html">相关文章</a>
+        <a class="drawer-menu-list-item" href="/articles.html">相关文章</a>
       </div>
       <!-- <div class="drawer-menu-login">
          登录
