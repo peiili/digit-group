@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+}
+
+.container .catalog {
+
+}
+
+.container .catalog .item_body {
+  overflow: hidden;
+height: 200px;
+}
+
+.container .catalog .item_body>hr {
+  height: 10px;
+  background-color: #4699b3;
+  width: 100%;
+}

@@ -105,6 +105,7 @@ body, p {
   gap: calc((16 / 1920) * 100vw) 0;
 }
 .left_list_item {
+  text-align: left;
   font-size: calc((20 / 1920) * 100vw);
   color: #FFF;
   display: flex;
@@ -367,7 +368,7 @@ body, p {
   width: 4px;
   height: 20px;
   background-color: #4298B4;
-}	
+}
 .jump_more {
   max-width: 1050px;
   width: 93.6vw;

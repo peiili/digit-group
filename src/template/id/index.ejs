@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="/access/bootstrap@5.3.0-alpha1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/id/question.css">
   <link rel="stylesheet" href="/id/button.css">
+  <link rel="stylesheet" href="/access/weui/2.5.16/weui.min.css">
+<script type="text/javascript" src="/access/weui/1.2.21/weui.min.js"></script>
   <script src="/access/js/apiFetch.js"></script>
 </head>
 
@@ -104,7 +106,8 @@
     currentPage = {}
     tempalte = _list.map((item, index) => {
       var name = item.name.trim()
-      currentPage[name] = ''
+      var id = item.id
+      currentPage[id] = ''
       return `
          <div class="inputoptions">
             <div class="input__label">
@@ -113,8 +116,8 @@
               </span>
             </div>
             <div class="group__options">
-             <div class="option option-left" data-option=${name} data-value=${item.option[0].character_type}>${item.option[0].name}</div>
-             <div class="option option-right" data-option=${name} data-value=${item.option[1].character_type}>${item.option[1].name}</div>
+             <div class="option option-left" data-option=${id} data-value=${item.option[0].character_type}>${item.option[0].name}</div>
+             <div class="option option-right" data-option=${id} data-value=${item.option[1].character_type}>${item.option[1].name}</div>
             </div>
           </div>`
     }).join('')
@@ -141,11 +144,63 @@
 
     })
   }
+  var orderid = ''
+  function createOrder(){
+    var url = '/mbti_api/order/create'
+    var body = {
+      "bd_vid": '',
+      "host": location.href,
+      "info_id": 8,
+      "goods_id":"6",
+      "from": ""
+    }
+    apiFetch.post(url,body).then(e=>{
+      if(e.success){
+        var id = e.data.id
+        orderid = id
+        render()
+        localStorage.setItem('orderId' ,id)
+      } else {
 
-  render()
+      }
+    })
+  }
+  const historyOrderId = localStorage.getItem('orderId')
+  if(historyOrderId) {
+    orderid = historyOrderId
+    var historyDone = localStorage.getItem(historyOrderId)
+    console.log(historyDone);
+    if(historyDone){
+      weui.dialog({
+        title: '提示',
+        content: '已经有完成测试的报告，是否重新测试？',
+        className: 'custom-classname',
+        buttons: [{
+            label: '否',
+            type: 'default',
+            onClick: function () {
+              location.href = '//test.mbti.ink/wait-pay?id='+ historyOrderId
+            }
+        }, {
+            label: '是',
+            type: 'primary',
+            onClick: function () {
+              createOrder()
+            }
+        }]
+    });
+
+    } else {
+      render()
+    }
+  } else {
+    createOrder()
+  }
+
+
 
   nextBtn.addEventListener('click', commit)
-  
+
   function commit() {
     for (const key in currentPage) {
       if (Object.hasOwnProperty.call(currentPage, key)) {
@@ -157,21 +212,34 @@
       }
     }
     msgTips.style.visibility = 'hidden'
-    window.scrollTo(0, 0);
+
     Object.assign(answer, currentPage)
     if(page === total){
       console.log('开始提交');
       console.log(answer);
+      var url = '/mbti_api/order/update'
+      var body = {
+        "detail":JSON.stringify(answer),
+        "id": orderid
+      }
+      localStorage.setItem(orderid, true)
+      apiFetch.put(url, body).then(e=>{
+        if(e.success){
+          location.href = '//test.mbti.ink/wait-pay?id='+ orderid
+        }
+      })
+
     } else {
       page++;
-      var progress = Math.ceil(page/total* 100)  + '%'
+      var progress = Math.ceil(page/total * 100)  + '%'
       progressBar.style.width = progress
       progressBar.textContent = progress
+      window.scrollTo(0, 0);
       render()
 
     }
   }
- 
+
   function smoothScrollUp(distance) {
     let start = document.documentElement.scrollTop || document.body.scrollTop;
     const end = start + distance;
