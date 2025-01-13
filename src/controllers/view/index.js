@@ -2,7 +2,7 @@ function index(req, res){
   res.render('index', {
     goods:  [
       {
-          "id": 1,
+          "id": 10,
           "goods_name": "93题",
           "goods_description": "标准版",
           "infomation_id": 5,

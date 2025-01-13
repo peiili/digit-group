@@ -302,9 +302,8 @@ body, p {
   left: calc((1080 / 1920) * 100vw);
 }
 .block4_main {
-  position: absolute;
-  top: calc((319 / 1920) * 100vw);
-  left: calc((360 / 1920) * 100vw);
+  margin-top: calc((50 / 1920) * 100vw);;
+  text-align: center;
 }
 .title4 {
   font-size: calc((28 / 1920) * 100vw);
@@ -571,7 +570,7 @@ a {
   }
   .block4 {
     width: 100%;
-    height: calc(100vw * (700 / 375));
+    height: calc(100vw * (450 / 375));
     clip-path: polygon(
       0 0.5%, 20% 3%, 45% 0, 80% 2.5%, 100% 1%,
       100% 97%, 80% 100%, 48% 97%, 19% 100%, 0 96.5%);
